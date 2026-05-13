@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import InitiativeCard from '../components/InitiativeCard.astro';
+import { initiatives } from '../data/initiatives';
+import { SITE } from '../data/site';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "HappyBein Initiatives",
+  "url": `${SITE.url}/initiatives`,
+  "itemListElement": initiatives.map((i, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "name": i.name,
+    "url": i.externalUrl,
+  }))
+});
+---
+
+<Base
+  title="Our Initiatives – HappyBein"
+  description="Explore all HappyBein initiatives: YeahVibe, YeahSight, YeahDev, Workout, GameTrack and SpeakNote — tools built to simplify complexity and build leverage."
+  canonical="https://happybein.com/initiatives"
+  schema={schema}
+>
+  <!-- Page hero -->
+  <div class="page-hero">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-label">What We're Building</div>
+      <h1 class="font-display font-black text-ink tracking-tight leading-[1.1] mb-4 max-w-2xl"
+          style="font-size:clamp(1.8rem,3.5vw,2.9rem);">Our Initiatives</h1>
+      <p class="text-muted leading-relaxed max-w-xl">
+        Seven instruments in the HappyBein ecosystem — each one a focused tool designed to help individuals simplify complexity, build leverage, and live with more purpose.
+      </p>
+    </div>
+  </div>
+
+  <!-- Cards grid -->
+  <section class="py-16 px-5">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid gap-5" style="grid-template-columns: repeat(1, 1fr);">
+        {initiatives.map(initiative => (
+          <InitiativeCard initiative={initiative} />
+        ))}
+      </div>
+
+      <!-- Contribute banner -->
+      <div class="mt-12 rounded-xl p-8 flex flex-wrap items-center justify-between gap-6"
+           style="background:#E8F7F7; border:1px solid rgba(42,191,191,0.18);">
+        <div>
+          <h3 class="font-display font-extrabold text-ink text-[1.15rem] mb-1">Want to build the next initiative?</h3>
+          <p class="text-sm text-muted">We are always looking for contributors, developers, and partners.</p>
+        </div>
+        <a href="/contact" class="btn-primary">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  @media (min-width: 640px) {
+    .grid { grid-template-columns: repeat(2, 1fr) !important; }
+  }
+  @media (min-width: 1020px) {
+    .grid { grid-template-columns: repeat(3, 1fr) !important; }
+  }
+</style>

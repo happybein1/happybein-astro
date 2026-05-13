@@ -1,0 +1,40 @@
+# HappyBein
+# Version: 1.5
+# Last updated: 2026-05-13
+# Framework: Astro 4 + Tailwind CSS (migrated from vanilla HTML)
+# Changelog:
+#   v1.5 (2026-05-13) — Migrated to Astro framework; component-based architecture
+#   v1.4 (2026-05-13) — Fixed nav dropdown hover gap; initiative links to external URLs
+#   v1.3 (2026-05-13) — Fixed iOS WebKit card rendering
+#   v1.2 (2026-05-13) — Added SpeakNote initiative
+#   v1.1 (2026-05-13) — Added initiatives page; nav restructure; real logo; collapsible cards
+#   v1.0 (2026-05-13) — Initial static site migrated from WordPress to Cloudflare Pages
+
+> A purpose-driven foundation dedicated to simplifying societal complexity so that every citizen and leader can make conscious, informed, and impactful decisions.
+
+## Core Pages
+
+- [Home](https://happybein.com/): Overview of HappyBein and YeahVibe.
+- [The HappyBein Manifesto](https://happybein.com/manifesto): Why we exist, how we operate, and what we believe.
+- [YeahVibe Roadmap](https://happybein.com/roadmap): Three-phase product roadmap.
+- [Our Initiatives](https://happybein.com/initiatives): All seven active tools in the Yeah ecosystem.
+- [Connect & Collaborate](https://happybein.com/contact): Email: happybein1@gmail.com
+
+## Initiatives
+
+- [HappyBein Foundation](https://happybein.com/initiatives#happybein): The architect. Non-profit research studio. Eindhoven, NL. Founded 2021.
+- [YeahVibe](https://yeahvibe.com): Core platform. Free modular Life Recipes around 5 Pillars of Leverage.
+- [YeahSight](https://yeahsight.com): World context tool. Decodes global trends into plain language.
+- [YeahDev](https://yeahdev.com): Article repository. No-fluff knowledge for founders and makers.
+- [YeahVibe Workout](https://workout.yeahvibe.com): Micro-exercise tool. Random exercises for home/office. FR/EN.
+- [YeahVibe GameTrack](https://gametrack.yeahvibe.com): Score tracker for board games and multiplayer activities.
+- [SpeakNote](https://speaknote.happybein.com): Voice transcription. Multi-language, 100% local, clipboard export.
+
+## About
+
+- Organisation: Non-profit foundation
+- Location: Eindhoven, Netherlands
+- Contact: happybein1@gmail.com
+- Discord: https://discord.com/invite/62xRJHCbRW
+- LinkedIn: https://www.linkedin.com/company/happybein/
+- Founded: 2021

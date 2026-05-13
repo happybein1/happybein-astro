@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    font-family: 'Open Sans', sans-serif;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+  }
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  /* ── Version bar ─────────────────────────────── */
+  .version-bar {
+    @apply fixed left-0 right-0 flex items-center justify-center gap-2 z-40;
+    top: 70px;
+    height: 22px;
+    background: #1A3333;
+    border-bottom: 1px solid rgba(42,191,191,0.2);
+    font-family: 'Courier New', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── Nav dropdown ────────────────────────────── */
+  .nav-dropdown {
+    @apply absolute left-0 min-w-[230px] bg-white rounded-b-md py-2 z-50;
+    top: 100%;
+    border: 1px solid rgba(42,191,191,0.18);
+    box-shadow: 0 8px 28px rgba(26,153,154,0.12);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .nav-item:hover .nav-dropdown,
+  .nav-item:focus-within .nav-dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  /* Invisible bridge to prevent gap between trigger and dropdown */
+  .nav-item::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    height: 8px;
+    background: transparent;
+  }
+
+  /* ── Initiative cards ────────────────────────── */
+  .init-card {
+    @apply bg-white rounded-xl flex flex-col relative;
+    border: 1px solid rgba(42,191,191,0.18);
+    box-shadow: 0 2px 14px rgba(26,153,154,0.12);
+    overflow: hidden;
+    /* GPU layer for iOS WebKit border-radius + overflow fix */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    isolation: isolate;
+    scroll-margin-top: calc(70px + 22px + 12px);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+  }
+  .init-card:hover {
+    transform: translateY(-4px) translateZ(0);
+    box-shadow: 0 16px 40px rgba(26,153,154,0.18);
+  }
+
+  /* Collapsible — grid-template-rows for smooth iOS animation */
+  .init-details {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 0.35s ease, opacity 0.3s ease;
+  }
+  .init-details.open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+  .init-details-inner {
+    overflow: hidden;
+    padding-top: 0.1rem;
+  }
+
+  /* ── Buttons ─────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center gap-1 px-6 py-3 rounded font-display font-extrabold text-white uppercase tracking-wider text-xs;
+    background: #4CAF50;
+    border: 2px solid #4CAF50;
+    transition: all 0.28s ease;
+  }
+  .btn-primary:hover, .btn-primary:active {
+    background: #388E3C;
+    border-color: #388E3C;
+    transform: translateY(-2px);
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-1 px-6 py-3 rounded font-display font-extrabold uppercase tracking-wider text-xs;
+    color: #1A9A9A;
+    border: 2px solid #2ABFBF;
+    transition: all 0.28s ease;
+  }
+  .btn-outline:hover, .btn-outline:active {
+    background: #2ABFBF;
+    color: white;
+    transform: translateY(-2px);
+  }
+  .btn-white {
+    @apply inline-flex items-center gap-1 px-6 py-3 rounded font-display font-extrabold uppercase tracking-wider text-xs;
+    background: white;
+    color: #1A9A9A;
+    border: 2px solid white;
+    transition: all 0.28s ease;
+  }
+  .btn-white:hover, .btn-white:active {
+    background: #E8F7F7;
+    border-color: #E8F7F7;
+    transform: translateY(-2px);
+  }
+
+  /* ── Gradient strip ──────────────────────────── */
+  .teal-gradient {
+    background: linear-gradient(135deg, #1A9A9A 0%, #2ABFBF 100%);
+  }
+
+  /* ── Section label ───────────────────────────── */
+  .section-label {
+    @apply text-2xs font-bold tracking-widest uppercase;
+    color: #1A9A9A;
+    margin-bottom: 0.6rem;
+  }
+
+  /* ── Page hero ───────────────────────────────── */
+  .page-hero {
+    padding-top: calc(70px + 22px + 3.5rem);
+    @apply pb-12 px-6 border-b;
+    background: #E8F7F7;
+    border-color: rgba(42,191,191,0.18);
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Nunito', sans-serif; }
+  .font-mono-sm { font-family: 'Courier New', monospace; font-size: 0.68rem; }
+}

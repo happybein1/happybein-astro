@@ -1,0 +1,138 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "HappyBein",
+      "url": SITE.url,
+      "logo": `${SITE.url}/images/logo.png`,
+      "foundingDate": SITE.founded,
+      "description": SITE.description,
+      "address": { "@type": "PostalAddress", "addressLocality": "Eindhoven", "addressCountry": "NL" },
+      "contactPoint": { "@type": "ContactPoint", "email": SITE.email },
+      "sameAs": Object.values(SITE.social),
+    },
+    {
+      "@type": "WebSite",
+      "url": SITE.url,
+      "name": SITE.name,
+    }
+  ]
+});
+---
+
+<Base
+  title="HappyBein – Simplify Complexity. Design Your Life."
+  description="HappyBein is a purpose-driven foundation simplifying societal complexity. Discover YeahVibe, YeahSight, YeahDev and more decision-support tools."
+  canonical="https://happybein.com/"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-5 grid gap-14 items-center" style="min-height:88vh; padding-top:4.5rem; padding-bottom:4rem; grid-template-columns:1fr 1.15fr;">
+    <div>
+      <h1 class="font-display font-black text-ink leading-[1.1] tracking-tight mb-5"
+          style="font-size:clamp(2rem, 4vw, 3.4rem);">
+        Simplify Complexity.<br/>Design Your Life.
+      </h1>
+      <p class="text-muted leading-relaxed mb-8 max-w-[400px]">
+        HappyBein is the architect. YeahVibe is the instrument. Together, we empower you to understand, decide, and act.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://www.yeahvibe.com" target="_blank" rel="noopener" class="btn-primary">Explore YeahVibe Tools</a>
+        <a href="/manifesto" class="btn-outline">Our Manifesto</a>
+      </div>
+    </div>
+
+    <!-- Vimeo embed -->
+    <div class="relative rounded-xl overflow-hidden" style="aspect-ratio:16/9; background:#000; border:3px solid #2ABFBF; box-shadow:0 16px 48px rgba(26,153,154,0.15); -webkit-transform:translateZ(0); transform:translateZ(0);">
+      <iframe
+        src="https://player.vimeo.com/video/908983038?badge=0&autopause=0&player_id=0&app_id=58479"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+        title="Introduction HappyBein"
+        class="absolute inset-0 w-full h-full border-0"
+      ></iframe>
+    </div>
+  </section>
+
+  <!-- What is HappyBein -->
+  <section class="py-20 px-5" style="background:#F4FAFA;">
+    <div class="max-w-6xl mx-auto grid gap-12 items-center" style="grid-template-columns:1fr 1fr;">
+      <div class="rounded-lg overflow-hidden" style="aspect-ratio:4/3; border:3px solid #2ABFBF; background:#E8F7F7;">
+        <img
+          src="https://happybein.com/wp-content/uploads/2022/08/shutterstock_1059887825-scaled-e1659873157592.jpg"
+          alt="People navigating with a compass"
+          class="w-full h-full object-cover"
+          onerror="this.style.display='none'"
+        />
+      </div>
+      <div>
+        <div class="section-label">What is HappyBein?</div>
+        <div class="rounded-lg p-6 mb-4" style="background:white; border-left:4px solid #2ABFBF; box-shadow:0 2px 12px rgba(26,153,154,0.12);">
+          <div class="text-2xs font-bold tracking-widest uppercase text-teal-dark mb-1">🏛 The Mission & Architect</div>
+          <h3 class="font-display font-extrabold text-ink text-[1.05rem] mb-2">HappyBein (The Foundation)</h3>
+          <p class="text-sm text-muted leading-relaxed">A purpose-driven foundation dedicated to simplifying societal complexity. We build the frameworks that help young adults and future leaders navigate a noisy world with clarity. <a href="/manifesto" class="text-teal-dark font-semibold border-b border-teal-dark/30 hover:border-teal-dark">Read The Manifesto →</a></p>
+        </div>
+        <div class="rounded-lg p-6" style="background:white; border-left:4px solid #4CAF50; box-shadow:0 2px 12px rgba(26,153,154,0.12);">
+          <div class="text-2xs font-bold tracking-widest uppercase text-green-dark mb-1">🛠 The Tool & Instrument</div>
+          <h3 class="font-display font-extrabold text-ink text-[1.05rem] mb-2">YeahVibe (The Platform)</h3>
+          <p class="text-sm text-muted leading-relaxed">A modular repository of "Life Recipes" and best practices. From personal well-being to professional checklists, YeahVibe turns abstract wisdom into actionable steps. <a href="https://www.yeahvibe.com/" target="_blank" rel="noopener" class="text-green-dark font-semibold border-b border-green-dark/30 hover:border-green-dark">Check YeahVibe →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote strip -->
+  <section class="py-16 px-5 text-center text-white teal-gradient">
+    <div class="max-w-3xl mx-auto">
+      <blockquote class="font-display font-bold leading-snug mb-4" style="font-size:clamp(1.1rem,2.2vw,1.65rem);">
+        "Individual well-being and collective progress are not accidental. They are the result of conscious choices."
+      </blockquote>
+      <cite class="text-xs tracking-widest uppercase opacity-75 not-italic">— The HappyBein Manifesto</cite>
+    </div>
+  </section>
+
+  <!-- Two streams -->
+  <section class="py-20 px-5">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-label">How It Works</div>
+      <h2 class="font-display font-extrabold text-ink tracking-tight mb-3" style="font-size:clamp(1.6rem,2.8vw,2.5rem);">Two Streams of Clarity</h2>
+      <p class="text-muted leading-relaxed mb-10 max-w-lg">The YeahVibe platform delivers support on two essential fronts — you need both to make truly good decisions.</p>
+      <div class="grid gap-6" style="grid-template-columns:1fr 1fr;">
+        <div class="rounded-xl p-7 relative overflow-hidden" style="background:white; border:1px solid rgba(42,191,191,0.18); box-shadow:0 4px 20px rgba(26,153,154,0.12);">
+          <div class="absolute top-0 left-0 right-0 h-1" style="background:#2ABFBF;"></div>
+          <div class="text-2xs font-bold tracking-widest uppercase text-teal-dark mb-2">Stream A — Internal</div>
+          <h3 class="font-display font-extrabold text-ink text-[1.1rem] mb-3">Internal Efficiency</h3>
+          <p class="text-sm text-muted leading-relaxed">Process optimisation checklists and personal organisation tools to clear mental clutter and save time. <span class="text-teal-dark font-semibold not-italic">Goal: move from Overwhelmed to Empowered.</span></p>
+        </div>
+        <div class="rounded-xl p-7 relative overflow-hidden" style="background:white; border:1px solid rgba(42,191,191,0.18); box-shadow:0 4px 20px rgba(26,153,154,0.12);">
+          <div class="absolute top-0 left-0 right-0 h-1" style="background:#4CAF50;"></div>
+          <div class="text-2xs font-bold tracking-widest uppercase text-green-dark mb-2">Stream B — External</div>
+          <h3 class="font-display font-extrabold text-ink text-[1.1rem] mb-3">External Understanding</h3>
+          <p class="text-sm text-muted leading-relaxed">Decoding complex global issues into plain language so you can see how the world impacts daily life. <span class="text-green-dark font-semibold not-italic">Goal: move from Confused to Informed.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-5 text-center" style="background:#E8F7F7;">
+    <div class="teal-gradient rounded-2xl p-16 max-w-2xl mx-auto text-white" style="box-shadow:0 12px 40px rgba(42,191,191,0.2);">
+      <h2 class="font-display font-extrabold leading-tight mb-4" style="font-size:clamp(1.4rem,2.5vw,2.1rem);">Join the Construction</h2>
+      <p class="opacity-90 mb-8 leading-relaxed">We are building the future of decision support, and we need your help. Whether you are a user or a partner, your voice matters.</p>
+      <a href="/contact" class="btn-white">Contact Us Today →</a>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  @media (max-width: 960px) {
+    section:first-of-type { grid-template-columns: 1fr !important; min-height: auto !important; }
+    .max-w-6xl > .grid { grid-template-columns: 1fr !important; }
+  }
+</style>

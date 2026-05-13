@@ -1,0 +1,53 @@
+---
+import { SITE } from '../data/site';
+---
+<footer class="px-6 py-10" style="background:#1A3333; color:rgba(255,255,255,0.55);">
+  <div class="max-w-6xl mx-auto grid gap-10"
+       style="grid-template-columns: 1.2fr 1fr 1fr;">
+
+    <!-- Brand -->
+    <div>
+      <a href="/">
+        <img src="/images/logo.png" alt="HappyBein" class="h-8 w-auto" />
+      </a>
+      <p class="mt-3 text-sm leading-relaxed max-w-[260px]">
+        A purpose-driven foundation simplifying societal complexity — one decision at a time.
+      </p>
+    </div>
+
+    <!-- Initiatives -->
+    <div>
+      <h4 class="text-[0.72rem] font-bold tracking-[0.12em] uppercase mb-4" style="color:#2ABFBF;">Initiatives</h4>
+      <a href="/initiatives" class="block text-sm mb-2 hover:text-white transition-colors">All Initiatives</a>
+      <a href="https://yeahvibe.com" target="_blank" rel="noopener" class="block text-sm mb-2 hover:text-white transition-colors">YeahVibe ↗</a>
+      <a href="https://yeahsight.com" target="_blank" rel="noopener" class="block text-sm mb-2 hover:text-white transition-colors">YeahSight ↗</a>
+      <a href="https://yeahdev.com" target="_blank" rel="noopener" class="block text-sm mb-2 hover:text-white transition-colors">YeahDev ↗</a>
+      <a href="https://workout.yeahvibe.com" target="_blank" rel="noopener" class="block text-sm mb-2 hover:text-white transition-colors">Workout Tool ↗</a>
+      <a href="https://gametrack.yeahvibe.com" target="_blank" rel="noopener" class="block text-sm mb-2 hover:text-white transition-colors">GameTrack ↗</a>
+      <a href="https://speaknote.happybein.com" target="_blank" rel="noopener" class="block text-sm mb-2 hover:text-white transition-colors">SpeakNote ↗</a>
+    </div>
+
+    <!-- About -->
+    <div>
+      <h4 class="text-[0.72rem] font-bold tracking-[0.12em] uppercase mb-4" style="color:#2ABFBF;">About</h4>
+      <a href="/manifesto" class="block text-sm mb-2 hover:text-white transition-colors">The Manifesto</a>
+      <a href="/roadmap" class="block text-sm mb-2 hover:text-white transition-colors">YeahVibe Roadmap</a>
+      <a href="/contact" class="block text-sm mb-2 hover:text-white transition-colors">Connect & Collaborate</a>
+      <a href="https://form.jotform.com/222551513307043" target="_blank" rel="noopener" class="block text-sm mb-2 hover:text-white transition-colors">1-Min Feedback ↗</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="max-w-6xl mx-auto mt-8 pt-5 flex flex-wrap justify-between items-center gap-3 text-xs"
+       style="border-top:1px solid rgba(255,255,255,0.08);">
+    <span>©2021–2026 HappyBein · {SITE.location}</span>
+    <span class="font-mono-sm" style="color:rgba(255,255,255,0.3);">v{SITE.version} · {SITE.versionDate}</span>
+    <div class="flex gap-4">
+      <a href={SITE.social.facebook} target="_blank" rel="noopener" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">Facebook</a>
+      <a href={SITE.social.linkedin} target="_blank" rel="noopener" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">LinkedIn</a>
+      <a href={SITE.social.discord}  target="_blank" rel="noopener" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">Discord</a>
+      <a href={SITE.social.twitter}  target="_blank" rel="noopener" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">Twitter</a>
+    </div>
+  </div>
+</footer>

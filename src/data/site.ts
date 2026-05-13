@@ -1,0 +1,36 @@
+export const SITE = {
+  name: 'HappyBein',
+  url: 'https://happybein.com',
+  version: '1.5',
+  versionDate: 'May 2026',
+  description: 'A purpose-driven foundation dedicated to simplifying societal complexity so every citizen and leader can make conscious, informed, and impactful decisions.',
+  email: 'happybein1@gmail.com',
+  location: 'Eindhoven, Netherlands',
+  founded: '2021',
+  ogImage: 'https://happybein.com/images/og-home.png',
+  GA_ID: 'G-TJFL5YQ705',
+  social: {
+    linkedin: 'https://www.linkedin.com/company/happybein/',
+    facebook: 'https://m.facebook.com/groups/463088738463506',
+    discord: 'https://discord.com/invite/62xRJHCbRW',
+    twitter: 'https://twitter.com/',
+  },
+  nav: {
+    initiatives: [
+      { label: 'All Initiatives',      href: '/initiatives',                         bold: true },
+      { label: 'HappyBein Foundation', href: '/initiatives#happybein',               external: false },
+      { label: 'YeahVibe',             href: 'https://yeahvibe.com',                 external: true },
+      { label: 'YeahSight',            href: 'https://yeahsight.com',                external: true },
+      { label: 'YeahDev',              href: 'https://yeahdev.com',                  external: true },
+      { label: 'YeahVibe Workout',     href: 'https://workout.yeahvibe.com',         external: true },
+      { label: 'YeahVibe GameTrack',   href: 'https://gametrack.yeahvibe.com',       external: true },
+      { label: 'SpeakNote',            href: 'https://speaknote.happybein.com',       external: true },
+    ],
+    about: [
+      { label: 'The HappyBein Manifesto', href: '/manifesto' },
+      { label: 'YeahVibe Roadmap',        href: '/roadmap' },
+      { divider: true },
+      { label: 'Connect & Collaborate',   href: '/contact' },
+    ],
+  },
+};

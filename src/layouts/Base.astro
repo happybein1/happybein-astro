@@ -1,0 +1,90 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../data/site';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  ogType?: string;
+  schema?: string;
+}
+
+const {
+  title,
+  description = SITE.description,
+  canonical = SITE.url,
+  ogType = 'website',
+  schema,
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+
+  <!-- Canonical -->
+  <link rel="canonical" href={canonical} />
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://happybein.com/wp-content/uploads/2021/09/fav_icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content={ogType} />
+  <meta property="og:title"       content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url"         content={canonical} />
+  <meta property="og:image"       content={SITE.ogImage} />
+  <meta property="og:site_name"   content={SITE.name} />
+  <meta property="og:locale"      content="en_GB" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image"       content={SITE.ogImage} />
+
+  <!-- SEO -->
+  <meta name="robots"     content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="author"     content={SITE.name} />
+  <meta name="theme-color" content="#2ABFBF" />
+
+  <!-- Structured data -->
+  {schema && <script type="application/ld+json" set:html={schema} />}
+
+  <!-- Google Analytics -->
+  <script async src={`https://www.googletagmanager.com/gtag/js?id=${SITE.GA_ID}`}></script>
+  <script define:vars={{ GA_ID: SITE.GA_ID }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+  </script>
+</head>
+<body class="bg-white text-body">
+  <Nav />
+  <main style="padding-top: calc(70px + 22px);">
+    <slot />
+  </main>
+  <Footer />
+
+  <!-- Collapsible toggle script — runs on every page -->
+  <script>
+    document.querySelectorAll('[data-toggle]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = (btn as HTMLElement).dataset.toggle;
+        const details = document.querySelector(`[data-details="${id}"]`);
+        if (!details) return;
+        const isOpen = details.classList.contains('open');
+        details.classList.toggle('open', !isOpen);
+        btn.textContent = isOpen ? 'Read more ↓' : 'Show less ↑';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+
+<Base
+  title="Connect & Collaborate – HappyBein"
+  description="Get in touch with the HappyBein team. Partner with us, give feedback on YeahVibe, or join our community on Discord and LinkedIn."
+  canonical="https://happybein.com/contact"
+>
+  <div class="page-hero">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-label">Get In Touch</div>
+      <h1 class="font-display font-black text-ink tracking-tight leading-[1.1] mb-4 max-w-2xl"
+          style="font-size:clamp(1.8rem,3.5vw,2.9rem);">Connect & Collaborate</h1>
+      <p class="text-muted leading-relaxed max-w-xl">Whether you are seeking clarity through our tools or looking to support our foundation's mission, we are ready to listen.</p>
+    </div>
+  </div>
+
+  <section class="py-16 px-5">
+    <div class="max-w-6xl mx-auto grid gap-14 items-start" style="grid-template-columns:1fr 1fr;">
+
+      <!-- Left: info -->
+      <div>
+        <h3 class="font-display font-extrabold text-ink text-[1.15rem] mb-3">For Partners & Contributors</h3>
+        <p class="text-sm text-muted leading-relaxed mb-3"><strong class="text-body">Help us build the Architecture.</strong> We are actively seeking open-minded supporters to collaborate on:</p>
+        <ul class="ml-4 list-disc flex flex-col gap-2 mb-6 text-sm text-muted">
+          <li><strong class="text-body">Content Creation:</strong> Developing frameworks for better decision-making.</li>
+          <li><strong class="text-body">Outreach:</strong> Expanding our network to those who need decision support.</li>
+          <li><strong class="text-body">Validation:</strong> Piloting our tools within your organisation or community.</li>
+        </ul>
+
+        <h3 class="font-display font-extrabold text-ink text-[1.15rem] mb-3">For Users (YeahVibe)</h3>
+        <p class="text-sm text-muted leading-relaxed mb-2"><strong class="text-body">Refine the Instrument.</strong> Your feedback is the fuel for our roadmap.</p>
+        <ul class="ml-4 list-disc flex flex-col gap-2 mb-6 text-sm text-muted">
+          <li>Have a suggestion for a new checklist or feature?</li>
+          <li>Found a bug or need technical support?</li>
+          <li><a href="https://form.jotform.com/222551513307043" target="_blank" rel="noopener" class="text-teal-dark font-semibold">Take our 1-Minute Survey →</a></li>
+        </ul>
+
+        <h3 class="font-display font-extrabold text-ink text-[1.15rem] mb-2">Location</h3>
+        <p class="text-sm text-muted">📍 {SITE.location}</p>
+      </div>
+
+      <!-- Right: email + channels -->
+      <div>
+        <div class="rounded-xl p-8 text-center mb-5" style="background:#E8F7F7; border:2px solid rgba(42,191,191,0.18);">
+          <div class="text-2xs font-bold tracking-widest uppercase text-teal-dark mb-3">✉ Drop us an email</div>
+          <a href={`mailto:${SITE.email}`}
+             class="inline-block font-display font-extrabold text-ink bg-white rounded-lg px-6 py-3 mb-4 hover:border-teal-DEFAULT transition-colors"
+             style="font-size:clamp(0.95rem,2.5vw,1.35rem); border:1.5px solid rgba(42,191,191,0.18); word-break:break-all;">
+            {SITE.email}
+          </a>
+          <p class="text-sm text-muted leading-relaxed">We typically reply within 2–3 business days.</p>
+        </div>
+
+        <div class="grid gap-3" style="grid-template-columns:1fr 1fr;">
+          {[
+            { icon:'💬', label:'Chat with us',  value:'Discord →',  href: SITE.social.discord },
+            { icon:'🔗', label:'Follow us',     value:'LinkedIn →', href: SITE.social.linkedin },
+            { icon:'👥', label:'Join the group',value:'Facebook →', href: SITE.social.facebook },
+            { icon:'📋', label:'Quick feedback', value:'1-Min Survey →', href: 'https://form.jotform.com/222551513307043' },
+          ].map(ch => (
+            <a href={ch.href} target="_blank" rel="noopener"
+               class="flex items-center gap-3 p-4 rounded-lg bg-white hover:border-teal-DEFAULT transition-colors"
+               style="border:1px solid rgba(42,191,191,0.18);">
+              <span class="text-[1.3rem] shrink-0">{ch.icon}</span>
+              <div>
+                <div class="text-2xs font-bold tracking-widest uppercase text-muted mb-[2px]">{ch.label}</div>
+                <div class="font-display font-bold text-teal-dark text-sm">{ch.value}</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Base>
+
+<style>
+  @media (max-width: 768px) {
+    .grid[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

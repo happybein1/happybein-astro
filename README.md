@@ -1,82 +1,49 @@
-# HappyBein – Astro Site
+# Starlight Starter Kit: Basics
 
-Built with [Astro](https://astro.build) + [Tailwind CSS](https://tailwindcss.com).  
-Deployed on [Cloudflare Pages](https://pages.cloudflare.com).
-
-## Version: 1.5 · May 2026
-
-## Quick Start
-
-```bash
-# Install dependencies
-npm install
-
-# Start dev server (http://localhost:4321)
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-## Deploy to Cloudflare Pages
-
-### Option A — GitHub (recommended, auto-deploy on push)
-1. Push this repo to GitHub
-2. Go to Cloudflare Pages → Create a project → Connect to Git
-3. Select your repo
-4. Set build settings:
-   - **Build command:** `npm run build`
-   - **Build output directory:** `dist`
-   - **Node version:** `18` or higher (set in Environment Variables: `NODE_VERSION = 18`)
-5. Add your custom domain `happybein.com` under Custom Domains
-
-### Option B — Direct upload
-1. Run `npm run build` locally
-2. Upload the `dist/` folder to Cloudflare Pages → Direct Upload
-
-## Project Structure
+[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
 ```
-src/
-├── components/
-│   ├── Nav.astro           # Shared navigation (auto-updates from site.ts)
-│   ├── Footer.astro        # Shared footer
-│   └── InitiativeCard.astro # Reusable initiative card with collapsible
-├── data/
-│   ├── site.ts             # ← Edit version, nav links, social links here
-│   └── initiatives.ts      # ← Add/edit initiatives here
-├── layouts/
-│   └── Base.astro          # Shared HTML shell + SEO tags
-├── pages/
-│   ├── index.astro         # Home
-│   ├── initiatives.astro   # All initiatives
-│   ├── manifesto.astro     # The HappyBein Manifesto
-│   ├── roadmap.astro       # YeahVibe Roadmap
-│   └── contact.astro       # Connect & Collaborate
-└── styles/
-    └── global.css          # Tailwind + custom component styles
-public/
-├── images/logo.png         # HappyBein logo (transparent PNG)
-├── robots.txt              # Bot crawling rules
-├── _redirects              # Cloudflare Pages URL redirects
-├── _headers                # HTTP headers (cache, security)
-└── llms.txt                # AI crawler metadata
-
+npm create astro@latest -- --template starlight
 ```
 
-## How to Update Version
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-Edit `src/data/site.ts`:
-```ts
-version: '1.6',
-versionDate: 'June 2026',
+## 🚀 Project Structure
+
+Inside of your Astro + Starlight project, you'll see the following folders and files:
+
 ```
-That's it — version updates everywhere automatically (nav bar, footer, llms.txt).
+.
+├── public/
+├── src/
+│   ├── assets/
+│   ├── content/
+│   │   └── docs/
+│   └── content.config.ts
+├── astro.config.mjs
+├── package.json
+└── tsconfig.json
+```
 
-## How to Add a New Initiative
+Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
 
-Edit `src/data/initiatives.ts` — add a new object to the `initiatives` array.  
-The card appears automatically on `/initiatives` and in the nav dropdown.
+Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+
+Static assets, like favicons, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).

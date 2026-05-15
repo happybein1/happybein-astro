@@ -1,11 +1,11 @@
 ---
-import Base from '../layouts/Base.astro';
-import InitiativeCard from '../components/InitiativeCard.astro';
-import { initiatives } from '../data/initiatives';
-import { SITE } from '../data/site';
-import { getT } from '../i18n/index';
+import Base from '../../layouts/Base.astro';
+import InitiativeCard from '../../components/InitiativeCard.astro';
+import { initiatives } from '../../data/initiatives';
+import { SITE } from '../../data/site';
+import { getT } from '../../i18n/index';
 
-const lang = 'en';
+const lang = 'fr';
 const t = getT(lang);
 const ti = t.initiatives;
 
@@ -13,7 +13,7 @@ const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": ti.pageTitle,
-  "url": "https://happybein.com/initiatives",
+  "url": "https://happybein.com/fr/initiatives",
   "itemListElement": initiatives.map((i, idx) => ({
     "@type": "ListItem", "position": idx + 1, "name": i.name, "url": i.externalUrl,
   }))
@@ -22,7 +22,7 @@ const schema = JSON.stringify({
 <Base
   title={ti.title}
   description={ti.description}
-  canonical="https://happybein.com/initiatives"
+  canonical="https://happybein.com/fr/initiatives"
   lang={lang}
   alternateEn="https://happybein.com/initiatives"
   alternateFr="https://happybein.com/fr/initiatives"

@@ -2,6 +2,7 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { SITE } from '../data/site';
+import { getT, type Lang } from '../i18n/index';
 import '../styles/global.css';
 
 export interface Props {
@@ -10,6 +11,9 @@ export interface Props {
   canonical?: string;
   ogType?: string;
   schema?: string;
+  lang?: Lang;
+  alternateFr?: string;
+  alternateEn?: string;
 }
 
 const {
@@ -18,47 +22,41 @@ const {
   canonical = SITE.url,
   ogType = 'website',
   schema,
+  lang = 'en',
+  alternateFr,
+  alternateEn,
 } = Astro.props;
+
+const t = getT(lang);
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
-
-  <!-- Canonical -->
   <link rel="canonical" href={canonical} />
-
-  <!-- Favicon -->
+  {alternateEn && <link rel="alternate" hreflang="en" href={alternateEn} />}
+  {alternateFr && <link rel="alternate" hreflang="fr" href={alternateFr} />}
+  {alternateEn && <link rel="alternate" hreflang="x-default" href={alternateEn} />}
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-  <!-- Open Graph -->
   <meta property="og:type"        content={ogType} />
   <meta property="og:title"       content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url"         content={canonical} />
   <meta property="og:image"       content={SITE.ogImage} />
   <meta property="og:site_name"   content={SITE.name} />
-  <meta property="og:locale"      content="en_GB" />
-
-  <!-- Twitter Card -->
+  <meta property="og:locale"      content={lang === 'fr' ? 'fr_FR' : 'en_GB'} />
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image"       content={SITE.ogImage} />
-
-  <!-- SEO -->
-  <meta name="robots"     content="index, follow, max-snippet:-1, max-image-preview:large" />
-  <meta name="author"     content={SITE.name} />
+  <meta name="robots"      content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="author"      content={SITE.name} />
   <meta name="theme-color" content="#2ABFBF" />
-
-  <!-- Structured data -->
   {schema && <script type="application/ld+json" set:html={schema} />}
-
-  <!-- Google Analytics -->
   <script async src={`https://www.googletagmanager.com/gtag/js?id=${SITE.GA_ID}`}></script>
   <script define:vars={{ GA_ID: SITE.GA_ID }}>
     window.dataLayer = window.dataLayer || [];
@@ -68,13 +66,11 @@ const {
   </script>
 </head>
 <body class="bg-white text-body">
-  <Nav />
+  <Nav lang={lang} t={t} />
   <main style="padding-top: calc(70px + 22px);">
     <slot />
   </main>
-  <Footer />
-
-  <!-- Collapsible toggle script — runs on every page -->
+  <Footer lang={lang} t={t} />
   <script>
     document.querySelectorAll('[data-toggle]').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -83,7 +79,9 @@ const {
         if (!details) return;
         const isOpen = details.classList.contains('open');
         details.classList.toggle('open', !isOpen);
-        btn.textContent = isOpen ? 'Read more ↓' : 'Show less ↑';
+        const readMore = (btn as HTMLElement).dataset.readmore || 'Read more ↓';
+        const showLess = (btn as HTMLElement).dataset.showless || 'Show less ↑';
+        btn.textContent = isOpen ? readMore : showLess;
       });
     });
   </script>

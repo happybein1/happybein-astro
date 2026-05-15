@@ -1,9 +1,9 @@
 ---
-import Base from '../layouts/Base.astro';
-import { SITE } from '../data/site';
-import { getT } from '../i18n/index';
+import Base from '../../layouts/Base.astro';
+import { SITE } from '../../data/site';
+import { getT } from '../../i18n/index';
 
-const lang = 'en';
+const lang = 'fr';
 const t = getT(lang);
 const c = t.contact;
 
@@ -12,7 +12,7 @@ const channelHrefs = [SITE.social.discord, SITE.social.linkedin, SITE.social.fac
 <Base
   title={c.title}
   description={c.description}
-  canonical="https://happybein.com/contact"
+  canonical="https://happybein.com/fr/contact"
   lang={lang}
   alternateEn="https://happybein.com/contact"
   alternateFr="https://happybein.com/fr/contact"

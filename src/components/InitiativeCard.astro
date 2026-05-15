@@ -1,17 +1,31 @@
 ---
 import type { Initiative } from '../data/initiatives';
-const { initiative: i } = Astro.props as { initiative: Initiative };
-const isExternal = i.externalUrl !== i.url && !i.externalUrl.includes('happybein.com') || i.id !== 'happybein';
-const ctaHref = i.id === 'happybein' ? '/manifesto' : i.externalUrl;
+import { initiativeTranslations, type Lang } from '../i18n/index';
+import type { Translations } from '../i18n/en';
+
+const { initiative: i, lang, t } = Astro.props as {
+  initiative: Initiative;
+  lang: Lang;
+  t: Translations;
+};
+
+// Use French translations if available, otherwise fall back to English
+const fr = lang === 'fr' ? initiativeTranslations[i.id] : null;
+const badge    = fr?.badge    ?? i.badge;
+const summary  = fr?.summary  ?? i.summary;
+const details  = fr?.details  ?? i.details;
+const ctaLabel = fr?.ctaLabel ?? i.ctaLabel;
+
+const ctaHref = i.id === 'happybein'
+  ? (lang === 'fr' ? '/fr/manifesto' : '/manifesto')
+  : i.externalUrl;
 ---
 
 <div class="init-card" id={i.id}>
-  <!-- Colour stripe -->
   <div class={`h-[7px] shrink-0 ${i.bannerClass}`}></div>
 
   <div class="flex flex-col flex-1 p-5 sm:p-6">
 
-    <!-- Header -->
     <div class="flex items-center gap-3 mb-3">
       <div class={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0 ${i.iconBgClass}`}>
         {i.icon}
@@ -22,51 +36,48 @@ const ctaHref = i.id === 'happybein' ? '/manifesto' : i.externalUrl;
       </div>
     </div>
 
-    <!-- Badge -->
     <span class={`inline-flex items-center gap-1 text-2xs font-bold tracking-widest uppercase px-3 py-1 rounded-full self-start mb-3 ${i.badgeColorClass}`}>
       <span class="w-[6px] h-[6px] rounded-sm inline-block shrink-0" style={`background:${i.dotColor}; animation:pulse 2s infinite;`}></span>
-      {i.badge}
+      {badge}
     </span>
 
-    <!-- Summary -->
-    <p class="text-sm text-muted leading-relaxed mb-3">{i.summary}</p>
+    <p class="text-sm text-muted leading-relaxed mb-3">{summary}</p>
 
-    <!-- Toggle button -->
     <button
       class={`w-full flex items-center justify-center gap-2 text-[0.8rem] font-display font-bold px-3 py-3 rounded border mb-3 transition-colors ${i.toggleColorClass}`}
       style="min-height:44px; background:transparent;"
       data-toggle={i.id}
+      data-readmore={t.initiatives.readMore}
+      data-showless={t.initiatives.showLess}
     >
-      Read more ↓
+      {t.initiatives.readMore}
     </button>
 
-    <!-- Collapsible details -->
     <div class="init-details" data-details={i.id}>
       <div class="init-details-inner">
-        {i.details.map(block => (
+        {details.map((block: any) => (
           block.type === 'italic'
             ? <p class="text-sm text-muted italic mb-3">{block.text}</p>
             : block.type === 'bullets'
               ? <ul class="flex flex-col gap-[0.45rem] mb-3">
-                  {block.items.map(item => (
+                  {block.items.map((item: string) => (
                     <li class="flex items-start gap-2 text-[0.875rem] text-body leading-snug">
-                      <span class="w-[6px] h-[6px] rounded-sm shrink-0 mt-[0.42rem]"
-                            style={`background:${i.dotColor};`}></span>
+                      <span class="w-[6px] h-[6px] rounded-sm shrink-0 mt-[0.42rem]" style={`background:${i.dotColor};`}></span>
                       {item}
                     </li>
                   ))}
                 </ul>
               : block.type === 'pillars'
                 ? <>
-                    <div class="text-2xs font-bold tracking-widest uppercase text-teal-dark mb-2">The 5 Pillars of Leverage</div>
+                    <div class="text-2xs font-bold tracking-widest uppercase text-teal-dark mb-2">{t.initiatives.pillarLabel}</div>
                     <ul class="flex flex-col gap-[0.45rem] mb-3">
-                      {block.items.map(p => (
+                      {block.items.map((p2: any) => (
                         <li class="flex items-start gap-2 text-[0.855rem] text-body leading-snug">
                           <span class="font-display font-black text-[0.68rem] text-white rounded-full flex items-center justify-center shrink-0 mt-[2px]"
                                 style={`width:17px;height:17px;min-width:17px;background:${i.dotColor};`}>
-                            {p.num}
+                            {p2.num}
                           </span>
-                          <span><strong>{p.title}</strong> — {p.desc}</span>
+                          <span><strong>{p2.title}</strong> — {p2.desc}</span>
                         </li>
                       ))}
                     </ul>
@@ -80,17 +91,16 @@ const ctaHref = i.id === 'happybein' ? '/manifesto' : i.externalUrl;
       </div>
     </div>
 
-    <!-- Footer link -->
     <div class="mt-auto pt-3 border-t flex items-center gap-3" style="border-color:rgba(42,191,191,0.18);">
       <a href={ctaHref}
          target={i.id !== 'happybein' ? '_blank' : undefined}
          rel={i.id !== 'happybein' ? 'noopener' : undefined}
          class={`inline-flex items-center gap-1 text-[0.84rem] font-display font-bold min-h-[44px] py-2 ${i.linkColorClass}`}>
-        {i.ctaLabel}
+        {ctaLabel}
       </a>
       <span class="ml-auto flex items-center gap-1 text-2xs font-bold tracking-wider uppercase text-muted">
         <span class="w-[6px] h-[6px] rounded-sm" style={`background:${i.dotColor}; animation:pulse 2s infinite;`}></span>
-        Live
+        {t.initiatives.live}
       </span>
     </div>
 

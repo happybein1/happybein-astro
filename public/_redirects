@@ -10,3 +10,6 @@
 /manifesto.html      /manifesto    301
 /roadmap.html        /roadmap      301
 /contact.html        /contact      301
+
+# French redirects
+/fr                  /fr/          301

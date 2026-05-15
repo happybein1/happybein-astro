@@ -1,15 +1,15 @@
 ---
-import Base from '../layouts/Base.astro';
-import { getT } from '../i18n/index';
+import Base from '../../layouts/Base.astro';
+import { getT } from '../../i18n/index';
 
-const lang = 'en';
+const lang = 'fr';
 const t = getT(lang);
 const r = t.roadmap;
 ---
 <Base
   title={r.title}
   description={r.description}
-  canonical="https://happybein.com/roadmap"
+  canonical="https://happybein.com/fr/roadmap"
   lang={lang}
   alternateEn="https://happybein.com/roadmap"
   alternateFr="https://happybein.com/fr/roadmap"

@@ -1,9 +1,9 @@
 ---
-import Base from '../layouts/Base.astro';
-import { SITE } from '../data/site';
-import { getT } from '../i18n/index';
+import Base from '../../layouts/Base.astro';
+import { SITE } from '../../data/site';
+import { getT } from '../../i18n/index';
 
-const lang = 'en';
+const lang = 'fr';
 const t = getT(lang);
 const h = t.home;
 
@@ -28,7 +28,7 @@ const schema = JSON.stringify({
 <Base
   title={h.title}
   description={h.description}
-  canonical="https://happybein.com/"
+  canonical="https://happybein.com/fr/"
   lang={lang}
   alternateEn="https://happybein.com/"
   alternateFr="https://happybein.com/fr/"

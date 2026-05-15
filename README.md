@@ -80,3 +80,11 @@ That's it — version updates everywhere automatically (nav bar, footer, llms.tx
 
 Edit `src/data/initiatives.ts` — add a new object to the `initiatives` array.  
 The card appears automatically on `/initiatives` and in the nav dropdown.
+
+## Internationalisation (i18n)
+
+- English pages: `/`, `/manifesto`, `/roadmap`, `/initiatives`, `/contact`
+- French pages: `/fr/`, `/fr/manifesto`, `/fr/roadmap`, `/fr/initiatives`, `/fr/contact`
+- All strings live in `src/i18n/en.ts` (English) and `src/i18n/fr.ts` (French)
+- Initiative card translations are in `src/i18n/index.ts` → `initiativeTranslations`
+- To add a new language: create `src/i18n/de.ts`, add pages under `src/pages/de/`, add toggle in Nav.astro

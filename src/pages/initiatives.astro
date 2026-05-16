@@ -9,10 +9,28 @@ const lang = 'en';
 const t = getT(lang);
 const ti = t.initiatives;
 
-// Split initiatives into categories
-const insightsTools  = initiatives.filter(i => ['yeahvibe','yeahsight','yeahdev'].includes(i.id));
-const smallApps      = initiatives.filter(i => ['workout','gametrack','speaknote','dailytracker'].includes(i.id));
-const foundation     = initiatives.filter(i => i.id === 'happybein');
+const insightsTools = initiatives.filter(i => ['yeahvibe','yeahsight','yeahdev'].includes(i.id));
+const smallApps     = initiatives.filter(i => ['workout','gametrack','speaknote','dailytracker'].includes(i.id));
+const foundation    = initiatives.filter(i => i.id === 'happybein');
+
+const insightsLabel = "Insights & Tools";
+const insightsSub   = "Full platforms to understand the world and structure your decisions.";
+const appsLabel     = "Small Apps";
+const appsSub       = "Lightweight, focused tools for everyday needs.";
+const foundLabel    = "The Foundation";
+const foundSub      = "The architect behind the entire HappyBein ecosystem.";
+const foundBadge    = "The Architect";
+const foundDesc     = "A non-profit foundation dedicated to simplifying societal complexity. We build the frameworks that enable individuals and leaders to navigate a complex world with clarity.";
+const streamALabel  = "Stream A — Internal";
+const streamATitle  = "Internal Efficiency";
+const streamADesc   = "Checklists and personal organisation tools to clear mental clutter and save time.";
+const streamBLabel  = "Stream B — External";
+const streamBTitle  = "External Understanding";
+const streamBDesc   = "Decoding complex global issues into plain language to make better decisions.";
+const ourStreams     = "Our two streams";
+const readManifesto = "Read the Manifesto →";
+const contributeHref = "/contact";
+const manifestoHref  = "/manifesto";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -23,19 +41,6 @@ const schema = JSON.stringify({
     "@type": "ListItem", "position": idx + 1, "name": i.name, "url": i.externalUrl,
   }))
 });
-
-const insightsLabel = lang === 'fr' ? 'Outils & Insights' : 'Insights & Tools';
-const insightsSub   = lang === 'fr'
-  ? 'Des plateformes complètes pour comprendre le monde et structurer vos décisions.'
-  : 'Full platforms to understand the world and structure your decisions.';
-const appsLabel     = lang === 'fr' ? 'Mini Applications' : 'Small Apps';
-const appsSub       = lang === 'fr'
-  ? 'Des outils légers et ciblés pour des besoins du quotidien.'
-  : 'Lightweight, focused tools for everyday needs.';
-const foundationLabel = lang === 'fr' ? 'La Fondation' : 'The Foundation';
-const foundationSub   = lang === 'fr'
-  ? "L'architecte derrière tout l'écosystème HappyBein."
-  : 'The architect behind the entire HappyBein ecosystem.';
 ---
 <Base
   title={ti.title}
@@ -46,7 +51,6 @@ const foundationSub   = lang === 'fr'
   alternateFr="https://happybein.com/fr/initiatives"
   schema={schema}
 >
-  <!-- Page hero -->
   <div class="page-hero">
     <div class="max-w-6xl mx-auto">
       <div class="section-label">{ti.pageLabel}</div>
@@ -59,7 +63,7 @@ const foundationSub   = lang === 'fr'
   <section class="py-16 px-5">
     <div class="max-w-6xl mx-auto space-y-16">
 
-      <!-- ── Section 1: Insights & Tools ── -->
+      <!-- Insights & Tools -->
       <div>
         <div class="flex items-center gap-4 mb-2">
           <div class="flex items-center gap-2">
@@ -76,7 +80,7 @@ const foundationSub   = lang === 'fr'
         </div>
       </div>
 
-      <!-- ── Section 2: Small Apps ── -->
+      <!-- Small Apps -->
       <div>
         <div class="flex items-center gap-4 mb-2">
           <div class="flex items-center gap-2">
@@ -93,22 +97,20 @@ const foundationSub   = lang === 'fr'
         </div>
       </div>
 
-      <!-- ── Section 3: The Foundation ── -->
+      <!-- Foundation -->
       <div id="happybein">
         <div class="flex items-center gap-4 mb-2">
           <div class="flex items-center gap-2">
             <span class="text-xl">🏛</span>
-            <h2 class="font-display font-extrabold text-ink" style="font-size:1.35rem;">{foundationLabel}</h2>
+            <h2 class="font-display font-extrabold text-ink" style="font-size:1.35rem;">{foundLabel}</h2>
           </div>
           <div class="flex-1 h-px" style="background:rgba(42,191,191,0.25);"></div>
         </div>
-        <p class="text-sm text-muted mb-6 ml-8">{foundationSub}</p>
-        <!-- Foundation card: full width with extra detail -->
+        <p class="text-sm text-muted mb-6 ml-8">{foundSub}</p>
         <div class="foundation-card rounded-xl overflow-hidden"
              style="-webkit-transform:translateZ(0); transform:translateZ(0); isolation:isolate; border:1px solid rgba(42,191,191,0.18); box-shadow:0 2px 14px rgba(26,153,154,0.12);">
           <div class="h-[7px]" style="background:linear-gradient(90deg,#29ABE2,#4CAF50);"></div>
           <div class="grid foundation-inner" style="background:white;">
-            <!-- Left: core info -->
             <div class="p-8 border-r" style="border-color:rgba(42,191,191,0.15);">
               <div class="flex items-center gap-3 mb-4">
                 <div class="w-14 h-14 rounded-xl flex items-center justify-center text-2xl shrink-0" style="background:rgba(41,171,226,0.10);">🏛</div>
@@ -119,50 +121,27 @@ const foundationSub   = lang === 'fr'
               </div>
               <span class="inline-flex items-center gap-1 text-2xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4" style="background:rgba(41,171,226,0.10); color:#1A7FAA;">
                 <span class="w-[6px] h-[6px] rounded-sm" style="background:#29ABE2; animation:pulse 2s infinite;"></span>
-                {lang === 'fr' ? 'L'Architecte' : 'The Architect'}
+                {foundBadge}
               </span>
-              <p class="text-sm text-muted leading-relaxed mb-6">
-                {lang === 'fr'
-                  ? 'Une fondation à but non lucratif dédiée à simplifier la complexité sociétale. Nous construisons les cadres qui permettent aux individus et aux leaders de naviguer dans un monde complexe avec clarté.'
-                  : 'A non-profit foundation dedicated to simplifying societal complexity. We build the frameworks that enable individuals and leaders to navigate a complex world with clarity.'}
-              </p>
-              <a href={lang === 'fr' ? '/fr/manifesto' : '/manifesto'}
-                 class="inline-flex items-center gap-2 font-display font-bold text-sm px-5 py-3 rounded-lg transition-all"
+              <p class="text-sm text-muted leading-relaxed mb-6">{foundDesc}</p>
+              <a href={manifestoHref}
+                 class="inline-flex items-center gap-2 font-display font-bold text-sm px-5 py-3 rounded-lg"
                  style="background:#29ABE2; color:white; min-height:44px;">
-                {lang === 'fr' ? 'Lire le Manifeste →' : 'Read the Manifesto →'}
+                {readManifesto}
               </a>
             </div>
-            <!-- Right: two streams -->
             <div class="p-8">
-              <div class="text-2xs font-bold tracking-widest uppercase text-teal-dark mb-4">
-                {lang === 'fr' ? 'Nos deux flux' : 'Our two streams'}
-              </div>
+              <div class="text-2xs font-bold tracking-widest uppercase text-teal-dark mb-4">{ourStreams}</div>
               <div class="flex flex-col gap-4">
                 <div class="rounded-lg p-5" style="background:#E8F7F7; border-left:3px solid #2ABFBF;">
-                  <div class="text-2xs font-bold tracking-widest uppercase text-teal-dark mb-1">
-                    {lang === 'fr' ? 'Flux A — Interne' : 'Stream A — Internal'}
-                  </div>
-                  <div class="font-display font-bold text-ink mb-1">
-                    {lang === 'fr' ? 'Efficacité interne' : 'Internal Efficiency'}
-                  </div>
-                  <p class="text-sm text-muted leading-relaxed">
-                    {lang === 'fr'
-                      ? "Listes de contrôle et outils d'organisation personnelle pour clarifier l'esprit et gagner du temps."
-                      : 'Checklists and personal organisation tools to clear mental clutter and save time.'}
-                  </p>
+                  <div class="text-2xs font-bold tracking-widest uppercase text-teal-dark mb-1">{streamALabel}</div>
+                  <div class="font-display font-bold text-ink mb-1">{streamATitle}</div>
+                  <p class="text-sm text-muted leading-relaxed">{streamADesc}</p>
                 </div>
                 <div class="rounded-lg p-5" style="background:#F0FFF0; border-left:3px solid #4CAF50;">
-                  <div class="text-2xs font-bold tracking-widest uppercase text-green-dark mb-1">
-                    {lang === 'fr' ? 'Flux B — Externe' : 'Stream B — External'}
-                  </div>
-                  <div class="font-display font-bold text-ink mb-1">
-                    {lang === 'fr' ? 'Compréhension externe' : 'External Understanding'}
-                  </div>
-                  <p class="text-sm text-muted leading-relaxed">
-                    {lang === 'fr'
-                      ? 'Décoder les enjeux mondiaux complexes en langage simple pour prendre de meilleures décisions.'
-                      : 'Decoding complex global issues into plain language to make better decisions.'}
-                  </p>
+                  <div class="text-2xs font-bold tracking-widest uppercase text-green-dark mb-1">{streamBLabel}</div>
+                  <div class="font-display font-bold text-ink mb-1">{streamBTitle}</div>
+                  <p class="text-sm text-muted leading-relaxed">{streamBDesc}</p>
                 </div>
               </div>
             </div>
@@ -170,14 +149,14 @@ const foundationSub   = lang === 'fr'
         </div>
       </div>
 
-      <!-- Contribute banner -->
+      <!-- Contribute -->
       <div class="rounded-xl p-8 flex flex-wrap items-center justify-between gap-6"
            style="background:#E8F7F7; border:1px solid rgba(42,191,191,0.18);">
         <div>
           <h3 class="font-display font-extrabold text-ink text-[1.15rem] mb-1">{ti.contributeTitle}</h3>
           <p class="text-sm text-muted">{ti.contributeDesc}</p>
         </div>
-        <a href={lang === 'fr' ? '/fr/contact' : '/contact'} class="btn-primary">{ti.contributeBtn}</a>
+        <a href={contributeHref} class="btn-primary">{ti.contributeBtn}</a>
       </div>
 
     </div>
@@ -186,13 +165,9 @@ const foundationSub   = lang === 'fr'
 
 <style>
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
-
-  /* Card grids */
   .card-grid { grid-template-columns: 1fr; }
   @media (min-width: 640px)  { .card-grid { grid-template-columns: 1fr 1fr; } }
   @media (min-width: 1020px) { .card-grid { grid-template-columns: 1fr 1fr 1fr; } }
-
-  /* Foundation card inner grid */
   .foundation-inner { grid-template-columns: 1fr 1fr; }
   @media (max-width: 768px) {
     .foundation-inner { grid-template-columns: 1fr; }

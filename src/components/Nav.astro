@@ -5,10 +5,9 @@ import type { Translations } from '../i18n/en';
 
 const { lang, t } = Astro.props as { lang: Lang; t: Translations };
 const { version, versionDate } = SITE;
-
-// Build localised nav paths
 const p = (path: string) => localePath(lang, path);
 const toggleHref = t.langToggleHref;
+const items = SITE.nav.initiatives as any[];
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 flex items-center"
@@ -30,19 +29,28 @@ const toggleHref = t.langToggleHref;
           {t.nav.initiatives}
           <span class="inline-block w-[7px] h-[7px] border-r-2 border-b-2 border-current rotate-45 translate-y-[-1px]"></span>
         </a>
-        <div class="nav-dropdown">
-          <a href={p('/initiatives')}
-             class="block px-5 py-[0.65rem] text-sm font-bold text-teal-dark hover:bg-lightbg whitespace-nowrap">
-            {t.nav.allInitiatives}
-          </a>
-          <div class="h-px my-1" style="background:rgba(42,191,191,0.18);"></div>
-          {SITE.nav.initiatives.filter(i => !i.bold).map((item: any) => (
-            <a href={item.external ? item.href : p(item.href)}
-               target={item.external ? '_blank' : undefined}
-               rel={item.external ? 'noopener' : undefined}
-               class="block px-5 py-[0.65rem] text-sm text-body hover:bg-lightbg hover:text-teal-dark whitespace-nowrap">
-              {item.label}{item.external ? ' ↗' : ''}
-            </a>
+        <div class="nav-dropdown" style="min-width:260px;">
+          {items.map((item: any) => (
+            item.bold
+              ? <a href={p('/initiatives')}
+                   class="block px-5 py-[0.6rem] text-sm font-bold text-teal-dark hover:bg-lightbg whitespace-nowrap">
+                   {t.nav.allInitiatives}
+                 </a>
+              : item.groupLabel
+                ? <div class="px-5 pt-3 pb-1 text-[0.65rem] font-bold tracking-[0.13em] uppercase"
+                       style="color:#1A9A9A;">
+                    {lang === 'fr'
+                      ? (item.groupLabel === 'Insights & Tools' ? 'Outils & Insights' : 'Mini Applications')
+                      : item.groupLabel}
+                  </div>
+                : item.divider
+                  ? <div class="h-px my-1 mx-3" style="background:rgba(42,191,191,0.18);"></div>
+                  : <a href={item.external ? item.href : p(item.href)}
+                       target={item.external ? '_blank' : undefined}
+                       rel={item.external ? 'noopener' : undefined}
+                       class="block pl-8 pr-5 py-[0.55rem] text-sm text-body hover:bg-lightbg hover:text-teal-dark whitespace-nowrap">
+                       {item.label}{item.external ? ' ↗' : ''}
+                     </a>
           ))}
         </div>
       </li>
@@ -55,34 +63,30 @@ const toggleHref = t.langToggleHref;
           <span class="inline-block w-[7px] h-[7px] border-r-2 border-b-2 border-current rotate-45 translate-y-[-1px]"></span>
         </a>
         <div class="nav-dropdown">
-          <a href={p('/manifesto')}   class="block px-5 py-[0.65rem] text-sm text-body hover:bg-lightbg hover:text-teal-dark whitespace-nowrap">{t.nav.manifesto}</a>
-          <a href={p('/roadmap')}     class="block px-5 py-[0.65rem] text-sm text-body hover:bg-lightbg hover:text-teal-dark whitespace-nowrap">{t.nav.roadmap}</a>
+          <a href={p('/manifesto')} class="block px-5 py-[0.65rem] text-sm text-body hover:bg-lightbg hover:text-teal-dark whitespace-nowrap">{t.nav.manifesto}</a>
+          <a href={p('/roadmap')}   class="block px-5 py-[0.65rem] text-sm text-body hover:bg-lightbg hover:text-teal-dark whitespace-nowrap">{t.nav.roadmap}</a>
           <div class="h-px my-1" style="background:rgba(42,191,191,0.18);"></div>
-          <a href={p('/contact')}     class="block px-5 py-[0.65rem] text-sm text-body hover:bg-lightbg hover:text-teal-dark whitespace-nowrap">{t.nav.contact}</a>
+          <a href={p('/contact')}   class="block px-5 py-[0.65rem] text-sm text-body hover:bg-lightbg hover:text-teal-dark whitespace-nowrap">{t.nav.contact}</a>
         </div>
       </li>
 
       <!-- Language toggle -->
       <li class="ml-2">
         <a href={toggleHref}
-           class="flex items-center gap-1 px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark hover:bg-teal-DEFAULT hover:text-white transition-all"
-           title={`Switch to ${t.langToggleLabel}`}>
-          <span class="text-xs">🌐</span>
-          {t.langToggleLabel}
+           class="flex items-center gap-1 px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark hover:bg-teal-DEFAULT hover:text-white transition-all">
+          <span class="text-xs">🌐</span>{t.langToggleLabel}
         </a>
       </li>
-
     </ul>
 
     <!-- Hamburger -->
     <button id="hamburger" aria-label="Menu"
-            class="md:hidden flex flex-col gap-[5px] p-2 bg-transparent border-none cursor-pointer"
-            style="min-width:44px; min-height:44px; align-items:center; justify-content:center;">
+            class="md:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer"
+            style="padding:8px; min-width:44px; min-height:44px; align-items:center; justify-content:center;">
       <span class="block w-6 h-[2px] bg-ink rounded"></span>
       <span class="block w-6 h-[2px] bg-ink rounded"></span>
       <span class="block w-6 h-[2px] bg-ink rounded"></span>
     </button>
-
   </div>
 </nav>
 
@@ -100,32 +104,57 @@ const toggleHref = t.langToggleHref;
      class="hidden fixed left-0 right-0 bottom-0 bg-white z-40 overflow-y-auto flex-col px-6 py-4"
      style="top:calc(70px + 22px); -webkit-overflow-scrolling:touch;">
 
-  <!-- Language toggle mobile -->
+  <!-- Language toggle -->
   <a href={toggleHref}
-     class="flex items-center gap-2 py-3 font-display font-bold text-teal-dark border-b"
-     style="border-color:rgba(42,191,191,0.18); min-height:44px;">
-    🌐 {t.langToggleLabel} — {t.langToggleLabel === 'FR' ? 'Switch to French' : 'Passer en anglais'}
+     class="flex items-center gap-2 font-display font-bold text-teal-dark border-b"
+     style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px; padding:0;">
+    🌐 {t.langToggleLabel === 'FR' ? 'Passer en français' : 'Switch to English'}
   </a>
 
+  <!-- Initiatives grouped -->
   <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-4 pb-1">{t.nav.initiatives}</span>
   <a href={p('/initiatives')}
-     class="block py-0 font-bold font-display text-teal-dark border-b min-h-[44px] leading-[44px]"
-     style="border-color:rgba(42,191,191,0.18);">{t.nav.allInitiatives}</a>
-  {SITE.nav.initiatives.filter((i: any) => !i.bold).map((item: any) => (
-    <a href={item.external ? item.href : p(item.href)}
-       target={item.external ? '_blank' : undefined}
-       rel={item.external ? 'noopener' : undefined}
-       class="block pl-5 text-sm text-muted border-b min-h-[44px] leading-[44px]"
-       style="border-color:rgba(42,191,191,0.18);">
-      {item.label}{item.external ? ' ↗' : ''}
+     class="block font-bold font-display text-teal-dark border-b"
+     style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">
+    {t.nav.allInitiatives}
+  </a>
+
+  <!-- Insights & Tools group -->
+  <span class="block text-[0.62rem] font-bold tracking-[0.12em] uppercase pt-3 pb-1" style="color:#1A9A9A;">
+    {lang === 'fr' ? 'Outils & Insights' : 'Insights & Tools'}
+  </span>
+  {items.filter((i: any) => ['YeahVibe','YeahSight','YeahDev'].includes(i.label)).map((item: any) => (
+    <a href={item.href} target="_blank" rel="noopener"
+       class="block pl-4 text-sm text-muted border-b"
+       style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">
+      {item.label} ↗
     </a>
   ))}
 
-  <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-5 pb-1">{t.nav.about}</span>
-  <a href={p('/manifesto')} class="block pl-5 text-sm text-muted border-b min-h-[44px] leading-[44px]" style="border-color:rgba(42,191,191,0.18);">{t.nav.manifesto}</a>
-  <a href={p('/roadmap')}   class="block pl-5 text-sm text-muted border-b min-h-[44px] leading-[44px]" style="border-color:rgba(42,191,191,0.18);">{t.nav.roadmap}</a>
-  <a href={p('/contact')}   class="block pl-5 text-sm text-muted border-b min-h-[44px] leading-[44px]" style="border-color:rgba(42,191,191,0.18);">{t.nav.contact}</a>
+  <!-- Small Apps group -->
+  <span class="block text-[0.62rem] font-bold tracking-[0.12em] uppercase pt-3 pb-1" style="color:#1A9A9A;">
+    {lang === 'fr' ? 'Mini Applications' : 'Small Apps'}
+  </span>
+  {items.filter((i: any) => ['Workout','GameTrack','SpeakNote','DailyTracker'].includes(i.label)).map((item: any) => (
+    <a href={item.href} target="_blank" rel="noopener"
+       class="block pl-4 text-sm text-muted border-b"
+       style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">
+      {item.label} ↗
+    </a>
+  ))}
 
+  <!-- Foundation -->
+  <a href={p('/initiatives') + '#happybein'}
+     class="block pl-4 text-sm text-muted border-b mt-1"
+     style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">
+    {lang === 'fr' ? 'Fondation HappyBein' : 'HappyBein Foundation'}
+  </a>
+
+  <!-- About -->
+  <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-4 pb-1">{t.nav.about}</span>
+  <a href={p('/manifesto')} class="block pl-4 text-sm text-muted border-b" style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">{t.nav.manifesto}</a>
+  <a href={p('/roadmap')}   class="block pl-4 text-sm text-muted border-b" style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">{t.nav.roadmap}</a>
+  <a href={p('/contact')}   class="block pl-4 text-sm text-muted border-b" style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">{t.nav.contact}</a>
 </div>
 
 <script>

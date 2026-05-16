@@ -1,8 +1,9 @@
 # HappyBein
-# Version: 1.8
+# Version: 1.9
 # Last updated: 2026-05-13
 # Framework: Astro 4 + Tailwind CSS (migrated from vanilla HTML)
 # Changelog:
+#   v1.9 (2026-05-13) — Fixed build errors: @import order in CSS, French apostrophes in template literals
 #   v1.8 (2026-05-13) — Initiatives page categorised into Insights & Tools / Small Apps / Foundation; nav grouped
 #   v1.7 (2026-05-13) — Full French (FR) translation; language toggle in nav; hreflang SEO tags; shareable /fr/ URLs
 #   v1.6 (2026-05-13) — Added DailyTracker initiative; self-hosted favicon; OG social image generated

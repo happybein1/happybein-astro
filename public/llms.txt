@@ -1,8 +1,9 @@
 # HappyBein
-# Version: 2.4
+# Version: 2.5
 # Last updated: 2026-05-13
 # Framework: Astro 4 + Tailwind CSS (migrated from vanilla HTML)
 # Changelog:
+#   v2.5 (2026-05-20) — Language selector replaced with single globe dropdown with flag labels
 #   v2.4 (2026-05-20) — Fixed temporal dead zone build error in i18n/index.ts
 #   v2.3 (2026-05-13) — Fixed language toggle: all 4 langs visible, links to equivalent page, active lang highlighted
 #   v2.2 (2026-05-13) — Added Dutch (NL) translation; /nl/ URL structure

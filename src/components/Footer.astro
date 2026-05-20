@@ -43,9 +43,22 @@ const p = (path: string) => localePath(lang, path);
        style="border-top:1px solid rgba(255,255,255,0.08);">
     <span>{t.footer.copyright}</span>
     <div class="flex gap-2 text-xs">
-      {lang !== 'en' && <a href="/" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">EN</a>}
-      {lang !== 'fr' && <a href="/fr/" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">FR</a>}
-      {lang !== 'es' && <a href="/es/" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">ES</a>}
+      {(['en', 'fr', 'es', 'nl'] as const).map(l => {
+        const isActive = l === lang;
+        const currentPath = Astro.url.pathname
+          .replace(/^\/(fr|es|nl)/, '')
+          .replace(/^$/, '/');
+        const href = l === 'en'
+          ? (currentPath || '/')
+          : `/${l}${currentPath === '/' ? '/' : currentPath}`;
+        return (
+          <a href={href}
+             class={`transition-colors ${isActive ? 'pointer-events-none' : 'hover:text-white'}`}
+             style={`color:${isActive ? '#2ABFBF' : 'rgba(255,255,255,0.45)'};`}>
+            {l.toUpperCase()}
+          </a>
+        );
+      })}
     </div>
     <span class="font-mono-sm" style="color:rgba(255,255,255,0.3);">v{SITE.version} · {SITE.versionDate}</span>
     <div class="flex gap-4">

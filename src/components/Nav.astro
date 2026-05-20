@@ -71,17 +71,28 @@ const items = SITE.nav.initiatives as any[];
       </li>
 
 
-      <!-- Language toggles — show non-active languages -->
+      <!-- Language toggles — all 4 shown, active one highlighted differently -->
       <li class="ml-2 flex items-center gap-1">
-        {lang !== 'en' && (
-          <a href="/" class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark hover:bg-teal-DEFAULT hover:text-white transition-all">EN</a>
-        )}
-        {lang !== 'fr' && (
-          <a href="/fr/" class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark hover:bg-teal-DEFAULT hover:text-white transition-all">FR</a>
-        )}
-        {lang !== 'es' && (
-          <a href="/es/" class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark hover:bg-teal-DEFAULT hover:text-white transition-all">ES</a>
-        )}
+        {(['en', 'fr', 'es', 'nl'] as const).map(l => {
+          const isActive = l === lang;
+          // Build equivalent page URL in target language
+          const currentPath = Astro.url.pathname
+            .replace(/^\/(fr|es|nl)/, '')   // strip current lang prefix
+            .replace(/^$/, '/');             // ensure root stays /
+          const href = l === 'en'
+            ? (currentPath || '/')
+            : `/${l}${currentPath === '/' ? '/' : currentPath}`;
+          return (
+            <a href={href}
+               class={`px-3 py-1 rounded-full font-display font-bold text-sm border-2 transition-all ${
+                 isActive
+                   ? 'bg-teal-DEFAULT border-teal-DEFAULT text-white cursor-default pointer-events-none'
+                   : 'border-teal-DEFAULT text-teal-dark hover:bg-teal-DEFAULT hover:text-white'
+               }`}>
+              {l.toUpperCase()}
+            </a>
+          );
+        })}
       </li>
     </ul>
 
@@ -113,15 +124,25 @@ const items = SITE.nav.initiatives as any[];
   <!-- Language toggles mobile -->
   <div class="flex gap-2 border-b py-3" style="border-color:rgba(42,191,191,0.18);">
     <span class="text-xs text-muted self-center">🌐</span>
-    {lang !== 'en' && (
-      <a href="/" class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark">EN</a>
-    )}
-    {lang !== 'fr' && (
-      <a href="/fr/" class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark">FR</a>
-    )}
-    {lang !== 'es' && (
-      <a href="/es/" class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark">ES</a>
-    )}
+    {(['en', 'fr', 'es', 'nl'] as const).map(l => {
+      const isActive = l === lang;
+      const currentPath = Astro.url.pathname
+        .replace(/^\/(fr|es|nl)/, '')
+        .replace(/^$/, '/');
+      const href = l === 'en'
+        ? (currentPath || '/')
+        : `/${l}${currentPath === '/' ? '/' : currentPath}`;
+      return (
+        <a href={href}
+           class={`px-3 py-1 rounded-full font-display font-bold text-sm border-2 min-h-[44px] flex items-center ${
+             isActive
+               ? 'bg-teal-DEFAULT border-teal-DEFAULT text-white pointer-events-none'
+               : 'border-teal-DEFAULT text-teal-dark'
+           }`}>
+          {l.toUpperCase()}
+        </a>
+      );
+    })}
   </div>
 
   <!-- Initiatives grouped -->

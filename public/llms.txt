@@ -1,8 +1,9 @@
 # HappyBein
-# Version: 2.6
+# Version: 2.7
 # Last updated: 2026-05-13
 # Framework: Astro 4 + Tailwind CSS (migrated from vanilla HTML)
 # Changelog:
+#   v2.7 (2026-05-20) — Fixed mobile nav always-visible bug (flex-col conflicting with hidden)
 #   v2.6 (2026-05-20) — Fixed build error: TypeScript generics moved from JSX to frontmatter
 #   v2.5 (2026-05-20) — Language selector replaced with single globe dropdown with flag labels
 #   v2.4 (2026-05-20) — Fixed temporal dead zone build error in i18n/index.ts

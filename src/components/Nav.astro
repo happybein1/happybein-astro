@@ -6,8 +6,25 @@ import type { Translations } from '../i18n/en';
 const { lang, t } = Astro.props as { lang: Lang; t: Translations };
 const { version, versionDate } = SITE;
 const p = (path: string) => localePath(lang, path);
-const toggleHref = t.langToggleHref;
 const items = SITE.nav.initiatives as any[];
+
+// Language switcher — computed once in frontmatter, safe from esbuild JSX parsing
+const langLabels: Record<string, string> = {
+  en: '🇬🇧 English',
+  fr: '🇫🇷 Français',
+  es: '🇪🇸 Español',
+  nl: '🇳🇱 Nederlands',
+};
+const allLangs = ['en', 'fr', 'es', 'nl'] as const;
+const currentPath = Astro.url.pathname
+  .replace(/^\/(fr|es|nl)/, '')
+  .replace(/^$/, '/');
+const langLinks: Record<string, string> = {};
+for (const l of allLangs) {
+  langLinks[l] = l === 'en'
+    ? (currentPath || '/')
+    : `/${l}${currentPath === '/' ? '/' : currentPath}`;
+}
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 flex items-center"
@@ -78,31 +95,17 @@ const items = SITE.nav.initiatives as any[];
           🌐 {lang.toUpperCase()}
           <span class="inline-block w-[6px] h-[6px] border-r-2 border-b-2 border-current rotate-45 translate-y-[-1px]"></span>
         </button>
-        <div class="nav-dropdown" style="min-width:130px; left:auto; right:0;">
-          {(['en', 'fr', 'es', 'nl'] as const).map(l => {
-            const isActive = l === lang;
-            const currentPath = Astro.url.pathname
-              .replace(/^\/(fr|es|nl)/, '')
-              .replace(/^$/, '/');
-            const href = l === 'en'
-              ? (currentPath || '/')
-              : `/${l}${currentPath === '/' ? '/' : currentPath}`;
-            const labels: Record<string, string> = {
-              en: '🇬🇧 English',
-              fr: '🇫🇷 Français',
-              es: '🇪🇸 Español',
-              nl: '🇳🇱 Nederlands',
-            };
-            return isActive
+        <div class="nav-dropdown" style="min-width:150px; left:auto; right:0;">
+          {allLangs.map(l => (
+            l === lang
               ? <div class="flex items-center justify-between px-5 py-[0.6rem] text-sm font-bold whitespace-nowrap" style="color:#1A9A9A;">
-                  {labels[l]}
-                  <span class="ml-2 text-xs">✓</span>
+                  {langLabels[l]} <span class="ml-2 text-xs">✓</span>
                 </div>
-              : <a href={href}
+              : <a href={langLinks[l]}
                    class="block px-5 py-[0.6rem] text-sm text-body hover:bg-lightbg hover:text-teal-dark whitespace-nowrap">
-                   {labels[l]}
-                 </a>;
-          })}
+                   {langLabels[l]}
+                 </a>
+          ))}
         </div>
       </li>
     </ul>
@@ -134,31 +137,18 @@ const items = SITE.nav.initiatives as any[];
 
   <!-- Language section mobile -->
   <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-4 pb-1">🌐 Language</span>
-  {(['en', 'fr', 'es', 'nl'] as const).map(l => {
-    const isActive = l === lang;
-    const currentPath = Astro.url.pathname
-      .replace(/^\/(fr|es|nl)/, '')
-      .replace(/^$/, '/');
-    const href = l === 'en'
-      ? (currentPath || '/')
-      : `/${l}${currentPath === '/' ? '/' : currentPath}`;
-    const labels: Record<string, string> = {
-      en: '🇬🇧 English',
-      fr: '🇫🇷 Français',
-      es: '🇪🇸 Español',
-      nl: '🇳🇱 Nederlands',
-    };
-    return isActive
+  {allLangs.map(l => (
+    l === lang
       ? <div class="flex items-center justify-between border-b font-bold"
              style="border-color:rgba(42,191,191,0.18); min-height:44px; color:#1A9A9A;">
-          {labels[l]} <span class="text-xs">✓</span>
+          {langLabels[l]} <span class="text-xs">✓</span>
         </div>
-      : <a href={href}
+      : <a href={langLinks[l]}
            class="block text-sm text-muted border-b"
            style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">
-           {labels[l]}
-         </a>;
-  })}
+           {langLabels[l]}
+         </a>
+  ))}
   </div>
 
   <!-- Initiatives grouped -->

@@ -1,0 +1,64 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getT } from '../../i18n/index';
+const lang = 'nl';
+const t = getT(lang);
+const m = t.manifesto;
+---
+<Base title={m.title} description={m.description}
+  canonical="https://happybein.com/nl/manifesto" ogType="article" lang={lang}
+  alternateEn="https://happybein.com/manifesto" alternateFr="https://happybein.com/fr/manifesto">
+  <div class="page-hero">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-label">{m.pageLabel}</div>
+      <h1 class="font-display font-black text-ink tracking-tight leading-[1.1] mb-4 max-w-2xl" style="font-size:clamp(1.8rem,3.5vw,2.9rem);">{m.pageTitle}</h1>
+      <p class="text-muted leading-relaxed max-w-xl">{m.pageSub}</p>
+    </div>
+  </div>
+  <section class="py-16 px-5">
+    <div class="max-w-[760px] mx-auto prose-hb">
+      <h2>{m.northStarTitle}</h2>
+      <div class="north-star"><p>{m.northStar}</p></div>
+      <p>{m.northStarIntro}</p>
+      <hr />
+      <h2>{m.s1Title}</h2>
+      <p>{m.s1Intro}</p>
+      <h3>{m.hbTitle}</h3><p>{m.hbDesc}</p>
+      <h3>{m.yvTitle}</h3><p>{m.yvDesc}</p>
+      <hr />
+      <h2>{m.s2Title}</h2>
+      <h3>{m.streamATitle}</h3>
+      <p>{m.streamAIntro}</p>
+      <ul>{m.streamAItems.map((item: string) => <li set:html={item.replace(/^(.*?:)/, '<strong>$1</strong>')} />)}</ul>
+      <h3>{m.streamBTitle}</h3>
+      <p>{m.streamBIntro}</p>
+      <ul>{m.streamBItems.map((item: string) => <li set:html={item.replace(/^(.*?:)/, '<strong>$1</strong>')} />)}</ul>
+      <hr />
+      <h2>{m.s3Title}</h2>
+      <div class="synthesis-box">
+        <p>{m.synthesisText}</p>
+        <p class="mt-3">{m.synthesisText2}</p>
+      </div>
+      <p class="text-center font-display font-extrabold text-ink text-[1.2rem] mt-10">{m.closing}</p>
+    </div>
+  </section>
+  <section class="py-16 px-5 text-center" style="background:#E8F7F7;">
+    <div class="teal-gradient rounded-2xl p-16 max-w-2xl mx-auto text-white">
+      <h2 class="font-display font-extrabold leading-tight mb-4" style="font-size:clamp(1.4rem,2.5vw,2.1rem);">{m.ctaTitle}</h2>
+      <p class="opacity-90 mb-8">{m.ctaDesc}</p>
+      <a href="https://www.yeahvibe.com" target="_blank" rel="noopener" class="btn-white">{m.ctaBtn}</a>
+    </div>
+  </section>
+</Base>
+<style>
+  .prose-hb h2 { font-family:'Nunito',sans-serif; font-size:1.45rem; font-weight:800; color:#1A3333; margin:2.8rem 0 0.8rem; }
+  .prose-hb h3 { font-family:'Nunito',sans-serif; font-size:1.05rem; font-weight:700; color:#1A9A9A; margin:1.6rem 0 0.5rem; }
+  .prose-hb p  { margin-bottom:1.1rem; color:#2C4A4A; line-height:1.85; }
+  .prose-hb ul { margin:0.5rem 0 1rem 1.5rem; list-style:disc; }
+  .prose-hb ul li { margin-bottom:0.4rem; color:#2C4A4A; }
+  .prose-hb hr { border:none; border-top:1px solid rgba(42,191,191,0.18); margin:2.5rem 0; }
+  .north-star { background:#E8F7F7; border-left:4px solid #2ABFBF; padding:1.3rem 1.6rem; border-radius:0 8px 8px 0; margin:1.5rem 0; }
+  .north-star p { font-family:'Nunito',sans-serif; font-style:italic; font-weight:700; color:#1A3333; margin:0; }
+  .synthesis-box { background:linear-gradient(135deg,#1A9A9A,#2ABFBF); color:white; padding:2rem; border-radius:8px; margin:2rem 0; }
+  .synthesis-box p { color:white; margin:0; }
+</style>

@@ -13,3 +13,9 @@
 
 # French redirects
 /fr                  /fr/          301
+
+# Spanish redirects
+/es    /es/    301
+
+# Dutch redirects
+/nl    /nl/    301

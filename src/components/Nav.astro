@@ -70,12 +70,18 @@ const items = SITE.nav.initiatives as any[];
         </div>
       </li>
 
-      <!-- Language toggle -->
-      <li class="ml-2">
-        <a href={toggleHref}
-           class="flex items-center gap-1 px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark hover:bg-teal-DEFAULT hover:text-white transition-all">
-          <span class="text-xs">🌐</span>{t.langToggleLabel}
-        </a>
+
+      <!-- Language toggles — show non-active languages -->
+      <li class="ml-2 flex items-center gap-1">
+        {lang !== 'en' && (
+          <a href="/" class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark hover:bg-teal-DEFAULT hover:text-white transition-all">EN</a>
+        )}
+        {lang !== 'fr' && (
+          <a href="/fr/" class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark hover:bg-teal-DEFAULT hover:text-white transition-all">FR</a>
+        )}
+        {lang !== 'es' && (
+          <a href="/es/" class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark hover:bg-teal-DEFAULT hover:text-white transition-all">ES</a>
+        )}
       </li>
     </ul>
 
@@ -104,12 +110,19 @@ const items = SITE.nav.initiatives as any[];
      class="hidden fixed left-0 right-0 bottom-0 bg-white z-40 overflow-y-auto flex-col px-6 py-4"
      style="top:calc(70px + 22px); -webkit-overflow-scrolling:touch;">
 
-  <!-- Language toggle -->
-  <a href={toggleHref}
-     class="flex items-center gap-2 font-display font-bold text-teal-dark border-b"
-     style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px; padding:0;">
-    🌐 {t.langToggleLabel === 'FR' ? 'Passer en français' : 'Switch to English'}
-  </a>
+  <!-- Language toggles mobile -->
+  <div class="flex gap-2 border-b py-3" style="border-color:rgba(42,191,191,0.18);">
+    <span class="text-xs text-muted self-center">🌐</span>
+    {lang !== 'en' && (
+      <a href="/" class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark">EN</a>
+    )}
+    {lang !== 'fr' && (
+      <a href="/fr/" class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark">FR</a>
+    )}
+    {lang !== 'es' && (
+      <a href="/es/" class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark">ES</a>
+    )}
+  </div>
 
   <!-- Initiatives grouped -->
   <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-4 pb-1">{t.nav.initiatives}</span>

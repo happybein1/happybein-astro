@@ -1,0 +1,70 @@
+---
+import Base from '../../layouts/Base.astro';
+import { SITE } from '../../data/site';
+import { getT } from '../../i18n/index';
+const lang = 'nl';
+const t = getT(lang);
+const c = t.contact;
+const channelHrefs = [SITE.social.discord, SITE.social.linkedin, SITE.social.facebook, 'https://form.jotform.com/222551513307043'];
+---
+<Base title={c.title} description={c.description}
+  canonical="https://happybein.com/nl/contact" lang={lang}
+  alternateEn="https://happybein.com/contact" alternateFr="https://happybein.com/fr/contact">
+  <div class="page-hero">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-label">{c.pageLabel}</div>
+      <h1 class="font-display font-black text-ink tracking-tight leading-[1.1] mb-4 max-w-2xl" style="font-size:clamp(1.8rem,3.5vw,2.9rem);">{c.pageTitle}</h1>
+      <p class="text-muted leading-relaxed max-w-xl">{c.pageSub}</p>
+    </div>
+  </div>
+  <section class="py-16 px-5">
+    <div class="max-w-6xl mx-auto grid gap-14 items-start" style="grid-template-columns:1fr 1fr;">
+      <div>
+        <h3 class="font-display font-extrabold text-ink text-[1.15rem] mb-3">{c.partnersTitle}</h3>
+        <p class="text-sm text-muted leading-relaxed mb-3">{c.partnersIntro}</p>
+        <ul class="ml-4 list-disc flex flex-col gap-2 mb-6 text-sm text-muted">
+          {c.partnersItems.map((item: any) => (
+            <li><strong class="text-body">{item.strong}</strong>{item.text}</li>
+          ))}
+        </ul>
+        <h3 class="font-display font-extrabold text-ink text-[1.15rem] mb-3">{c.usersTitle}</h3>
+        <p class="text-sm text-muted leading-relaxed mb-2">{c.usersIntro}</p>
+        <ul class="ml-4 list-disc flex flex-col gap-2 mb-4 text-sm text-muted">
+          {c.usersItems.map((item: string) => <li>{item}</li>)}
+          <li><a href="https://form.jotform.com/222551513307043" target="_blank" rel="noopener" class="text-teal-dark font-semibold">{c.surveyLink}</a></li>
+        </ul>
+        <h3 class="font-display font-extrabold text-ink text-[1.15rem] mb-2">{c.locationTitle}</h3>
+        <p class="text-sm text-muted">📍 {SITE.location}</p>
+      </div>
+      <div>
+        <div class="rounded-xl p-8 text-center mb-5" style="background:#E8F7F7; border:2px solid rgba(42,191,191,0.18);">
+          <div class="text-2xs font-bold tracking-widest uppercase text-teal-dark mb-3">{c.emailLabel}</div>
+          <a href={`mailto:${SITE.email}`}
+             class="inline-block font-display font-extrabold text-ink bg-white rounded-lg px-6 py-3 mb-4"
+             style="font-size:clamp(0.95rem,2.5vw,1.35rem); border:1.5px solid rgba(42,191,191,0.18); word-break:break-all;">
+            {SITE.email}
+          </a>
+          <p class="text-sm text-muted leading-relaxed">{c.emailNote}</p>
+        </div>
+        <div class="grid gap-3" style="grid-template-columns:1fr 1fr;">
+          {c.channels.map((ch: any, idx: number) => (
+            <a href={channelHrefs[idx]} target="_blank" rel="noopener"
+               class="flex items-center gap-3 p-4 rounded-lg bg-white"
+               style="border:1px solid rgba(42,191,191,0.18);">
+              <span class="text-[1.3rem] shrink-0">{ch.icon}</span>
+              <div>
+                <div class="text-2xs font-bold tracking-widest uppercase text-muted mb-[2px]">{ch.label}</div>
+                <div class="font-display font-bold text-teal-dark text-sm">{ch.value}</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  @media (max-width: 768px) {
+    .grid[style*="1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

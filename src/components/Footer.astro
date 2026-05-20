@@ -42,6 +42,11 @@ const p = (path: string) => localePath(lang, path);
   <div class="max-w-6xl mx-auto mt-8 pt-5 flex flex-wrap justify-between items-center gap-3 text-xs"
        style="border-top:1px solid rgba(255,255,255,0.08);">
     <span>{t.footer.copyright}</span>
+    <div class="flex gap-2 text-xs">
+      {lang !== 'en' && <a href="/" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">EN</a>}
+      {lang !== 'fr' && <a href="/fr/" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">FR</a>}
+      {lang !== 'es' && <a href="/es/" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">ES</a>}
+    </div>
     <span class="font-mono-sm" style="color:rgba(255,255,255,0.3);">v{SITE.version} · {SITE.versionDate}</span>
     <div class="flex gap-4">
       <a href={SITE.social.facebook} target="_blank" rel="noopener" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">Facebook</a>

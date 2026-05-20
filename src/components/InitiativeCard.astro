@@ -1,6 +1,6 @@
 ---
 import type { Initiative } from '../data/initiatives';
-import { initiativeTranslations, type Lang } from '../i18n/index';
+import { getInitiativeT, type Lang } from '../i18n/index';
 import type { Translations } from '../i18n/en';
 
 const { initiative: i, lang, t } = Astro.props as {
@@ -9,15 +9,15 @@ const { initiative: i, lang, t } = Astro.props as {
   t: Translations;
 };
 
-// Use French translations if available, otherwise fall back to English
-const fr = lang === 'fr' ? initiativeTranslations[i.id] : null;
-const badge    = fr?.badge    ?? i.badge;
-const summary  = fr?.summary  ?? i.summary;
-const details  = fr?.details  ?? i.details;
-const ctaLabel = fr?.ctaLabel ?? i.ctaLabel;
+const translations = getInitiativeT(lang);
+const tr = translations?.[i.id];
+const badge    = tr?.badge    ?? i.badge;
+const summary  = tr?.summary  ?? i.summary;
+const details  = tr?.details  ?? i.details;
+const ctaLabel = tr?.ctaLabel ?? i.ctaLabel;
 
 const ctaHref = i.id === 'happybein'
-  ? (lang === 'fr' ? '/fr/manifesto' : '/manifesto')
+  ? (lang === 'fr' ? '/fr/manifesto' : lang === 'es' ? '/es/manifesto' : '/manifesto')
   : i.externalUrl;
 ---
 

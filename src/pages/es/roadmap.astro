@@ -1,0 +1,97 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getT } from '../../i18n/index';
+
+const lang = 'es';
+const t = getT(lang);
+const r = t.roadmap;
+---
+<Base
+  title={r.title}
+  description={r.description}
+  canonical="https://happybein.com/es/roadmap"
+  lang={lang}
+  alternateEn="https://happybein.com/roadmap"
+  alternateFr="https://happybein.com/fr/roadmap"
+>
+  <div class="page-hero">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-label">{r.pageLabel}</div>
+      <h1 class="font-display font-black text-ink tracking-tight leading-[1.1] mb-4 max-w-2xl"
+          style="font-size:clamp(1.8rem,3.5vw,2.9rem);">{r.pageTitle}</h1>
+      <p class="text-muted leading-relaxed max-w-xl">{r.pageSub}</p>
+    </div>
+  </div>
+  <section class="py-16 px-5">
+    <div class="max-w-[820px] mx-auto">
+      <div class="section-label">{r.roadmapLabel}</div>
+      <h2 class="font-display font-extrabold text-ink mb-8" style="font-size:clamp(1.5rem,2.5vw,2.2rem);">{r.roadmapTitle}</h2>
+      <div class="flex flex-col gap-5">
+        {[
+          { status: r.phase1Status, title: r.phase1Title, sub: r.phase1Sub, items: r.phase1Items, border: '#2ABFBF', badge: 'rgba(42,191,191,0.12)', badgeColor: '#1A9A9A', faded: false },
+          { status: r.phase2Status, title: r.phase2Title, sub: r.phase2Sub, items: r.phase2Items, border: '#4CAF50', badge: 'rgba(76,175,80,0.1)', badgeColor: '#388E3C', faded: false },
+          { status: r.phase3Status, title: r.phase3Title, sub: r.phase3Sub, items: r.phase3Items, border: 'rgba(42,191,191,0.18)', badge: 'rgba(0,0,0,0.05)', badgeColor: '#5A7A7A', faded: true },
+        ].map((phase, idx) => (
+          <div class={`rounded-xl p-8 grid gap-6 items-start ${phase.faded ? 'opacity-75' : ''}`}
+               style={`background:white; border:1px solid rgba(42,191,191,0.18); border-left:4px solid ${phase.border}; box-shadow:0 2px 12px rgba(26,153,154,0.12); grid-template-columns:48px 1fr;`}>
+            <div class="w-12 h-12 rounded-full flex items-center justify-center font-display font-black text-teal-dark text-[1.2rem]" style="background:#E8F7F7;">{idx + 1}</div>
+            <div>
+              <span class="inline-block text-2xs font-bold tracking-widest uppercase px-2 py-1 rounded-full mb-2"
+                    style={`background:${phase.badge}; color:${phase.badgeColor};`}>{phase.status}</span>
+              <h3 class="font-display font-extrabold text-ink text-[1.15rem] mb-2">{phase.title}</h3>
+              <p class="text-sm text-muted mb-3">{phase.sub}</p>
+              <ul class="ml-4 list-disc flex flex-col gap-1">
+                {phase.items.map((item: any) => (
+                  <li class="text-sm text-muted"><strong class="text-body">{item.strong}</strong>{item.text}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="py-16 px-5" style="background:#F4FAFA;">
+    <div class="max-w-[820px] mx-auto text-center">
+      <div class="section-label flex justify-center">{r.philLabel}</div>
+      <h2 class="font-display font-extrabold text-ink mb-8" style="font-size:clamp(1.4rem,2.5vw,2rem);">{r.philTitle}</h2>
+      <div class="grid gap-4" style="grid-template-columns:repeat(3,1fr);">
+        {r.principles.map((p2: any) => (
+          <div class="rounded-xl p-6 text-center" style="background:white; border:1px solid rgba(42,191,191,0.18);">
+            <div class="text-[1.7rem] mb-2">{p2.icon}</div>
+            <h4 class="font-display font-extrabold text-ink mb-1">{p2.title}</h4>
+            <p class="text-sm text-muted">{p2.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="py-16 px-5">
+    <div class="max-w-[780px] mx-auto">
+      <div class="section-label">{r.involvedLabel}</div>
+      <h2 class="font-display font-extrabold text-ink mb-3" style="font-size:clamp(1.4rem,2.5vw,2rem);">{r.involvedTitle}</h2>
+      <p class="text-muted leading-relaxed mb-8 max-w-lg">{r.involvedSub}</p>
+      <div class="grid gap-5" style="grid-template-columns:1fr 1fr;">
+        <div class="rounded-xl p-6 relative overflow-hidden" style="background:white; border:1px solid rgba(42,191,191,0.18); box-shadow:0 4px 20px rgba(26,153,154,0.12);">
+          <div class="absolute top-0 left-0 right-0 h-1" style="background:#2ABFBF;"></div>
+          <div class="text-2xs font-bold tracking-widest uppercase text-teal-dark mb-2">{r.validateTag}</div>
+          <h3 class="font-display font-extrabold text-ink mb-2">{r.validateTitle}</h3>
+          <p class="text-sm text-muted">{r.validateDesc} <a href="https://form.jotform.com/222551513307043" target="_blank" rel="noopener" class="text-teal-dark font-semibold">{r.validateLink}</a></p>
+        </div>
+        <div class="rounded-xl p-6 relative overflow-hidden" style="background:white; border:1px solid rgba(42,191,191,0.18); box-shadow:0 4px 20px rgba(26,153,154,0.12);">
+          <div class="absolute top-0 left-0 right-0 h-1" style="background:#4CAF50;"></div>
+          <div class="text-2xs font-bold tracking-widest uppercase text-green-dark mb-2">{r.collabTag}</div>
+          <h3 class="font-display font-extrabold text-ink mb-2">{r.collabTitle}</h3>
+          <p class="text-sm text-muted">{r.collabDesc} <a href="/es/contact" class="text-green-dark font-semibold">{r.collabLink}</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  @media (max-width: 640px) {
+    .grid[style*="repeat(3"] { grid-template-columns: 1fr !important; }
+    .grid[style*="1fr 1fr"]  { grid-template-columns: 1fr !important; }
+    .grid[style*="48px 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

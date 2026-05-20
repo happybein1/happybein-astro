@@ -1,0 +1,173 @@
+---
+import Base from '../../layouts/Base.astro';
+import InitiativeCard from '../../components/InitiativeCard.astro';
+import { initiatives } from '../../data/initiatives';
+import { SITE } from '../../data/site';
+import { getT } from '../../i18n/index';
+
+const lang = 'es';
+const t = getT(lang);
+const ti = t.initiatives;
+
+const insightsTools = initiatives.filter(i => ['yeahvibe','yeahsight','yeahdev'].includes(i.id));
+const smallApps     = initiatives.filter(i => ['workout','gametrack','speaknote','dailytracker'].includes(i.id));
+
+const insightsLabel = "Herramientas e Insights";
+const insightsSub   = "Plataformas completas para entender el mundo y estructurar tus decisiones.";
+const appsLabel     = "Mini Aplicaciones";
+const appsSub       = "Herramientas ligeras y enfocadas para necesidades del día a día.";
+const foundLabel    = "La Fundación";
+const foundSub      = "El arquitecto detrás de todo el ecosistema HappyBein.";
+const foundBadge    = "El Arquitecto";
+const foundDesc     = "Una fundación sin ánimo de lucro dedicada a simplificar la complejidad social. Construimos los marcos que permiten a individuos y líderes navegar un mundo complejo con claridad.";
+const streamALabel  = "Flujo A — Interno";
+const streamATitle  = "Eficiencia interna";
+const streamADesc   = "Listas de verificación y herramientas de organización personal para aclarar la mente y ahorrar tiempo.";
+const streamBLabel  = "Flujo B — Externo";
+const streamBTitle  = "Comprensión externa";
+const streamBDesc   = "Decodificar los problemas globales complejos en lenguaje sencillo para tomar mejores decisiones.";
+const ourStreams     = "Nuestros dos flujos";
+const readManifesto = "Leer el Manifiesto →";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": ti.pageTitle,
+  "url": "https://happybein.com/es/initiatives",
+  "itemListElement": initiatives.map((i, idx) => ({
+    "@type": "ListItem", "position": idx + 1, "name": i.name, "url": i.externalUrl,
+  }))
+});
+---
+<Base
+  title={ti.title}
+  description={ti.description}
+  canonical="https://happybein.com/es/initiatives"
+  lang={lang}
+  alternateEn="https://happybein.com/initiatives"
+  alternateFr="https://happybein.com/fr/initiatives"
+  schema={schema}
+>
+  <div class="page-hero">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-label">{ti.pageLabel}</div>
+      <h1 class="font-display font-black text-ink tracking-tight leading-[1.1] mb-4 max-w-2xl"
+          style="font-size:clamp(1.8rem,3.5vw,2.9rem);">{ti.pageTitle}</h1>
+      <p class="text-muted leading-relaxed max-w-xl">{ti.pageSub}</p>
+    </div>
+  </div>
+
+  <section class="py-16 px-5">
+    <div class="max-w-6xl mx-auto space-y-16">
+
+      <!-- Herramientas e Insights -->
+      <div>
+        <div class="flex items-center gap-4 mb-2">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">🔭</span>
+            <h2 class="font-display font-extrabold text-ink" style="font-size:1.35rem;">{insightsLabel}</h2>
+          </div>
+          <div class="flex-1 h-px" style="background:rgba(42,191,191,0.25);"></div>
+        </div>
+        <p class="text-sm text-muted mb-6 ml-8">{insightsSub}</p>
+        <div class="grid gap-5 card-grid">
+          {insightsTools.map(initiative => (
+            <InitiativeCard initiative={initiative} lang={lang} t={t} />
+          ))}
+        </div>
+      </div>
+
+      <!-- Mini Aplicaciones -->
+      <div>
+        <div class="flex items-center gap-4 mb-2">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">⚡</span>
+            <h2 class="font-display font-extrabold text-ink" style="font-size:1.35rem;">{appsLabel}</h2>
+          </div>
+          <div class="flex-1 h-px" style="background:rgba(42,191,191,0.25);"></div>
+        </div>
+        <p class="text-sm text-muted mb-6 ml-8">{appsSub}</p>
+        <div class="grid gap-5 card-grid">
+          {smallApps.map(initiative => (
+            <InitiativeCard initiative={initiative} lang={lang} t={t} />
+          ))}
+        </div>
+      </div>
+
+      <!-- La Fundación -->
+      <div id="happybein">
+        <div class="flex items-center gap-4 mb-2">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">🏛</span>
+            <h2 class="font-display font-extrabold text-ink" style="font-size:1.35rem;">{foundLabel}</h2>
+          </div>
+          <div class="flex-1 h-px" style="background:rgba(42,191,191,0.25);"></div>
+        </div>
+        <p class="text-sm text-muted mb-6 ml-8">{foundSub}</p>
+        <div class="foundation-card rounded-xl overflow-hidden"
+             style="-webkit-transform:translateZ(0); transform:translateZ(0); isolation:isolate; border:1px solid rgba(42,191,191,0.18); box-shadow:0 2px 14px rgba(26,153,154,0.12);">
+          <div class="h-[7px]" style="background:linear-gradient(90deg,#29ABE2,#4CAF50);"></div>
+          <div class="grid foundation-inner" style="background:white;">
+            <div class="p-8 border-r" style="border-color:rgba(42,191,191,0.15);">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-14 h-14 rounded-xl flex items-center justify-center text-2xl shrink-0" style="background:rgba(41,171,226,0.10);">🏛</div>
+                <div>
+                  <div class="font-display font-black text-ink text-[1.2rem]">HappyBein Foundation</div>
+                  <div class="font-mono-sm text-muted mt-1">happybein.com</div>
+                </div>
+              </div>
+              <span class="inline-flex items-center gap-1 text-2xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4" style="background:rgba(41,171,226,0.10); color:#1A7FAA;">
+                <span class="w-[6px] h-[6px] rounded-sm" style="background:#29ABE2; animation:pulse 2s infinite;"></span>
+                {foundBadge}
+              </span>
+              <p class="text-sm text-muted leading-relaxed mb-6">{foundDesc}</p>
+              <a href="/es/manifesto"
+                 class="inline-flex items-center gap-2 font-display font-bold text-sm px-5 py-3 rounded-lg"
+                 style="background:#29ABE2; color:white; min-height:44px;">
+                {readManifesto}
+              </a>
+            </div>
+            <div class="p-8">
+              <div class="text-2xs font-bold tracking-widest uppercase text-teal-dark mb-4">{ourStreams}</div>
+              <div class="flex flex-col gap-4">
+                <div class="rounded-lg p-5" style="background:#E8F7F7; border-left:3px solid #2ABFBF;">
+                  <div class="text-2xs font-bold tracking-widest uppercase text-teal-dark mb-1">{streamALabel}</div>
+                  <div class="font-display font-bold text-ink mb-1">{streamATitle}</div>
+                  <p class="text-sm text-muted leading-relaxed">{streamADesc}</p>
+                </div>
+                <div class="rounded-lg p-5" style="background:#F0FFF0; border-left:3px solid #4CAF50;">
+                  <div class="text-2xs font-bold tracking-widest uppercase text-green-dark mb-1">{streamBLabel}</div>
+                  <div class="font-display font-bold text-ink mb-1">{streamBTitle}</div>
+                  <p class="text-sm text-muted leading-relaxed">{streamBDesc}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contribuir -->
+      <div class="rounded-xl p-8 flex flex-wrap items-center justify-between gap-6"
+           style="background:#E8F7F7; border:1px solid rgba(42,191,191,0.18);">
+        <div>
+          <h3 class="font-display font-extrabold text-ink text-[1.15rem] mb-1">{ti.contributeTitle}</h3>
+          <p class="text-sm text-muted">{ti.contributeDesc}</p>
+        </div>
+        <a href="/es/contact" class="btn-primary">{ti.contributeBtn}</a>
+      </div>
+
+    </div>
+  </section>
+</Base>
+
+<style>
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+  .card-grid { grid-template-columns: 1fr; }
+  @media (min-width: 640px)  { .card-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1020px) { .card-grid { grid-template-columns: 1fr 1fr 1fr; } }
+  .foundation-inner { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 768px) {
+    .foundation-inner { grid-template-columns: 1fr; }
+    .foundation-inner > div:first-child { border-right: none !important; border-bottom: 1px solid rgba(42,191,191,0.15); }
+  }
+</style>

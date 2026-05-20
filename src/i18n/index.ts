@@ -28,15 +28,13 @@ export function localePath(lang: Lang, path: string): string {
 }
 
 // Get initiative translations for a given language
+// (defined after the translation objects below)
 export function getInitiativeT(lang: Lang) {
   if (lang === 'fr') return frInitiatives;
   if (lang === 'es') return esInitiatives;
   if (lang === 'nl') return nlInitiatives;
   return null;
 }
-
-// Keep backwards compatibility
-export const initiativeTranslations = frInitiatives;
 
 // ── French initiative translations ────────────────────────────────────────────
 export const frInitiatives: Record<string, {
@@ -390,3 +388,6 @@ export const nlInitiatives: Record<string, {
     ctaLabel: 'Open DailyTracker ↗',
   },
 };
+
+// Keep backwards compatibility — must come after frInitiatives is declared
+export const initiativeTranslations = frInitiatives;

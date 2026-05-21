@@ -10,6 +10,12 @@ const items = SITE.nav.initiatives as any[];
 
 // Language switcher — all logic in frontmatter to avoid esbuild JSX issues
 const allLangs = ['en', 'fr', 'es', 'nl'] as const;
+const langLabels: Record<string, string> = {
+  en: '🇬🇧 English',
+  fr: '🇫🇷 Français',
+  es: '🇪🇸 Español',
+  nl: '🇳🇱 Nederlands',
+};
 const currentPath = Astro.url.pathname
   .replace(/^\/(fr|es|nl)/, '')
   .replace(/^$/, '/');
@@ -85,18 +91,26 @@ for (const l of allLangs) {
         </div>
       </li>
 
-      <!-- Language pills — all 4 visible, active one filled -->
-      <li class="ml-2 flex items-center gap-1">
-        {allLangs.map(l => (
-          l === lang
-            ? <span class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 bg-teal-DEFAULT border-teal-DEFAULT text-white">
-                {l.toUpperCase()}
-              </span>
-            : <a href={langLinks[l]}
-                 class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark hover:bg-teal-DEFAULT hover:text-white transition-all">
-                 {l.toUpperCase()}
-               </a>
-        ))}
+      <!-- Single language dropdown -->
+      <li class="nav-item relative ml-2">
+        <button type="button"
+                class="flex items-center gap-1 px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark hover:bg-teal-DEFAULT hover:text-white transition-all"
+                style="min-height:36px; background:transparent; cursor:pointer;">
+          🌐 {lang.toUpperCase()}
+          <span class="inline-block w-[6px] h-[6px] border-r-2 border-b-2 border-current rotate-45 translate-y-[-1px]"></span>
+        </button>
+        <div class="nav-dropdown" style="min-width:160px; left:auto; right:0;">
+          {allLangs.map(l => (
+            l === lang
+              ? <div class="flex items-center justify-between px-5 py-[0.6rem] text-sm font-bold whitespace-nowrap cursor-default" style="color:#1A9A9A;">
+                  {langLabels[l]}<span class="ml-3 text-xs">✓</span>
+                </div>
+              : <a href={langLinks[l]}
+                   class="block px-5 py-[0.6rem] text-sm text-body hover:bg-lightbg hover:text-teal-dark whitespace-nowrap">
+                   {langLabels[l]}
+                 </a>
+          ))}
+        </div>
       </li>
 
     </ul>
@@ -126,21 +140,20 @@ for (const l of allLangs) {
      class="hidden fixed left-0 right-0 bottom-0 bg-white z-40 overflow-y-auto px-6 py-4"
      style="top:calc(70px + 22px); -webkit-overflow-scrolling:touch; flex-direction:column;">
 
-  <!-- Language pills mobile -->
-  <div class="flex gap-2 flex-wrap border-b py-3" style="border-color:rgba(42,191,191,0.18);">
-    <span class="text-xs text-muted self-center">🌐</span>
-    {allLangs.map(l => (
-      l === lang
-        ? <span class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 bg-teal-DEFAULT border-teal-DEFAULT text-white">
-            {l.toUpperCase()}
-          </span>
-        : <a href={langLinks[l]}
-             class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark"
-             style="min-height:44px; display:flex; align-items:center;">
-             {l.toUpperCase()}
-           </a>
-    ))}
-  </div>
+  <!-- Language section mobile -->
+  <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-4 pb-1">🌐 Language</span>
+  {allLangs.map(l => (
+    l === lang
+      ? <div class="flex items-center justify-between border-b font-bold"
+             style="border-color:rgba(42,191,191,0.18); min-height:44px; color:#1A9A9A;">
+          {langLabels[l]} <span class="text-xs">✓</span>
+        </div>
+      : <a href={langLinks[l]}
+           class="block text-sm text-muted border-b"
+           style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">
+           {langLabels[l]}
+         </a>
+  ))}
 
   <!-- Initiatives -->
   <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-4 pb-1">{t.nav.initiatives}</span>

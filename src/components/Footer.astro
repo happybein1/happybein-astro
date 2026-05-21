@@ -5,17 +5,6 @@ import type { Translations } from '../i18n/en';
 
 const { lang, t } = Astro.props as { lang: Lang; t: Translations };
 const p = (path: string) => localePath(lang, path);
-
-const allLangs = ['en', 'fr', 'es', 'nl'] as const;
-const currentPath = Astro.url.pathname
-  .replace(/^\/(fr|es|nl)/, '')
-  .replace(/^$/, '/');
-const langLinks: Record<string, string> = {};
-for (const l of allLangs) {
-  langLinks[l] = l === 'en'
-    ? (currentPath || '/')
-    : `/${l}${currentPath === '/' ? '/' : currentPath}`;
-}
 ---
 <footer class="px-6 py-10" style="background:#1A3333; color:rgba(255,255,255,0.55);">
   <div class="max-w-6xl mx-auto grid gap-10"
@@ -53,14 +42,6 @@ for (const l of allLangs) {
   <div class="max-w-6xl mx-auto mt-8 pt-5 flex flex-wrap justify-between items-center gap-3 text-xs"
        style="border-top:1px solid rgba(255,255,255,0.08);">
     <span>{t.footer.copyright}</span>
-    <div class="flex gap-3 text-xs">
-      {allLangs.map(l => (
-        l === lang
-          ? <span style="color:#2ABFBF;" class="font-bold">{l.toUpperCase()}</span>
-          : <a href={langLinks[l]} class="hover:text-white transition-colors"
-               style="color:rgba(255,255,255,0.45);">{l.toUpperCase()}</a>
-      ))}
-    </div>
     <span class="font-mono-sm" style="color:rgba(255,255,255,0.3);">v{SITE.version} · {SITE.versionDate}</span>
     <div class="flex gap-4">
       <a href={SITE.social.facebook} target="_blank" rel="noopener" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">Facebook</a>

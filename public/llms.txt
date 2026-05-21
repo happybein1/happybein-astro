@@ -1,5 +1,5 @@
 # HappyBein
-# Version: 2.7
+# Version: 2.4
 # Last updated: 2026-05-13
 # Framework: Astro 4 + Tailwind CSS (migrated from vanilla HTML)
 # Changelog:

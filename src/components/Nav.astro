@@ -8,13 +8,7 @@ const { version, versionDate } = SITE;
 const p = (path: string) => localePath(lang, path);
 const items = SITE.nav.initiatives as any[];
 
-// Language switcher — computed once in frontmatter, safe from esbuild JSX parsing
-const langLabels: Record<string, string> = {
-  en: '🇬🇧 English',
-  fr: '🇫🇷 Français',
-  es: '🇪🇸 Español',
-  nl: '🇳🇱 Nederlands',
-};
+// Language switcher — all logic in frontmatter to avoid esbuild JSX issues
 const allLangs = ['en', 'fr', 'es', 'nl'] as const;
 const currentPath = Astro.url.pathname
   .replace(/^\/(fr|es|nl)/, '')
@@ -58,7 +52,11 @@ for (const l of allLangs) {
                        style="color:#1A9A9A;">
                     {lang === 'fr'
                       ? (item.groupLabel === 'Insights & Tools' ? 'Outils & Insights' : 'Mini Applications')
-                      : item.groupLabel}
+                      : lang === 'es'
+                        ? (item.groupLabel === 'Insights & Tools' ? 'Herramientas & Insights' : 'Mini Aplicaciones')
+                        : lang === 'nl'
+                          ? (item.groupLabel === 'Insights & Tools' ? 'Tools & Inzichten' : 'Mini Applicaties')
+                          : item.groupLabel}
                   </div>
                 : item.divider
                   ? <div class="h-px my-1 mx-3" style="background:rgba(42,191,191,0.18);"></div>
@@ -87,27 +85,20 @@ for (const l of allLangs) {
         </div>
       </li>
 
-
-      <!-- Language dropdown -->
-      <li class="nav-item relative ml-2">
-        <button class="flex items-center gap-1 px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark hover:bg-teal-DEFAULT hover:text-white transition-all"
-                style="min-height:36px;">
-          🌐 {lang.toUpperCase()}
-          <span class="inline-block w-[6px] h-[6px] border-r-2 border-b-2 border-current rotate-45 translate-y-[-1px]"></span>
-        </button>
-        <div class="nav-dropdown" style="min-width:150px; left:auto; right:0;">
-          {allLangs.map(l => (
-            l === lang
-              ? <div class="flex items-center justify-between px-5 py-[0.6rem] text-sm font-bold whitespace-nowrap" style="color:#1A9A9A;">
-                  {langLabels[l]} <span class="ml-2 text-xs">✓</span>
-                </div>
-              : <a href={langLinks[l]}
-                   class="block px-5 py-[0.6rem] text-sm text-body hover:bg-lightbg hover:text-teal-dark whitespace-nowrap">
-                   {langLabels[l]}
-                 </a>
-          ))}
-        </div>
+      <!-- Language pills — all 4 visible, active one filled -->
+      <li class="ml-2 flex items-center gap-1">
+        {allLangs.map(l => (
+          l === lang
+            ? <span class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 bg-teal-DEFAULT border-teal-DEFAULT text-white">
+                {l.toUpperCase()}
+              </span>
+            : <a href={langLinks[l]}
+                 class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark hover:bg-teal-DEFAULT hover:text-white transition-all">
+                 {l.toUpperCase()}
+               </a>
+        ))}
       </li>
+
     </ul>
 
     <!-- Hamburger -->
@@ -130,28 +121,28 @@ for (const l of allLangs) {
   <span style="color:rgba(255,255,255,0.45);" class="font-mono-sm">{t.versionBar}</span>
 </div>
 
-<!-- Mobile nav -->
+<!-- Mobile nav — hidden by default, toggled by hamburger -->
 <div id="mobile-nav"
      class="hidden fixed left-0 right-0 bottom-0 bg-white z-40 overflow-y-auto px-6 py-4"
      style="top:calc(70px + 22px); -webkit-overflow-scrolling:touch; flex-direction:column;">
 
-  <!-- Language section mobile -->
-  <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-4 pb-1">🌐 Language</span>
-  {allLangs.map(l => (
-    l === lang
-      ? <div class="flex items-center justify-between border-b font-bold"
-             style="border-color:rgba(42,191,191,0.18); min-height:44px; color:#1A9A9A;">
-          {langLabels[l]} <span class="text-xs">✓</span>
-        </div>
-      : <a href={langLinks[l]}
-           class="block text-sm text-muted border-b"
-           style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">
-           {langLabels[l]}
-         </a>
-  ))}
+  <!-- Language pills mobile -->
+  <div class="flex gap-2 flex-wrap border-b py-3" style="border-color:rgba(42,191,191,0.18);">
+    <span class="text-xs text-muted self-center">🌐</span>
+    {allLangs.map(l => (
+      l === lang
+        ? <span class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 bg-teal-DEFAULT border-teal-DEFAULT text-white">
+            {l.toUpperCase()}
+          </span>
+        : <a href={langLinks[l]}
+             class="px-3 py-1 rounded-full font-display font-bold text-sm border-2 border-teal-DEFAULT text-teal-dark"
+             style="min-height:44px; display:flex; align-items:center;">
+             {l.toUpperCase()}
+           </a>
+    ))}
   </div>
 
-  <!-- Initiatives grouped -->
+  <!-- Initiatives -->
   <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-4 pb-1">{t.nav.initiatives}</span>
   <a href={p('/initiatives')}
      class="block font-bold font-display text-teal-dark border-b"
@@ -159,9 +150,8 @@ for (const l of allLangs) {
     {t.nav.allInitiatives}
   </a>
 
-  <!-- Insights & Tools group -->
   <span class="block text-[0.62rem] font-bold tracking-[0.12em] uppercase pt-3 pb-1" style="color:#1A9A9A;">
-    {lang === 'fr' ? 'Outils & Insights' : 'Insights & Tools'}
+    {lang === 'fr' ? 'Outils & Insights' : lang === 'es' ? 'Herramientas & Insights' : lang === 'nl' ? 'Tools & Inzichten' : 'Insights & Tools'}
   </span>
   {items.filter((i: any) => ['YeahVibe','YeahSight','YeahDev'].includes(i.label)).map((item: any) => (
     <a href={item.href} target="_blank" rel="noopener"
@@ -171,9 +161,8 @@ for (const l of allLangs) {
     </a>
   ))}
 
-  <!-- Small Apps group -->
   <span class="block text-[0.62rem] font-bold tracking-[0.12em] uppercase pt-3 pb-1" style="color:#1A9A9A;">
-    {lang === 'fr' ? 'Mini Applications' : 'Small Apps'}
+    {lang === 'fr' ? 'Mini Applications' : lang === 'es' ? 'Mini Aplicaciones' : lang === 'nl' ? 'Mini Applicaties' : 'Small Apps'}
   </span>
   {items.filter((i: any) => ['Workout','GameTrack','SpeakNote','DailyTracker'].includes(i.label)).map((item: any) => (
     <a href={item.href} target="_blank" rel="noopener"
@@ -183,33 +172,36 @@ for (const l of allLangs) {
     </a>
   ))}
 
-  <!-- Foundation -->
   <a href={p('/initiatives') + '#happybein'}
      class="block pl-4 text-sm text-muted border-b mt-1"
      style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">
-    {lang === 'fr' ? 'Fondation HappyBein' : 'HappyBein Foundation'}
+    {lang === 'fr' ? 'Fondation HappyBein' : lang === 'es' ? 'Fundación HappyBein' : lang === 'nl' ? 'HappyBein Stichting' : 'HappyBein Foundation'}
   </a>
 
   <!-- About -->
-  <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-4 pb-1">{t.nav.about}</span>
+  <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-5 pb-1">{t.nav.about}</span>
   <a href={p('/manifesto')} class="block pl-4 text-sm text-muted border-b" style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">{t.nav.manifesto}</a>
   <a href={p('/roadmap')}   class="block pl-4 text-sm text-muted border-b" style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">{t.nav.roadmap}</a>
   <a href={p('/contact')}   class="block pl-4 text-sm text-muted border-b" style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">{t.nav.contact}</a>
+
 </div>
 
 <script>
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobile-nav');
   hamburger?.addEventListener('click', () => {
-    const isOpen = !mobileNav?.classList.contains('hidden');
-    mobileNav?.classList.toggle('hidden', isOpen);
-    mobileNav?.classList.toggle('flex', !isOpen);
-    document.body.style.overflow = isOpen ? '' : 'hidden';
+    const isOpen = mobileNav?.style.display === 'flex';
+    if (isOpen) {
+      mobileNav.style.display = 'none';
+      document.body.style.overflow = '';
+    } else {
+      mobileNav!.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
   });
   mobileNav?.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
-      mobileNav.classList.add('hidden');
-      mobileNav.classList.remove('flex');
+      mobileNav.style.display = 'none';
       document.body.style.overflow = '';
     });
   });

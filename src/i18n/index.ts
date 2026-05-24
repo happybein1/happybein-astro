@@ -43,11 +43,11 @@ export const frInitiatives: Record<string, {
   happybein: {
     badge: "L\u2019Architecte",
     tagline: '',
-    summary: "Une fondation engag\u00e9e \u00e0 simplifier la complexit\u00e9 soci\u00e9tale. Nous construisons les cadres qui aident les individus et les leaders \u00e0 naviguer dans un monde bruyant avec clart\u00e9.",
+    summary: "HappyBein existe pour rendre la complexit\u00e9 plus facile \u00e0 vivre. Nous construisons des outils simples et partageons des insights clairs pour aider les gens \u00e0 comprendre le monde et \u00e0 faire de meilleurs choix.",
     details: [{ type: 'bullets', items: [
-      "Studio de recherche \u00e9tudiant les d\u00e9fis soci\u00e9taux",
-      "D\u00e9finit la vision et r\u00e9pond \u00e0 \u00ab\u00a0Pourquoi est-ce important\u00a0?\u00a0\u00bb",
-      "\u00c0 but non lucratif, Eindhoven, Pays-Bas \u2014 fond\u00e9e en 2021",
+      "Stichting zonder winstoogmerk gevestigd in Eindhoven, Nederland \u2014 opgericht in 2021",
+      "Studio de recherche \u00e9tudiant les d\u00e9fis soci\u00e9taux et les meilleures pratiques",
+      "Construit et maintient l\u2019\u00e9cosyst\u00e8me d\u2019outils et d\u2019insights Yeah",
       "Op\u00e8re sur deux flux\u00a0: Efficacit\u00e9 interne + Compr\u00e9hension externe",
     ]}],
     ctaLabel: 'Lire le Manifeste \u2197',
@@ -55,7 +55,7 @@ export const frInitiatives: Record<string, {
   yeahvibe: {
     badge: 'Plateforme principale',
     tagline: "\u00ab\u00a0Arr\u00eatez de g\u00e9rer le temps. Commencez \u00e0 construire l\u2019effet de levier.\u00a0\u00bb",
-    summary: "Le rem\u00e8de au chaos moderne. Un r\u00e9f\u00e9rentiel gratuit et modulaire de \u00ab\u00a0recettes de vie\u00a0\u00bb structur\u00e9 autour de 5 Piliers.",
+    summary: "Prenez de meilleures d\u00e9cisions et agissez avec clart\u00e9 gr\u00e2ce \u00e0 un cadre pratique construit autour de 5 leviers de changement.",
     details: [
       { type: 'pillars', items: [
         { num: '1', title: "Direction & Priorit\u00e9s", desc: "D\u00e9finissez votre \u00e9toile polaire." },
@@ -71,7 +71,7 @@ export const frInitiatives: Record<string, {
   yeahsight: {
     badge: 'Contexte mondial',
     tagline: "\u00ab\u00a0Pour gagner, vous devez voir le tableau.\u00a0\u00bb",
-    summary: "Le Pilier 5 de YeahVibe. D\u00e9code les tendances mondiales en langage simple.",
+    summary: "Comprenez les forces qui fa\u00e7onnent le monde \u2014 \u00e9nergie, \u00e9conomie, technologie, soci\u00e9t\u00e9 \u2014 pour que vos d\u00e9cisions soient align\u00e9es avec l\u2019avenir.",
     details: [
       { type: 'italic', text: "\u00ab\u00a0Pour gagner, vous devez voir le tableau.\u00a0\u00bb" },
       { type: 'bullets', items: [
@@ -85,7 +85,7 @@ export const frInitiatives: Record<string, {
   yeahdev: {
     badge: "R\u00e9f\u00e9rentiel d\u2019articles",
     tagline: "\u00ab\u00a0Des connaissances pratiques pour d\u00e9velopper votre initiative.\u00a0\u00bb",
-    summary: "Une biblioth\u00e8que d\u2019articles sans fioritures ni paywalls pour les fondateurs.",
+    summary: "Des guides pratiques et sans fioritures sur les outils et tactiques pour construire et faire grandir votre projet \u2014 IA, marketing, SEO et premiers clients.",
     details: [
       { type: 'italic', text: "\u00ab\u00a0Des connaissances pratiques.\u00a0\u00bb" },
       { type: 'bullets', items: [
@@ -99,7 +99,7 @@ export const frInitiatives: Record<string, {
   workout: {
     badge: 'Outil de micro-exercice',
     tagline: "\u00ab\u00a0Bougez un peu. Gagnez beaucoup.\u00a0\u00bb",
-    summary: "S\u00e9lectionne al\u00e9atoirement de courts exercices pour la maison ou le bureau.",
+    summary: "Une invite d\u2019exercice al\u00e9atoire pour quand vous n\u2019avez que quelques minutes pour bouger.",
     details: [
       { type: 'italic', text: "\u00ab\u00a0Bougez un peu. Gagnez beaucoup.\u00a0\u00bb" },
       { type: 'bullets', items: [
@@ -113,7 +113,7 @@ export const frInitiatives: Record<string, {
   gametrack: {
     badge: 'Suivi de scores',
     tagline: "\u00ab\u00a0Suivez le score. Montez les enjeux.\u00a0\u00bb",
-    summary: "Un suivi de scores simple pour n\u2019importe quel jeu.",
+    summary: "Suivez les scores et la progression dans les jeux et activit\u00e9s qui comptent pour vous.",
     details: [
       { type: 'italic', text: "\u00ab\u00a0Suivez le score. Montez les enjeux.\u00a0\u00bb" },
       { type: 'bullets', items: [
@@ -125,7 +125,7 @@ export const frInitiatives: Record<string, {
   speaknote: {
     badge: 'Transcription vocale',
     tagline: "\u00ab\u00a0Parlez. Stockez. Utilisez.\u00a0\u00bb",
-    summary: "Transcription instantan\u00e9e dans n\u2019importe quelle langue. 100% local.",
+    summary: "Transformez votre voix en texte instantan\u00e9ment \u2014 en priv\u00e9, sans cloud requis.",
     details: [
       { type: 'italic', text: "\u00ab\u00a0Parlez. Stockez. Utilisez.\u00a0\u00bb" },
       { type: 'bullets', items: [
@@ -139,7 +139,7 @@ export const frInitiatives: Record<string, {
   dailytracker: {
     badge: "Suivi d\u2019habitudes",
     tagline: "\u00ab\u00a0Cochez. Construisez. Ma\u00eetrisez.\u00a0\u00bb",
-    summary: "Suivez vos bonnes habitudes et soyez r\u00e9compens\u00e9 pour votre r\u00e9gularit\u00e9.",
+    summary: "Construisez de meilleures habitudes et restez r\u00e9gulier gr\u00e2ce \u00e0 un suivi quotidien simple qui r\u00e9compense vos progr\u00e8s.",
     details: [
       { type: 'italic', text: "\u00ab\u00a0Cochez. Construisez. Ma\u00eetrisez.\u00a0\u00bb" },
       { type: 'bullets', items: [
@@ -171,7 +171,7 @@ export const esInitiatives: Record<string, {
   yeahvibe: {
     badge: 'Plataforma principal',
     tagline: '"Deja de gestionar el tiempo. Empieza a construir influencia."',
-    summary: 'El remedio al caos moderno. Un repositorio gratuito y modular de "recetas de vida" estructurado en torno a 5 Pilares.',
+    summary: 'Tome mejores decisiones y actúe con claridad usando un marco práctico construido alrededor de 5 palancas de cambio.',
     details: [
       { type: 'pillars', items: [
         { num: '1', title: 'Dirección y Prioridades', desc: 'Define tu estrella polar.' },
@@ -187,7 +187,7 @@ export const esInitiatives: Record<string, {
   yeahsight: {
     badge: 'Contexto mundial',
     tagline: '"Para ganar, debes ver el tablero."',
-    summary: 'El Pilar 5 de YeahVibe. Decodifica las tendencias globales en lenguaje sencillo.',
+    summary: 'Comprenda las fuerzas que dan forma al mundo — energía, economía, tecnología, sociedad — para que sus decisiones estén alineadas con hacia dónde van las cosas.',
     details: [
       { type: 'italic', text: '"Para ganar, debes ver el tablero."' },
       { type: 'bullets', items: [
@@ -201,7 +201,7 @@ export const esInitiatives: Record<string, {
   yeahdev: {
     badge: 'Repositorio de artículos',
     tagline: '"Conocimiento práctico para desarrollar tu iniciativa."',
-    summary: 'Una biblioteca de artículos sin relleno ni muros de pago para fundadores y creadores.',
+    summary: 'Guías prácticas y sin relleno sobre las herramientas y tácticas para construir y hacer crecer tu proyecto — IA, marketing, SEO y primeros clientes.',
     details: [
       { type: 'italic', text: '"Conocimiento práctico para desarrollar tu iniciativa."' },
       { type: 'bullets', items: [
@@ -215,7 +215,7 @@ export const esInitiatives: Record<string, {
   workout: {
     badge: 'Herramienta de micro-ejercicio',
     tagline: '"Muévete un poco. Gana mucho."',
-    summary: 'Selecciona aleatoriamente ejercicios cortos para casa u oficina.',
+    summary: 'Una propuesta de ejercicio aleatorio para cuando solo tienes unos minutos para moverte.',
     details: [
       { type: 'italic', text: '"Muévete un poco. Gana mucho."' },
       { type: 'bullets', items: [
@@ -229,7 +229,7 @@ export const esInitiatives: Record<string, {
   gametrack: {
     badge: 'Marcador de puntuaciones',
     tagline: '"Lleva el marcador. Sube las apuestas."',
-    summary: 'Un marcador simple para cualquier juego de mesa o multijugador.',
+    summary: 'Lleva el seguimiento de puntuaciones y progreso en los juegos y actividades que te importan.',
     details: [
       { type: 'italic', text: '"Lleva el marcador. Sube las apuestas."' },
       { type: 'bullets', items: [
@@ -241,7 +241,7 @@ export const esInitiatives: Record<string, {
   speaknote: {
     badge: 'Transcripción de voz',
     tagline: '"Habla. Almacena. Usa."',
-    summary: 'Transcripción instantánea en cualquier idioma. Datos 100% locales.',
+    summary: 'Convierte tu voz en texto al instante — de forma privada, sin necesidad de nube.',
     details: [
       { type: 'italic', text: '"Habla. Almacena. Usa."' },
       { type: 'bullets', items: [
@@ -255,7 +255,7 @@ export const esInitiatives: Record<string, {
   dailytracker: {
     badge: 'Seguimiento de hábitos',
     tagline: '"Marca. Construye. Domina."',
-    summary: 'Marca tus buenos hábitos diarios y recibe recompensas por tu constancia.',
+    summary: 'Construye mejores hábitos y mantén la constancia con un sencillo seguidor diario que recompensa tu progreso.',
     details: [
       { type: 'italic', text: '"Marca. Construye. Domina."' },
       { type: 'bullets', items: [
@@ -275,7 +275,7 @@ export const nlInitiatives: Record<string, {
   happybein: {
     badge: 'De Architect',
     tagline: '',
-    summary: 'Een doelgerichte stichting toegewijd aan het vereenvoudigen van maatschappelijke complexiteit. Wij bouwen de kaders die individuen en leiders helpen een complexe wereld met helderheid te navigeren.',
+    summary: 'HappyBein bestaat om complexiteit makkelijker te maken om mee te leven. We bouwen eenvoudige tools en delen heldere inzichten om mensen te helpen de wereld beter te begrijpen en betere keuzes te maken.',
     details: [{ type: 'bullets', items: [
       'Onderzoeksstudio die maatschappelijke uitdagingen en beste praktijken bestudeert',
       'Definieert de visie en beantwoordt "Waarom is dit belangrijk?"',
@@ -287,7 +287,7 @@ export const nlInitiatives: Record<string, {
   yeahvibe: {
     badge: 'Kernplatform',
     tagline: '"Stop met tijd beheren. Begin met invloed opbouwen."',
-    summary: 'Het tegengif voor moderne chaos. Een gratis, modulaire bibliotheek van "levensrecepten" gestructureerd rond 5 Hefbomen.',
+    summary: 'Neem betere beslissingen en handel met helderheid via een praktisch kader gebouwd rond 5 hefbomen van verandering.',
     details: [
       { type: 'pillars', items: [
         { num: '1', title: 'Richting & Prioriteiten', desc: 'Definieer je poolster zodat elke inspanning telt.' },
@@ -303,7 +303,7 @@ export const nlInitiatives: Record<string, {
   yeahsight: {
     badge: 'Wereldcontext',
     tagline: '"Om te winnen, moet je het bord zien."',
-    summary: 'Hefboom 5 van YeahVibe. Decodeert wereldwijde trends en maatschappelijke complexiteit in begrijpelijke taal voor een zekere langetermijnrichting.',
+    summary: 'Begrijp de krachten die de wereld vormen — energie, economie, technologie, samenleving — zodat uw beslissingen aansluiten op waar dingen naartoe gaan.',
     details: [
       { type: 'italic', text: '"Om te winnen, moet je het bord zien."' },
       { type: 'bullets', items: [
@@ -317,7 +317,7 @@ export const nlInitiatives: Record<string, {
   yeahdev: {
     badge: 'Artikelbibliotheek',
     tagline: '"Praktische kennis om jouw initiatief te ontwikkelen."',
-    summary: 'Een bibliotheek van artikelen zonder opvulling of betaalmuren voor oprichters, bouwers en makers.',
+    summary: 'Praktische, no-nonsense gidsen over de tools en tactieken die je helpen bouwen en groeien — AI, marketing, SEO en je eerste klanten.',
     details: [
       { type: 'italic', text: '"Praktische kennis om jouw initiatief te ontwikkelen."' },
       { type: 'bullets', items: [
@@ -331,7 +331,7 @@ export const nlInitiatives: Record<string, {
   workout: {
     badge: 'Micro-oefening tool',
     tagline: '"Beweeg een beetje. Win veel."',
-    summary: 'Selecteert willekeurig korte oefeningen voor thuis of op kantoor. Geen sportschool nodig — gewoon een korte bewegingspauze.',
+    summary: 'Een willekeurige oefenimpuls voor wanneer je maar een paar minuten hebt om te bewegen.',
     details: [
       { type: 'italic', text: '"Beweeg een beetje. Win veel."' },
       { type: 'bullets', items: [
@@ -346,7 +346,7 @@ export const nlInitiatives: Record<string, {
   gametrack: {
     badge: 'Scorebijhouder',
     tagline: '"Houd de score bij. Verhoog de inzet."',
-    summary: 'Een eenvoudige, afleidingsvrije scorebijhouder voor elk spel — bordspellen, kaartspellen of andere multiplayer activiteiten.',
+    summary: 'Houd scores en voortgang bij in de spellen en activiteiten die er voor jou toe doen.',
     details: [
       { type: 'italic', text: '"Houd de score bij. Verhoog de inzet."' },
       { type: 'bullets', items: [
@@ -360,7 +360,7 @@ export const nlInitiatives: Record<string, {
   speaknote: {
     badge: 'Spraaktranscriptie',
     tagline: '"Spreek. Sla op. Gebruik."',
-    summary: 'Luistert naar wat je zegt — in elke taal — en schrijft het direct neer. Jouw gegevens blijven privé en lokaal.',
+    summary: 'Zet je stem direct om in tekst — privé, geen cloud vereist.',
     details: [
       { type: 'italic', text: '"Spreek. Sla op. Gebruik."' },
       { type: 'bullets', items: [
@@ -375,7 +375,7 @@ export const nlInitiatives: Record<string, {
   dailytracker: {
     badge: 'Gewoontetracker',
     tagline: '"Vink af. Bouw op. Beheers het."',
-    summary: 'Een eenvoudige gewoontetracker waarmee je goede dagelijkse gewoonten afvinkt en beloond wordt voor consistentie.',
+    summary: 'Bouw betere gewoonten en blijf consistent met een eenvoudige dagelijkse tracker die je voortgang beloont.',
     details: [
       { type: 'italic', text: '"Vink af. Bouw op. Beheers het."' },
       { type: 'bullets', items: [

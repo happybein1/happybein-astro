@@ -37,14 +37,17 @@ const schema = JSON.stringify({
   <section class="max-w-6xl mx-auto px-5 grid gap-14 items-center"
            style="min-height:88vh; padding-top:4.5rem; padding-bottom:4rem; grid-template-columns:1fr 1.15fr;">
     <div>
-      <h1 class="font-display font-black text-ink leading-[1.1] tracking-tight mb-5"
-          style="font-size:clamp(2rem, 4vw, 3.4rem);">
-        {h.heroH1a}<br/>{h.heroH1b}
+      <h1 class="font-display font-black text-ink leading-[1.12] tracking-tight mb-5"
+          style="font-size:clamp(1.55rem, 2.8vw, 2.6rem); max-width:520px;">
+        HappyBein exists to make complexity easier to live with.
       </h1>
-      <p class="text-muted leading-relaxed mb-8 max-w-[400px]">{h.heroSub}</p>
+      <p class="leading-relaxed mb-8 max-w-[480px]" style="color:#2C4A4A; font-size:1.05rem; line-height:1.75;">
+        We build simple tools and share clear insights to help people understand the world around them and make better choices.
+        <span class="block mt-3 font-semibold" style="color:#1A9A9A;">Because life is complicated enough — navigating it shouldn't be.</span>
+      </p>
       <div class="flex flex-wrap gap-3">
         <a href="https://www.yeahvibe.com" target="_blank" rel="noopener" class="btn-primary">{h.btnExplore}</a>
-        <a href={lang === 'fr' ? '/fr/manifesto' : '/manifesto'} class="btn-outline">{h.btnManifesto}</a>
+        <a href="/manifesto" class="btn-outline">{h.btnManifesto}</a>
       </div>
     </div>
     <div class="relative rounded-xl overflow-hidden" style="aspect-ratio:16/9; background:#000; border:3px solid #2ABFBF; box-shadow:0 16px 48px rgba(26,153,154,0.15); -webkit-transform:translateZ(0); transform:translateZ(0);">

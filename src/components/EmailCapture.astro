@@ -1,0 +1,100 @@
+---
+// EmailCapture — reads worker URL from env var set in Cloudflare Pages
+// Set WORKER_URL in Cloudflare Pages → Settings → Environment Variables
+const workerUrl = import.meta.env.WORKER_URL || '';
+---
+
+<section class="py-14 px-5" style="background:#E8F7F7;">
+  <div class="max-w-2xl mx-auto text-center">
+
+    <div class="text-2xl mb-3">📬</div>
+    <h2 class="font-display font-extrabold text-ink mb-2" style="font-size:clamp(1.3rem,2.5vw,1.8rem);">
+      Stay in the loop
+    </h2>
+    <p class="text-muted mb-6 leading-relaxed max-w-md mx-auto">
+      Monthly insights from HappyBein — tools, ideas, and updates on what we're building.
+      No spam, unsubscribe any time.
+    </p>
+
+    <form id="email-capture-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" novalidate>
+      <input
+        id="email-input"
+        type="email"
+        name="email"
+        placeholder="your@email.com"
+        autocomplete="email"
+        required
+        class="flex-1 px-4 py-3 rounded border text-body placeholder-muted focus:outline-none"
+        style="border:1.5px solid rgba(42,191,191,0.35); font-size:0.95rem; min-height:48px;"
+      />
+      <button
+        type="submit"
+        id="email-submit"
+        class="btn-primary shrink-0"
+        style="min-height:48px; min-width:130px;"
+      >
+        Subscribe
+      </button>
+    </form>
+
+    <!-- Status message -->
+    <div id="email-status" class="mt-4 text-sm font-semibold hidden" aria-live="polite"></div>
+
+  </div>
+</section>
+
+<script define:vars={{ workerUrl }}>
+  const form    = document.getElementById('email-capture-form');
+  const input   = document.getElementById('email-input');
+  const btn     = document.getElementById('email-submit');
+  const status  = document.getElementById('email-status');
+
+  function showStatus(msg, isError = false) {
+    status.textContent = msg;
+    status.className = `mt-4 text-sm font-semibold ${isError ? 'text-red-500' : 'text-teal-dark'}`;
+    status.classList.remove('hidden');
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = input.value.trim();
+    if (!email) {
+      showStatus('Please enter your email address.', true);
+      input.focus();
+      return;
+    }
+
+    // Disable while submitting
+    btn.disabled = true;
+    btn.textContent = 'Subscribing…';
+    status.classList.add('hidden');
+
+    try {
+      const res = await fetch(workerUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        form.classList.add('hidden');
+        showStatus(
+          data.alreadySubscribed
+            ? "You're already subscribed — good to have you! 👋"
+            : "You're in! We'll be in touch. 🎉"
+        );
+      } else {
+        showStatus(data.error || 'Something went wrong. Please try again.', true);
+        btn.disabled = false;
+        btn.textContent = 'Subscribe';
+      }
+    } catch {
+      showStatus('Network error — please check your connection and try again.', true);
+      btn.disabled = false;
+      btn.textContent = 'Subscribe';
+    }
+  });
+</script>

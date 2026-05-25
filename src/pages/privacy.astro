@@ -1,0 +1,75 @@
+---
+import Base from '../layouts/Base.astro';
+import { getT } from '../i18n/index';
+const lang = 'en';
+const t = getT(lang);
+---
+<Base
+  title="Privacy Policy – HappyBein"
+  description="How HappyBein collects, uses, and protects your personal data."
+  canonical="https://happybein.com/privacy"
+  lang={lang}
+>
+  <div class="page-hero">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-label">Legal</div>
+      <h1 class="font-display font-black text-ink tracking-tight leading-[1.1] mb-4"
+          style="font-size:clamp(1.8rem,3.5vw,2.9rem);">Privacy Policy</h1>
+      <p class="text-muted">Last updated: May 2026</p>
+    </div>
+  </div>
+
+  <section class="py-16 px-5">
+    <div class="max-w-[760px] mx-auto prose-hb">
+
+      <h2>Who we are</h2>
+      <p>HappyBein is a non-profit foundation based in Eindhoven, Netherlands. We operate the website <strong>happybein.com</strong> and a suite of tools under the Yeah ecosystem. Contact: <a href="mailto:happybein1@gmail.com" class="text-teal-dark">happybein1@gmail.com</a></p>
+
+      <h2>What data we collect</h2>
+      <p>We only collect data you voluntarily provide:</p>
+      <ul>
+        <li><strong>Email address</strong> — when you subscribe to our newsletter via the form on this site.</li>
+      </ul>
+      <p>We also collect anonymous analytics data via Google Analytics 4 (GA4) to understand how the site is used. This includes pages visited, approximate location (country level), and device type. No personally identifiable information is collected through analytics.</p>
+
+      <h2>How we use your data</h2>
+      <ul>
+        <li>Your email address is used solely to send the HappyBein monthly newsletter.</li>
+        <li>We will never sell, rent, or share your email with third parties.</li>
+        <li>Analytics data is used only to improve the site.</li>
+      </ul>
+
+      <h2>Who stores your data</h2>
+      <ul>
+        <li><strong>Email subscriptions</strong> are stored by <a href="https://www.brevo.com" target="_blank" rel="noopener" class="text-teal-dark">Brevo</a> (formerly Sendinblue), a French email service provider compliant with GDPR.</li>
+        <li><strong>Analytics</strong> are processed by Google Analytics 4, with IP anonymisation enabled.</li>
+      </ul>
+
+      <h2>Your rights (GDPR)</h2>
+      <p>As an EU resident you have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> — request a copy of the data we hold about you.</li>
+        <li><strong>Rectification</strong> — ask us to correct inaccurate data.</li>
+        <li><strong>Erasure</strong> — ask us to delete your data at any time.</li>
+        <li><strong>Unsubscribe</strong> — every newsletter email contains an unsubscribe link. You can also email us directly.</li>
+        <li><strong>Withdraw consent</strong> — you can withdraw your newsletter consent at any time with no consequences.</li>
+      </ul>
+      <p>To exercise any of these rights, email us at <a href="mailto:happybein1@gmail.com" class="text-teal-dark">happybein1@gmail.com</a>.</p>
+
+      <h2>Cookies</h2>
+      <p>This site uses minimal cookies — only those set by Google Analytics for anonymous usage tracking. We do not use advertising cookies or third-party tracking pixels.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>We may update this policy occasionally. The "last updated" date at the top of this page will reflect any changes.</p>
+
+    </div>
+  </section>
+</Base>
+
+<style>
+  .prose-hb h2 { font-family:'Nunito',sans-serif; font-size:1.25rem; font-weight:800; color:#1A3333; margin:2.4rem 0 0.7rem; }
+  .prose-hb p  { margin-bottom:1rem; color:#2C4A4A; line-height:1.85; }
+  .prose-hb ul { margin:0.5rem 0 1rem 1.5rem; list-style:disc; }
+  .prose-hb ul li { margin-bottom:0.4rem; color:#2C4A4A; line-height:1.7; }
+  .prose-hb a  { text-decoration:underline; }
+</style>

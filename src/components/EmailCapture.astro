@@ -1,6 +1,4 @@
 ---
-// EmailCapture — reads worker URL from env var set in Cloudflare Pages
-// Set WORKER_URL in Cloudflare Pages → Settings → Environment Variables
 const workerUrl = import.meta.env.WORKER_URL || '';
 ---
 
@@ -16,25 +14,43 @@ const workerUrl = import.meta.env.WORKER_URL || '';
       No spam, unsubscribe any time.
     </p>
 
-    <form id="email-capture-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" novalidate>
-      <input
-        id="email-input"
-        type="email"
-        name="email"
-        placeholder="your@email.com"
-        autocomplete="email"
-        required
-        class="flex-1 px-4 py-3 rounded border text-body placeholder-muted focus:outline-none"
-        style="border:1.5px solid rgba(42,191,191,0.35); font-size:0.95rem; min-height:48px;"
-      />
-      <button
-        type="submit"
-        id="email-submit"
-        class="btn-primary shrink-0"
-        style="min-height:48px; min-width:130px;"
-      >
-        Subscribe
-      </button>
+    <form id="email-capture-form" class="max-w-md mx-auto" novalidate>
+      <!-- Email row -->
+      <div class="flex flex-col sm:flex-row gap-3 mb-3">
+        <input
+          id="email-input"
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+          required
+          class="flex-1 px-4 py-3 rounded border text-body placeholder-muted focus:outline-none"
+          style="border:1.5px solid rgba(42,191,191,0.35); font-size:0.95rem; min-height:48px;"
+        />
+        <button
+          type="submit"
+          id="email-submit"
+          class="btn-primary shrink-0"
+          style="min-height:48px; min-width:130px;"
+        >
+          Subscribe
+        </button>
+      </div>
+
+      <!-- GDPR consent checkbox -->
+      <label class="flex items-start gap-2 text-left cursor-pointer" style="color:#5A7A7A;">
+        <input
+          id="gdpr-consent"
+          type="checkbox"
+          required
+          class="mt-[3px] shrink-0 accent-teal-DEFAULT"
+          style="width:16px; height:16px; cursor:pointer;"
+        />
+        <span class="text-xs leading-relaxed">
+          I agree to receive the HappyBein monthly newsletter. You can unsubscribe at any time.
+          See our <a href="/privacy" class="underline hover:text-ink transition-colors">privacy policy</a>.
+        </span>
+      </label>
     </form>
 
     <!-- Status message -->
@@ -44,10 +60,11 @@ const workerUrl = import.meta.env.WORKER_URL || '';
 </section>
 
 <script define:vars={{ workerUrl }}>
-  const form    = document.getElementById('email-capture-form');
-  const input   = document.getElementById('email-input');
-  const btn     = document.getElementById('email-submit');
-  const status  = document.getElementById('email-status');
+  const form   = document.getElementById('email-capture-form');
+  const input  = document.getElementById('email-input');
+  const consent = document.getElementById('gdpr-consent');
+  const btn    = document.getElementById('email-submit');
+  const status = document.getElementById('email-status');
 
   function showStatus(msg, isError = false) {
     status.textContent = msg;
@@ -59,13 +76,19 @@ const workerUrl = import.meta.env.WORKER_URL || '';
     e.preventDefault();
 
     const email = input.value.trim();
+
     if (!email) {
       showStatus('Please enter your email address.', true);
       input.focus();
       return;
     }
 
-    // Disable while submitting
+    if (!consent.checked) {
+      showStatus('Please tick the consent box to subscribe.', true);
+      consent.focus();
+      return;
+    }
+
     btn.disabled = true;
     btn.textContent = 'Subscribing…';
     status.classList.add('hidden');

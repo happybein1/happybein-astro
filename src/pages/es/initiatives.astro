@@ -10,12 +10,12 @@ const t = getT(lang);
 const ti = t.initiatives;
 
 const insightsTools = initiatives.filter(i => ['yeahvibe','yeahsight','yeahdev'].includes(i.id));
-const smallApps     = initiatives.filter(i => ['workout','gametrack','speaknote','dailytracker'].includes(i.id));
+const smallApps     = initiatives.filter(i => i.id === 'dailyapp');
 
 const insightsLabel = "Herramientas e Insights";
 const insightsSub   = "Plataformas completas para entender el mundo y estructurar tus decisiones.";
-const appsLabel     = "Mini Aplicaciones";
-const appsSub       = "Herramientas ligeras y enfocadas para necesidades del día a día.";
+const appsLabel     = "DailyApp";
+const appsSub       = "Una colección de herramientas ligeras y enfocadas para el día a día.";
 const foundLabel    = "La Fundación";
 const foundSub      = "El arquitecto detrás de todo el ecosistema HappyBein.";
 const foundBadge    = "El Arquitecto";

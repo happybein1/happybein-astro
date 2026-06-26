@@ -56,7 +56,7 @@ export const fr: Translations = {
   // Initiatives
   initiatives: {
     title: 'Nos Initiatives – HappyBein',
-    description: 'Découvrez toutes les initiatives HappyBein : YeahVibe, YeahSight, YeahDev, Workout, GameTrack, SpeakNote et DailyTracker.',
+    description: 'Découvrez toutes les initiatives HappyBein : YeahVibe, YeahSight, YeahDev et DailyApp — des outils simples pour le quotidien.',
     pageLabel: 'Ce que nous construisons',
     pageTitle: 'Nos Initiatives',
     pageSub: 'Huit instruments dans l\'écosystème HappyBein — chacun un outil ciblé pour aider les individus à simplifier la complexité, gagner en efficacité et vivre avec plus de sens.',

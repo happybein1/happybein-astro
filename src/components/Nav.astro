@@ -164,7 +164,7 @@ for (const l of allLangs) {
   </a>
 
   <span class="block text-[0.62rem] font-bold tracking-[0.12em] uppercase pt-3 pb-1" style="color:#1A9A9A;">
-    {lang === 'fr' ? 'Outils & Insights' : lang === 'es' ? 'Herramientas & Insights' : lang === 'nl' ? 'Tools & Inzichten' : 'Insights & Tools'}
+    {lang === 'fr' ? 'Initiatives' : lang === 'es' ? 'Iniciativas' : lang === 'nl' ? 'Initiatieven' : 'Initiatives'}
   </span>
   {items.filter((i: any) => ['YeahVibe','YeahSight','YeahDev'].includes(i.label)).map((item: any) => (
     <a href={item.href} target="_blank" rel="noopener"
@@ -175,9 +175,9 @@ for (const l of allLangs) {
   ))}
 
   <span class="block text-[0.62rem] font-bold tracking-[0.12em] uppercase pt-3 pb-1" style="color:#1A9A9A;">
-    {lang === 'fr' ? 'Outils Quotidiens' : lang === 'es' ? 'Herramientas Diarias' : lang === 'nl' ? 'Dagelijkse Tools' : 'Daily Tools'}
+    {lang === 'fr' ? 'Outils' : lang === 'es' ? 'Herramientas' : lang === 'nl' ? 'Tools' : 'Tools'}
   </span>
-  {items.filter((i: any) => ['DailyApp'].includes(i.label)).map((item: any) => (
+  {items.filter((i: any) => ['YeahVibe Tools'].includes(i.label)).map((item: any) => (
     <a href={item.href} target="_blank" rel="noopener"
        class="block pl-4 text-sm text-muted border-b"
        style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">
@@ -194,7 +194,6 @@ for (const l of allLangs) {
   <!-- About -->
   <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-5 pb-1">{t.nav.about}</span>
   <a href={p('/manifesto')} class="block pl-4 text-sm text-muted border-b" style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">{t.nav.manifesto}</a>
-  <a href={p('/roadmap')}   class="block pl-4 text-sm text-muted border-b" style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">{t.nav.roadmap}</a>
   <a href={p('/contact')}   class="block pl-4 text-sm text-muted border-b" style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">{t.nav.contact}</a>
 
 </div>

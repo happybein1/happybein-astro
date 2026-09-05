@@ -19,5 +19,5 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
-      - { label: "Description", name: "description", widget: "text", required: false, hint: "Optional — shown on the journal listing page." }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Description", name: "description", widget: "text", required: false, hint: "Optional — used as the SEO/social-sharing summary for this article, not shown on the journal listing page." }

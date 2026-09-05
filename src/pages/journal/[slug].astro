@@ -39,21 +39,25 @@ const schema = JSON.stringify({
   lang={lang}
   schema={schema}
 >
-  <div class="page-hero">
+  <div class="journal-hero px-5" style="background:#E8F7F7; border-bottom:1px solid rgba(42,191,191,0.18);">
     <div class="max-w-6xl mx-auto">
       <a href="/journal" class="section-label" style="text-decoration:none;">← Journal</a>
-      <h1 class="font-display font-black text-ink tracking-tight leading-[1.1] mt-2 mb-3 max-w-2xl"
-          style="font-size:clamp(1.7rem,3.2vw,2.6rem);">{entry.data.title}</h1>
+      <h1 class="font-display font-black text-ink tracking-tight leading-[1.1] mt-2 mb-2 max-w-2xl"
+          style="font-size:clamp(1.6rem,3vw,2.4rem);">{entry.data.title}</h1>
       <div class="font-mono-sm text-muted">{dateFmt(entry.data.date)}</div>
     </div>
   </div>
-  <section class="py-16 px-5">
+  <section class="py-12 px-5">
     <article class="max-w-[760px] mx-auto prose-journal">
       <Content />
     </article>
   </section>
 </Base>
 <style>
+  .journal-hero {
+    padding-top: calc(70px + 22px + 1.8rem);
+    padding-bottom: 1.8rem;
+  }
   .prose-journal h2 { font-family:'Nunito',sans-serif; font-size:1.45rem; font-weight:800; color:#1A3333; margin:2.8rem 0 0.8rem; }
   .prose-journal h3 { font-family:'Nunito',sans-serif; font-size:1.05rem; font-weight:700; color:#1A9A9A; margin:1.6rem 0 0.5rem; }
   .prose-journal p  { margin-bottom:1.1rem; color:#2C4A4A; line-height:1.85; }

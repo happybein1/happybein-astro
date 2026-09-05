@@ -1,0 +1,71 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('journal');
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'journal'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const lang = 'en';
+const dateFmt = (d: Date) =>
+  d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": entry.data.title,
+  "description": entry.data.description || '',
+  "datePublished": entry.data.date.toISOString(),
+  "url": `https://happybein.com/journal/${entry.slug}`,
+  "author": { "@type": "Organization", "name": "HappyBein" },
+});
+---
+<Base
+  title={`${entry.data.title} – HappyBein Journal`}
+  description={entry.data.description || `${entry.data.title} — HappyBein Journal`}
+  canonical={`https://happybein.com/journal/${entry.slug}`}
+  ogType="article"
+  lang={lang}
+  schema={schema}
+>
+  <div class="page-hero">
+    <div class="max-w-6xl mx-auto">
+      <a href="/journal" class="section-label" style="text-decoration:none;">← Journal</a>
+      <h1 class="font-display font-black text-ink tracking-tight leading-[1.1] mt-2 mb-3 max-w-2xl"
+          style="font-size:clamp(1.7rem,3.2vw,2.6rem);">{entry.data.title}</h1>
+      <div class="font-mono-sm text-muted">{dateFmt(entry.data.date)}</div>
+    </div>
+  </div>
+  <section class="py-16 px-5">
+    <article class="max-w-[760px] mx-auto prose-journal">
+      <Content />
+    </article>
+  </section>
+</Base>
+<style>
+  .prose-journal h2 { font-family:'Nunito',sans-serif; font-size:1.45rem; font-weight:800; color:#1A3333; margin:2.8rem 0 0.8rem; }
+  .prose-journal h3 { font-family:'Nunito',sans-serif; font-size:1.05rem; font-weight:700; color:#1A9A9A; margin:1.6rem 0 0.5rem; }
+  .prose-journal p  { margin-bottom:1.1rem; color:#2C4A4A; line-height:1.85; }
+  .prose-journal ul, .prose-journal ol { margin:0.5rem 0 1rem 1.5rem; }
+  .prose-journal ul { list-style:disc; }
+  .prose-journal ol { list-style:decimal; }
+  .prose-journal li { margin-bottom:0.4rem; color:#2C4A4A; }
+  .prose-journal a { color:#1A9A9A; text-decoration:underline; }
+  .prose-journal blockquote { border-left:4px solid #2ABFBF; background:#E8F7F7; padding:1rem 1.4rem; border-radius:0 8px 8px 0; margin:1.5rem 0; color:#1A3333; font-style:italic; }
+  .prose-journal hr { border:none; border-top:1px solid rgba(42,191,191,0.18); margin:2.5rem 0; }
+  .prose-journal img { border-radius:8px; margin:1.5rem 0; max-width:100%; height:auto; }
+  .prose-journal code { background:#E8F7F7; color:#1A9A9A; padding:0.15em 0.4em; border-radius:4px; font-size:0.9em; }
+  .prose-journal pre { background:#1A3333; color:#F4FAFA; padding:1rem 1.2rem; border-radius:8px; overflow-x:auto; margin:1.5rem 0; }
+  .prose-journal pre code { background:none; color:inherit; padding:0; }
+</style>

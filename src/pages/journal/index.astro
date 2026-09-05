@@ -1,0 +1,52 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const lang = 'en';
+
+const entries = (await getCollection('journal')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const dateFmt = (d: Date) =>
+  d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<Base
+  title="Journal – HappyBein"
+  description="Notes, reflections and updates from the HappyBein journal."
+  canonical="https://happybein.com/journal"
+  lang={lang}
+>
+  <div class="page-hero">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-label">Notes &amp; Reflections</div>
+      <h1 class="font-display font-black text-ink tracking-tight leading-[1.1] mb-4 max-w-2xl"
+          style="font-size:clamp(1.8rem,3.5vw,2.9rem);">Journal</h1>
+      <p class="text-muted leading-relaxed max-w-xl">Thoughts, updates and reflections along the way.</p>
+    </div>
+  </div>
+
+  <section class="py-16 px-5">
+    <div class="max-w-[760px] mx-auto">
+      {entries.length === 0 && (
+        <p class="text-muted">No entries yet — check back soon.</p>
+      )}
+      <ul class="flex flex-col gap-8">
+        {entries.map((entry) => (
+          <li class="border-b pb-8" style="border-color:rgba(42,191,191,0.18);">
+            <a href={`/journal/${entry.slug}`} class="group block">
+              <div class="font-mono-sm text-muted mb-2">{dateFmt(entry.data.date)}</div>
+              <h2 class="font-display font-extrabold text-ink text-xl group-hover:text-teal-dark transition-colors mb-2">
+                {entry.data.title}
+              </h2>
+              {entry.data.description && (
+                <p class="text-body leading-relaxed">{entry.data.description}</p>
+              )}
+              <span class="inline-block mt-2 text-sm font-bold text-teal-dark">Read more →</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: happybein1/happybein-astro
+  branch: main
+  base_url: https://happybein.com
+  auth_endpoint: api/auth
+
+publish_mode: simple
+media_folder: "public/images/journal"
+public_folder: "/images/journal"
+
+collections:
+  - name: "journal"
+    label: "Journal"
+    folder: "src/content/journal"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+      - { label: "Description", name: "description", widget: "text", required: false, hint: "Optional — shown on the journal listing page." }
+      - { label: "Body", name: "body", widget: "markdown" }

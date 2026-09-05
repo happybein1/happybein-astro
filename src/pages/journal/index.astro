@@ -10,6 +10,20 @@ const entries = (await getCollection('journal')).sort(
 
 const dateFmt = (d: Date) =>
   d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+
+// A plain-text preview pulled from the article body itself (not the optional
+// description field) — strips markdown syntax down to readable text, visual
+// truncation to two lines is handled by the `line-clamp-2` class below.
+const excerpt = (md: string, maxLen = 220): string => {
+  const plain = md
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/[#>*_`~]/g, '')
+    .replace(/\n+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return plain.length > maxLen ? plain.slice(0, maxLen).trim() + '…' : plain;
+};
 ---
 <Base
   title="Journal – HappyBein"
@@ -33,15 +47,13 @@ const dateFmt = (d: Date) =>
       )}
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {entries.map((entry) => (
-          <li class="journal-card aspect-square">
+          <li class="journal-card">
             <a href={`/journal/${entry.slug}`} class="group flex flex-col h-full p-6">
               <div class="font-mono-sm text-muted mb-2">{dateFmt(entry.data.date)}</div>
               <h2 class="font-display font-extrabold text-ink text-lg leading-snug group-hover:text-teal-dark transition-colors mb-2">
                 {entry.data.title}
               </h2>
-              {entry.data.description && (
-                <p class="text-body leading-relaxed text-sm line-clamp-4 mb-2">{entry.data.description}</p>
-              )}
+              <p class="text-body leading-relaxed text-sm line-clamp-2 mb-2">{excerpt(entry.body)}</p>
               <span class="inline-block mt-auto text-sm font-bold text-teal-dark">Read more →</span>
             </a>
           </li>
@@ -62,6 +74,7 @@ const dateFmt = (d: Date) =>
     box-shadow: 0 2px 14px rgba(26,153,154,0.12);
     transition: transform 0.28s ease, box-shadow 0.28s ease;
     overflow: hidden;
+    min-height: 170px;
   }
   .journal-card:hover {
     transform: translateY(-3px);

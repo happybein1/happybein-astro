@@ -1,5 +1,6 @@
 ---
 title: "Welcome to the HappyBein Journal"
+category: history-strategy
 date: 2026-09-05
 description: "A quick note on why this journal exists and what to expect here."
 ---

@@ -1,5 +1,6 @@
 ---
 title: Motivation and creation of this Journal
+category: history-strategy
 date: 2026-09-05
 description: ""
 ---

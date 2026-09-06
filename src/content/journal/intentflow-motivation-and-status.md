@@ -1,5 +1,6 @@
 ---
 title: "Why IntentFlow exists, and where it stands today"
+category: dev-update
 date: 2026-09-06
 description: "The thinking behind IntentFlow and a status update now that cloud sync is live."
 ---

@@ -21,6 +21,13 @@ const lang = 'en';
 const dateFmt = (d: Date) =>
   d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
 
+// Same two categories/colors as the journal listing page (src/pages/journal/index.astro).
+const CATEGORY_META: Record<string, { label: string; badgeClass: string }> = {
+  'dev-update': { label: 'Development Update', badgeClass: 'bg-teal-DEFAULT/10 text-teal-dark' },
+  'history-strategy': { label: 'History & Strategy', badgeClass: 'bg-[#29ABE2]/10 text-[#1A7FAA]' },
+};
+const category = CATEGORY_META[entry.data.category];
+
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -44,7 +51,12 @@ const schema = JSON.stringify({
       <a href="/journal" class="section-label" style="text-decoration:none;">← Journal</a>
       <h1 class="font-display font-black text-ink tracking-tight leading-[1.1] mt-2 mb-2 max-w-2xl"
           style="font-size:clamp(1.6rem,3vw,2.4rem);">{entry.data.title}</h1>
-      <div class="font-mono-sm text-muted">{dateFmt(entry.data.date)}</div>
+      <div class="flex items-center gap-3 flex-wrap">
+        <span class={`inline-flex items-center text-2xs font-bold tracking-widest uppercase px-2.5 py-1 rounded-full ${category.badgeClass}`}>
+          {category.label}
+        </span>
+        <div class="font-mono-sm text-muted">{dateFmt(entry.data.date)}</div>
+      </div>
     </div>
   </div>
   <section class="py-12 px-5">

@@ -1,7 +1,7 @@
 export const SITE = {
   name: 'HappyBein',
   url: 'https://happybein.com',
-  version: '3.0',
+  version: '3.1',
   versionDate: 'September 2026',
   description: 'A purpose-driven foundation dedicated to simplifying societal complexity so every citizen and leader can make conscious, informed, and impactful decisions.',
   email: 'happybein1@gmail.com',

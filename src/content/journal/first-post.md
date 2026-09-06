@@ -8,8 +8,4 @@ As founder of the HappyBein non profit Foundation, I felt the need to describe w
 
 I used AI to generate this journal page within my HappyBein domain which I can relatively easily manage.
 
-I will next describe how I plan on using and organizing this page.
-
-While it would be interesting to have the history, it may save time to focus rather on what is the current project about with ongoing projects as future perspectives.
-
-So I think on having two views for this journal, one with the latest development update, and one general project history and strategy.
+I will next describe how I plan on using and organizing this page. Articles are split between development updates for the recent news, and history and strategy for long term plan sharing.

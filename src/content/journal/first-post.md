@@ -8,4 +8,4 @@ As founder of the HappyBein non profit Foundation, I felt the need to describe w
 
 I used AI to generate this journal page within my HappyBein domain which I can relatively easily manage.
 
-I will next describe how I plan on using and organizing this page. Articles are split between development updates for the recent news, and history and strategy for long term plan sharing.
+I will next describe how I plan on using and organizing this page. Articles are split between development updates for the recent news, and history and strategy for long term plan sharing. I may further split history and strategy but we will see.

@@ -11,3 +11,5 @@ I used AI to generate this journal page within my HappyBein domain which I can r
 I will next describe how I plan on using and organizing this page.
 
 While it would be interesting to have the history, it may save time to focus rather on what is the current project about with ongoing projects as future perspectives.
+
+So I think on having two views for this journal, one with the latest development update, and one general project history and strategy.

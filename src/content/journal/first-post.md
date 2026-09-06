@@ -9,4 +9,4 @@ I used AI to generate this journal page within my HappyBein domain which I can r
 
 I will next describe how I plan on using and organizing this page.
 
-It would make sense to start describing where the Happybein Foundation and projects originated from, also to covers what are the man goals of today, and the ongoing and future developments.
+While it would be interesting to have the history, it may save time to focus rather on what is the current project about with ongoing projects as future perspectives.

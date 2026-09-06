@@ -2,6 +2,7 @@
 title: HappyBein's Vision
 category: history-strategy
 date: 2026-09-06
+description: "The world HappyBein is working toward, what stands in the way, and the role we aim to play in getting there."
 ---
 We believe that a world is possible where the world organisation would be such that there  would be the highest chance that each sentient being would naturally feel as well as possible over time (in all aspects of wellbeing).
 

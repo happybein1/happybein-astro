@@ -65,7 +65,15 @@ const schema = JSON.stringify({
     </article>
   </section>
 </Base>
-<style>
+<style is:global>
+  /* is:global is required here: <Content /> renders the markdown body through
+     a separate pipeline that doesn't carry this component's scoped
+     data-astro-cid attribute, so a normal scoped <style> block's selectors
+     (e.g. ".prose-journal p[data-astro-cid-xxx]") silently never match the
+     actual <p>/<h2>/<ul>/etc tags coming from the article body — every rule
+     below looked correct but had zero effect (no paragraph spacing, no list
+     styling, etc). Safe to make global: every selector here is scoped by the
+     .prose-journal / .journal-hero class names themselves. */
   .journal-hero {
     padding-top: 1.8rem;
     padding-bottom: 1.8rem;

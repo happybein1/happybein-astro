@@ -8,6 +8,7 @@ backend:
 publish_mode: simple
 media_folder: "public/images/journal"
 public_folder: "/images/journal"
+site_url: https://happybein.com/journal
 
 collections:
   - name: "journal"
@@ -16,6 +17,17 @@ collections:
     create: true
     slug: "{{slug}}"
     identifier_field: title
+    summary: "{{title}} — {{category | upper}}"
+    view_groups:
+      - label: "Category"
+        field: category
+    view_filters:
+      - label: "Development Update"
+        field: category
+        pattern: "dev-update"
+      - label: "History & Strategy"
+        field: category
+        pattern: "history-strategy"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Category", name: "category", widget: "select", options: [{ label: "Development Update", value: "dev-update" }, { label: "History & Strategy", value: "history-strategy" }], default: "dev-update", hint: "Development Update = build/feature notes on the apps. History & Strategy = reflections on HappyBein itself, its history and direction." }

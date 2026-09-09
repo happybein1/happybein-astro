@@ -5,7 +5,7 @@ date: 2026-09-07
 ---
 This entry is meant to help define the next steps by describing what has been done so far.
 
-It started all in 2022 when I personally felt very unwell and started to learn about the chemical aspects well-being and best practices for decision making and interacting with others. 
+It all started in 2022 when I personally felt very unwell and started to learn about the chemical aspects of well-being and best practices for decision making and interacting with others. 
 
 I felt very excited about what I learned and decided to invest time in creating a non profit organization called HappyBein Stichting to educate the world. Beside my full time work and life, I contracted third parties to create a website and explainers videos for YouTube and for that website. I also protected the HappyBein brand.
 
@@ -19,7 +19,7 @@ I created YeahVibe.com and stored and enhanced there the content I previously ma
 
 I also added the yeahsight part which is a part dedicated to analysing some important part of society and consideration on how to solve ongoing challenges and thoughts on how the world is developing. The reason for adding that part is because current decision making often requires high level understanding of where we are and where we are going.
 
-I also created yeahdev website to store and share development insight know how I was learning.
+I also created yeahdev website to store and share development know-how I was learning.
 
 Once progressed enough on yeahvibe, I thought of marketing the content by making videos and posting these on social platforms. It was very time consuming and I was not happy with the outcome. But I learned AI tools and some basics on the new marketing, which can be handy for the future.
 

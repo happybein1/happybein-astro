@@ -5,7 +5,7 @@ date: 2026-09-13
 description: "What each tab in IntentFlow actually does, with real examples of how I use them."
 ---
 
-IntentFlow helps you define, plan, and reach your goals — from daily habits to short, medium, and long-term goals and plans, all in one place, rather than a handful of separate apps and notes for the different pieces. Long-term goals live as lists you build out yourself, supported underneath by the medium-term Weekly Goals that keep the day-to-day progress toward them moving. Free, no account required, nothing running in the background you didn't ask for.
+IntentFlow's integrated, customizable lists and trackers help you brainstorm, plan, and prioritize your goals and habits, and keep your events and chores on track. Free, no account required, nothing running in the background you didn't ask for.
 
 This is the tour I'd give a friend looking over my shoulder for the first time, tab by tab, with the kind of everyday examples that make each one click.
 
@@ -27,7 +27,7 @@ From there, everything hangs off five tabs: **Today**, **Events**, **Calendar**,
 
 ## Today — the habit tracker you open every morning
 
-This is the tab IntentFlow opens to by default, and it's built around three things stacked top to bottom: **habits**, a **Due today** reminders section, and **Weekly Goals & Trackers**.
+This is the tab IntentFlow opens to by default, and it's built around three things stacked top to bottom: **habits**, a **Due today** reminders section, and **Weekly Goals / Trackers**.
 
 Habits are the things you want to do every day — say, 10 minutes of stretching, drinking a glass of water before coffee, or reading a few pages before bed. Each one gets a time and a point value, and checking it off adds to a daily score that resets overnight. Miss a day and the streak counter under that habit resets too, which turns out to be a surprisingly effective nudge — nobody wants to watch a 12-day streak drop back to zero over something as small as forgetting to check a box.
 

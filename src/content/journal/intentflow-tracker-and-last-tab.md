@@ -1,8 +1,8 @@
 ---
 title: "September 2026 — Development Updates"
 category: dev-update
-date: 2026-09-09
-description: "IntentFlow gets value tracking and a smarter landing tab; Shop gets automatic sync and drag-to-reorder for its Others list."
+date: 2026-09-12
+description: "IntentFlow gets value tracking and a smarter landing tab; Shop gets automatic sync and drag-to-reorder for its Others list; both apps get real privacy policies and go through Google's verification process."
 ---
 
 Starting this month, I'm grouping these into one running post per month instead of a separate entry for every small change — easier to follow than a stream of one-liners, and less pressure to write something every time a feature ships. Here's what moved this September.
@@ -26,3 +26,11 @@ Shop — the grocery and household tracker — got two updates as well.
 **Others list items can now be dragged to reorder**, using the same grip-handle pattern the Stores tab already had — so groceries stay grouped by category as before, but the miscellaneous Others list can finally be arranged however makes sense to you.
 
 Small compounding benefit of building things with reusable patterns instead of one-off logic each time.
+
+## Privacy & Google sign-in
+
+The other real thread this month didn't touch either app's day-to-day features, but I think it matters as much as anything else: both apps now have an actual privacy policy, written in plain language, plus a short line right at the "Sign in with Google" button so it's clear in the moment what that button does — not buried three taps deep in Settings.
+
+That work turned up a small discovery I hadn't expected. Both apps' Google sign-in runs through the same Google Cloud project behind the scenes — deliberate, so I wouldn't have to get the app reviewed by Google twice — which meant the Privacy Policy link Google itself shows *during* sign-in was pointing at Shop's page even when you were signing into IntentFlow. Easy to miss, since it only shows up on Google's own screen, never in the app. Fixed by giving both apps a shared page at yeahvibe.com that covers sign-in in general, with each app's own page one click deeper for the specifics.
+
+Then I actually put both apps through Google's real verification process, to get rid of the "unverified app" warning testers see when signing in. Genuinely useful, if slow: Google's reviewers came back with specific, itemized feedback on the privacy page — spell out exactly what data is accessed, how it's used, who it's shared with, how it's protected, how long it's kept — and answering each point explicitly made the policy better, not just more compliant. Worth doing even with just a couple of testers.

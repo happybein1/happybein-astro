@@ -5,7 +5,7 @@ date: 2026-09-13
 description: "What each tab in IntentFlow actually does, with real examples of how I use them."
 ---
 
-IntentFlow exists to make it easy to track habits and set up and manage goals and plans, all in one place — a personal daily dashboard rather than a handful of separate apps and notes for the different pieces. Free, no account required, nothing running in the background you didn't ask for.
+IntentFlow is a tool to help optimize your plans — from daily habits to short, medium, and long-term goals and plans, all in one place, rather than a handful of separate apps and notes for the different pieces. Long-term goals live as lists you build out yourself, supported underneath by the medium-term Weekly Goals that keep the day-to-day progress toward them moving. Free, no account required, nothing running in the background you didn't ask for.
 
 This is the tour I'd give a friend looking over my shoulder for the first time, tab by tab, with the kind of everyday examples that make each one click.
 

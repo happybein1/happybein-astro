@@ -1,13 +1,13 @@
 ---
-title: "A walkthrough of IntentFlow, for anyone seeing it for the first time"
+title: A walkthrough of IntentFlow, for anyone seeing it for the first time
 category: dev-update
 date: 2026-09-13
-description: "What each tab in IntentFlow actually does, with real examples of how I use them."
+description: What each tab in IntentFlow actually does, with real examples of
+  how I use them.
 ---
-
 IntentFlow's integrated, customizable lists and trackers help you brainstorm, plan, and prioritize your goals and habits, and keep your events and chores on track. Free, no account required, nothing running in the background you didn't ask for.
 
-This is the tour I'd give a friend looking over my shoulder for the first time, tab by tab, with the kind of everyday examples that make each one click.
+Here is the tour tab by tab, with the kind of everyday examples that make each one click.
 
 ## Installing it on your phone first
 
@@ -21,7 +21,7 @@ Either way, you now have a real app icon, not just a bookmark — and everything
 
 ## First open: the landing screen and the five tabs
 
-The very first time you open IntentFlow, before any of your own data exists, you land on a full-screen welcome page rather than straight into the app — a teal gradient background, the app's icon, "IntentFlow" in big type under the tagline **"Your personal daily OS,"** and one line explaining the basics: habits, weekly goals, events, plans and links, all in one place, staying on your device unless you turn on sync. Tap **Get Started** and you're in — this screen only ever shows once per device.
+The very first time you open IntentFlow, before any of your own data exists, you land on a full-screen welcome page rather than straight into the app — a teal gradient background, the app's icon, "IntentFlow" in big type under the tagline **"Your personal daily OS,"** and one line explaining the basics: habits, weekly goals and trackers, events, plans and links, all in one place, staying on your device unless you turn on sync. Tap **Get Started** and you're in — this screen only ever shows once per device.
 
 From there, everything hangs off five tabs: **Today**, **Events**, **Calendar**, **Plans**, and **Links**. Today is your daily habit tracker and where the app opens by default. Events and Calendar are two views of the same underlying dates — a list and a month grid. Plans is where lists, itineraries, and prioritization live. Links is a small reorderable set of URLs you reach for often. Settings later lets you change which of these five the app opens to by default — including an option to just reopen wherever you last were — but "Today" is the sensible starting point, so that's where this tour starts too.
 

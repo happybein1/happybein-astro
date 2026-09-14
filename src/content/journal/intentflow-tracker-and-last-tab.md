@@ -2,7 +2,7 @@
 title: "September 2026 — Development Updates"
 category: dev-update
 date: 2026-09-12
-description: "IntentFlow gets value tracking and a smarter landing tab; Shop gets automatic sync and drag-to-reorder for its Others list; both apps get real privacy policies and go through Google's verification process."
+description: "IntentFlow gets value tracking, a smarter landing tab, and demo content matching its own walkthrough; Shop gets automatic sync, drag-to-reorder, and Android app packaging; both apps get real privacy policies, Google verification, and a safer way to delete things."
 ---
 
 Starting this month, I'm grouping these into one running post per month instead of a separate entry for every small change — easier to follow than a stream of one-liners, and less pressure to write something every time a feature ships. Here's what moved this September.
@@ -17,6 +17,8 @@ Two smaller additions, both born out of just using the app myself.
 
 Neither of these needed a redesign — both slotted into decisions already made earlier (the Plans tab already remembers your last-selected list the same way; the sync work already required tracking "what tab were you on" for its own reload logic).
 
+**The brand-new-install demo content now matches the walkthrough post I wrote about the app.** I wanted to be able to open a fresh device, narrate that post as a script, and have the app already showing the exact habits, goals, and events it describes — instead of generic placeholders that don't line up with what I'm saying. So the default habits, Weekly Goals, and events a new install seeds itself with are now the same ones the walkthrough talks through, and Plans ships with two lists built from the walkthrough's own examples: a Plan-mode weekend-trip itinerary and a Priority-mode apartment-hunting checklist, sorted by the same Impact/Urgency/Effort scoring the app actually uses. The old generic "Ideas of lists" checklist is still there too, just moved to the end, so nothing that existed before quietly disappeared. None of this touches anyone's real data — it only ever fills in on a genuinely empty install. Alongside that, the "Weekly Goals & Trackers" section got a small wording tweak to "Weekly Goals / Trackers," and the Plans mode menu now lists Plan above Priority, matching the order I actually introduce them in the walkthrough.
+
 ## Shop
 
 Shop — the grocery and household tracker — got two updates as well.
@@ -26,6 +28,12 @@ Shop — the grocery and household tracker — got two updates as well.
 **Others list items can now be dragged to reorder**, using the same grip-handle pattern the Stores tab already had — so groceries stay grouped by category as before, but the miscellaneous Others list can finally be arranged however makes sense to you.
 
 Small compounding benefit of building things with reusable patterns instead of one-off logic each time.
+
+**Shop can also now be packaged as an actual Android app**, ahead of putting it on the Play Store. It's still the same web app under the hood — no rewrite — wrapped in a Trusted Web Activity so it opens full-screen with no Chrome address bar, the way an installed app should. Getting there surfaced one genuinely useful side-finding: the packaging tool couldn't fetch the app's own icons because a bot-protection setting on the domain was blocking it, which is likely the same reason an earlier Google review flagged the app's home page as looking like it was "behind a login page" to an automated crawler. Turning that setting off fixed both. The remaining steps — the actual Play Store listing, screenshots, and submission — are on me to finish outside of any code change.
+
+## Delete safety
+
+The one change that touched every part of both apps at once: routine deletes now show an "Undo" action right on the confirmation toast instead of asking "are you sure?" beforehand. I'd been going back and forth between a few options — confirm-before-delete, undo-after-delete, or swipe-to-delete — and landed on undo-after for the everyday, one-item deletes (a habit, a grocery item, a link, a plan step): a dialog you have to click through on every single delete stops being a safety net and just becomes reflex, while a few seconds to tap Undo actually gets read. Deleting something bigger — a whole Plans list, a store's saved card, everything in a list at once — still asks first, since those are rare enough that the friction is worth it. IntentFlow already had a snapshot-based undo tucked away in Settings, so this mostly meant surfacing it right where the action happens; Shop didn't have anything like it, so it got a matching one built from scratch, plus a half-finished version of the same idea I found sitting unused in the code got properly wired up instead of left dormant.
 
 ## Privacy & Google sign-in
 

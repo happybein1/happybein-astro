@@ -1,13 +1,13 @@
 ---
 title: "IntentFlow, fully specified: what every tab and setting actually does"
 category: dev-update
-date: 2026-09-14
+date: 2026-09-19
 description: "A complete, living functional reference for IntentFlow — every tab, every setting, every behavior, kept up to date as the app changes rather than written once and left to go stale."
 ---
 
 I've written about IntentFlow a few times now — why it exists, a walkthrough for someone seeing it the first time, monthly notes on what shipped. What's been missing is the boring but useful one: a single document that actually specifies what the app does, completely, in one place. Not a pitch, not a tour with anecdotes — a reference.
 
-This is that document. Unlike the other posts here, I'm treating this one as living rather than a snapshot: when a feature changes, this gets updated in place rather than superseded by a new post. **As of this writing, it reflects IntentFlow v4.33.** If you're reading this much later than the date above, treat any specific detail with a little skepticism and check the app itself for the current behavior.
+This is that document. Unlike the other posts here, I'm treating this one as living rather than a snapshot: when a feature changes, this gets updated in place rather than superseded by a new post. **As of this writing, it reflects IntentFlow v4.49.** If you're reading this much later than the date above, treat any specific detail with a little skepticism and check the app itself for the current behavior.
 
 ## What it is
 
@@ -15,29 +15,29 @@ IntentFlow is a free, installable Progressive Web App covering five things: dail
 
 It's built as a single-page app (one HTML file, inline styles and script, no build step) with a service worker for offline caching. Installing it — "Add to Home Screen" on iOS Safari, or the install prompt / "Install app" menu item on Android Chrome — gives it a real home-screen icon that opens full-screen with no browser chrome, and it keeps working with no network connection once it's been opened at least once.
 
-The five tabs are **Today**, **Events**, **Calendar**, **Plans**, and **Links**, plus a **Settings** panel reached from a gear icon in the header. A one-time full-screen welcome page introduces all five the very first time the app is opened on a device; it never shows again after that.
+The five tabs are **Today**, **Upcoming**, **Calendar**, **Plans**, and **Links**, plus a **Settings** panel reached from a gear icon in the header. A one-time full-screen welcome page introduces all five the very first time the app is opened on a device; it never shows again after that.
 
-## Today — habits, due items, and weekly goals
+## Today — weekly goals, due items, and habits
 
-The default landing tab, built from three stacked sections.
-
-**Habits.** Each habit has a name, an icon, a time of day, and a point value. Checking one off adds its points to a running daily score that resets at midnight (local time, not UTC). Missing a day resets that habit's individual streak counter back to zero, shown right on the habit row. A small chart on this tab plots recent daily scores; tapping into a fuller history view (via the Score History screen) shows a longer dated log.
-
-**🔔 Due today.** A section that appears only when something is actually due — a recurring chore (like a weekly bins run with no `lastDone` yet today) or a one-off event dated today, pulled from the Events data. Tapping an item here checks it off and awards points exactly like a habit, so there's no separate trip to the Events tab required just to clear what's due right now. It's absent entirely when nothing qualifies.
+The default landing tab, built from three stacked sections, in this order: **Weekly Goals / Trackers**, **Due today**, then your **daily routine** (habits). Weekly Goals and Due Today sit above the habit list specifically so both stay visible with no scrolling or collapsing needed, even on a day with a long habit list — habits used to lead the tab, but that meant they were the thing pushing everything else off-screen.
 
 **Weekly Goals / Trackers.** Two goal types, both editable from the same add/edit modal:
 - **Counter** — tallies toward a weekly target (e.g. "Run 3×"), resets every Monday.
 - **Tracker** — logs a value on any day with no target and no weekly reset (e.g. weight); tapping the trend icon shows the last 30 logged entries as a chart plus the full dated history underneath.
 
-Both types share an icon field (tap it to open the shared icon popup, described below) and a name.
+Both types share an icon field (tap it to open the shared icon popup, described below) and a name. Each card has a **⠿** grip on its left edge for drag-to-reorder; the log/increment button sits at the right edge of the card (the frequent action, easiest to reach), with edit — and, for Trackers, the history button — just to its left.
 
-## Events — the chronological list
+**🔔 Due today.** A section that appears only when something is actually due — a recurring chore (like a weekly bins run with no `lastDone` yet today) or a one-off event dated today, pulled from the Upcoming data. Tapping an item here checks it off and awards points exactly like a habit, so there's no separate trip to the Upcoming tab required just to clear what's due right now. It's absent entirely when nothing qualifies.
 
-A flat, date-ordered list of one-off events and recurring chores. Each entry has a name, icon, date, and (for chores) a recurrence rule — daily, weekly, monthly, or a custom interval. The tab has two independent toggles: filter by **Events** or **Chores** (or both), and switch the time horizon between **Next** (near-term) and **6 mo** (six months out) — useful for something like a wedding four months away that you want on the radar without it cluttering the near-term view. Marking something done here also feeds the streak/point mechanics shared with Today.
+**Daily routine (habits).** Each habit has a name, an icon, a time of day, and a point value. Checking one off adds its points to a running daily score that resets at midnight (local time, not UTC). Missing a day resets that habit's individual streak counter back to zero, shown right on the habit row. On each row, edit (✎) sits between the name and the time, with the done-circle at the trailing right edge — same reachability logic as Weekly Goals' log button. A habit checked off today drops out of the list by default (a "Show completed" toggle above the list brings it back — useful for editing one you've already done); the whole section also has its own **▾** collapse toggle in its header, compressing down to a small progress badge. The score card at the top of the tab is deliberately minimal: just the running total next to a **📈** button that opens the full score history — no in-card breakdown text or chart, both of which used to sit here and were dropped as redundant with that history screen.
+
+## Upcoming — the chronological list
+
+A flat, date-ordered list of one-off events and recurring chores — this tab was originally called "Events," renamed to Upcoming since it's really a browsable schedule list, not a reminder feed. Each entry has a name, icon, date, and (for chores) a recurrence rule — daily, weekly, monthly, or a custom interval. Each row shows the item's name and its type/recurrence label together on one line, with the date in a colored pill on the right. The tab has two independent toggles: filter by **Events** or **Chores** (or both), and switch the time horizon between **Next** (near-term) and **6 mo** (six months out) — useful for something like a wedding four months away that you want on the radar without it cluttering the near-term view. Marking something done here also feeds the streak/point mechanics shared with Today.
 
 ## Calendar — the same data, month view
 
-A six-month calendar grid rendered from the exact same events/chores data as the Events tab — no separate data model, just a different lens on it. Tapping a day with something scheduled shows the details for that day; the same **+ Add** control from Events works here too.
+A six-month calendar grid rendered from the exact same events/chores data as the Upcoming tab — no separate data model, just a different lens on it. Tapping a day with something scheduled shows the details for that day; the same **+ Add** control from Upcoming works here too.
 
 ## Plans — lists, in two modes
 

@@ -2,7 +2,7 @@
 title: "Testing IntentFlow: the app link, what to try, and how to send feedback"
 category: dev-update
 date: 2026-09-15
-description: "A practical guide for testers — where to find the app, how to install it so it works offline, what's worth trying, and the two ways to send feedback. Current as of v4.34."
+description: "A practical guide for testers — where to find the app, how to install it so it works offline, what's worth trying, and the two ways to send feedback. Current as of v4.49."
 ---
 
 A few of you have offered to try IntentFlow out, so rather than repeat the same instructions in separate messages, here's one place with everything you need: the link, how to install it properly, what's actually worth testing, and how to tell me what you find.
@@ -28,11 +28,11 @@ Once it's installed and you've opened it at least once, try turning on airplane 
 
 No wrong way to explore it, but if you want a starting checklist, here's what exercises most of the app:
 
-**Today.** Add a habit or two (pick an icon, a time, a point value) and check one off — you should see your score go up and a streak start. Add a Weekly Goal of each type: a **Counter** (something with a weekly target, like "Run 3×") and a **Tracker** (something you just log over time, like weight, no target). If your habit list gets long, try the small **▾** next to "Daily routine" — it collapses the list down to a progress badge so Weekly Goals stays reachable without scrolling.
+**Today.** Add a habit or two (pick an icon, a time, a point value) and check one off — you should see your score go up next to the 📈 button (tap it for the full history), a streak start, and the habit itself drop out of the list (there's a "Show completed" toggle to bring it back). Add a Weekly Goal of each type: a **Counter** (something with a weekly target, like "Run 3×") and a **Tracker** (something you just log over time, like weight, no target) — try dragging one by its grip to reorder it against the other. If your habit list gets long, try the small **▾** next to "Daily routine" — it collapses the list down to a progress badge so Weekly Goals and Due Today stay reachable without scrolling.
 
-**Events.** Add a one-off event and a recurring chore. Mark one done and see it reflected on Today's "Due today" section. Try switching between the **Next** and **6 mo** filters.
+**Upcoming.** Add a one-off event and a recurring chore. Mark one done and see it reflected on Today's "Due today" section. Try switching between the **Next** and **6 mo** filters.
 
-**Calendar.** Same data as Events, laid out as a month grid — tap a day that has something on it.
+**Calendar.** Same data as Upcoming, laid out as a month grid — tap a day that has something on it.
 
 **Plans.** Create a list and try both modes: **Plan** (add a part, add a few steps, drag to reorder, try the small **+** next to a step's grip to insert one right after it) and **Priority** (score an item on Impact/Urgency/Effort and watch it rank). If you create more than one list, check that switching between them and coming back to Plans later takes you to the right one.
 

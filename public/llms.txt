@@ -1,33 +1,5 @@
 # HappyBein
-# Version: 2.8
-# Last updated: 2026-09-25
 # Framework: Astro 4 + Tailwind CSS (migrated from vanilla HTML)
-# Changelog:
-#   v2.8 (2026-09-25) — Initiatives list updated to match the current five (HappyBein, YeahVibe, YeahSight, YeahDev, DailyApp — the small standalone tools are now bundled under DailyApp rather than listed individually)
-#   v2.7 (2026-05-20) — Fixed mobile nav always-visible bug (flex-col conflicting with hidden)
-#   v2.7 (2026-05-21) — Updated all initiative descriptions across EN/FR/ES/NL
-#   v2.6 (2026-05-20) — Fixed build error: TypeScript generics moved from JSX to frontmatter
-#   v2.7 (2026-05-21) — Updated all initiative descriptions across EN/FR/ES/NL
-#   v2.6 (2026-05-21) — Updated homepage hero statement across all 4 languages
-#   v2.5 (2026-05-20) — Language selector replaced with single globe dropdown with flag labels
-#   v2.7 (2026-05-21) — Updated all initiative descriptions across EN/FR/ES/NL
-#   v2.6 (2026-05-21) — Updated homepage hero statement across all 4 languages
-#   v2.5 (2026-05-21) — Single globe language dropdown; no footer lang buttons
-#   v2.4 (2026-05-20) — Fixed temporal dead zone build error in i18n/index.ts
-#   v2.3 (2026-05-13) — Fixed language toggle: all 4 langs visible, links to equivalent page, active lang highlighted
-#   v2.2 (2026-05-13) — Added Dutch (NL) translation; /nl/ URL structure
-#   v2.1 (2026-05-13) — Added Spanish (ES) translation; 3-language toggle (EN/FR/ES); /es/ URL structure
-#   v2.0 (2026-05-13) — Fixed all French apostrophe build errors; all strings pre-declared as variables
-#   v1.9 (2026-05-13) — Fixed build errors: @import order in CSS, French apostrophes in template literals
-#   v1.8 (2026-05-13) — Initiatives page categorised into Insights & Tools / Small Apps / Foundation; nav grouped
-#   v1.7 (2026-05-13) — Full French (FR) translation; language toggle in nav; hreflang SEO tags; shareable /fr/ URLs
-#   v1.6 (2026-05-13) — Added DailyTracker initiative; self-hosted favicon; OG social image generated
-#   v1.5 (2026-05-13) — Migrated to Astro framework; component-based architecture
-#   v1.4 (2026-05-13) — Fixed nav dropdown hover gap; initiative links to external URLs
-#   v1.3 (2026-05-13) — Fixed iOS WebKit card rendering
-#   v1.2 (2026-05-13) — Added SpeakNote initiative
-#   v1.1 (2026-05-13) — Added initiatives page; nav restructure; real logo; collapsible cards
-#   v1.0 (2026-05-13) — Initial static site migrated from WordPress to Cloudflare Pages
 
 > A purpose-driven foundation dedicated to simplifying societal complexity so that every citizen and leader can make conscious, informed, and impactful decisions.
 

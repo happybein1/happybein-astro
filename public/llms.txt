@@ -1,8 +1,9 @@
 # HappyBein
-# Version: 2.7
-# Last updated: 2026-05-13
+# Version: 2.8
+# Last updated: 2026-09-25
 # Framework: Astro 4 + Tailwind CSS (migrated from vanilla HTML)
 # Changelog:
+#   v2.8 (2026-09-25) — Initiatives list updated to match the current five (HappyBein, YeahVibe, YeahSight, YeahDev, DailyApp — the small standalone tools are now bundled under DailyApp rather than listed individually)
 #   v2.7 (2026-05-20) — Fixed mobile nav always-visible bug (flex-col conflicting with hidden)
 #   v2.7 (2026-05-21) — Updated all initiative descriptions across EN/FR/ES/NL
 #   v2.6 (2026-05-20) — Fixed build error: TypeScript generics moved from JSX to frontmatter
@@ -35,19 +36,16 @@
 - [Home](https://happybein.com/): Overview of HappyBein and YeahVibe.
 - [The HappyBein Manifesto](https://happybein.com/manifesto): Why we exist, how we operate, and what we believe.
 - [YeahVibe Roadmap](https://happybein.com/roadmap): Three-phase product roadmap.
-- [Our Initiatives](https://happybein.com/initiatives): All seven active tools in the Yeah ecosystem.
+- [Our Initiatives](https://happybein.com/initiatives): The five active initiatives in the Yeah ecosystem.
 - [Connect & Collaborate](https://happybein.com/contact): Email: happybein1@gmail.com
 
 ## Initiatives
 
 - [HappyBein Foundation](https://happybein.com/initiatives#happybein): The architect. Non-profit research studio. Eindhoven, NL. Founded 2021.
-- [YeahVibe](https://yeahvibe.com): Core platform. Free modular Life Recipes around 5 Pillars of Leverage.
-- [YeahSight](https://yeahsight.com): World context tool. Decodes global trends into plain language.
-- [YeahDev](https://yeahdev.com): Article repository. No-fluff knowledge for founders and makers.
-- [YeahVibe Workout](https://workout.yeahvibe.com): Micro-exercise tool. Random exercises for home/office. FR/EN.
-- [YeahVibe GameTrack](https://gametrack.yeahvibe.com): Score tracker for board games and multiplayer activities.
-- [SpeakNote](https://speaknote.happybein.com): Voice transcription. Multi-language, 100% local, clipboard export.
-- [DailyTracker](https://dailytracker.yeahvibe.com): Habit tracker. Tick daily habits, get rewarded for consistency streaks. Simple, fast, no account needed.
+- [YeahVibe](https://yeahvibe.com): Core platform. Practical framework built around 5 levers of change (direction & priorities, mindset, surroundings & processes, collaboration & leadership, YeahSight).
+- [YeahSight](https://yeahsight.com): World context tool. Decodes global trends — energy, economy, technology, society — into plain language.
+- [YeahDev](https://yeahdev.com): Article repository. No-fluff guides on AI, marketing, SEO, and getting your first customers, for founders and makers.
+- [DailyApp](https://dailyapp.happybein.com): A collection of lightweight, focused daily tools, each doing one thing well with no accounts or subscriptions — DailyTracker (habit streaks), SpeakNote (local voice-to-text), QuickTimer (preset/custom timers), YeahVibe Workout (micro-exercise prompts), and YeahVibe GameTrack (score tracking).
 
 ## About
 

@@ -5,6 +5,8 @@ date: 2026-09-13
 description: What each tab in IntentFlow actually does, with real examples of
   how I use them.
 ---
+*Part of a series on IntentFlow: [why it exists](/journal/intentflow-motivation-and-status) · this post (a first-timer walkthrough) · [the testing guide](/journal/intentflow-testing-guide) · [the full functional spec](/journal/intentflow-functional-specification).*
+
 IntentFlow's integrated, customizable lists and trackers help you brainstorm, plan, and prioritize your goals and habits, and keep your events and chores on track. Free, no account required, nothing running in the background you didn't ask for.
 
 Here is the tour tab by tab, with the kind of everyday examples that make each one click.
@@ -59,4 +61,4 @@ This one's deliberately simple: a flat, reorderable list of saved title-and-URL 
 
 ## Settings, briefly
 
-Everything above lives locally on your device by default — no account needed for any of it. Settings is where you'd turn on sync if you want that same data to follow you to a second device, pick which tab the app opens to (including "last tab used," if you'd rather it just remember where you left off), and find the privacy policy and export/backup tools. I've written about the sync work in more depth in an earlier post, so I won't repeat it here — this one was about the everyday shape of the app itself.
+Everything above lives locally on your device by default — no account needed for any of it. Settings is where you'd turn on sync if you want that same data to follow you to a second device, pick which tab the app opens to (including "last tab used," if you'd rather it just remember where you left off), and find the privacy policy and export/backup tools. For exactly what sync does, see the [full functional spec](/journal/intentflow-functional-specification#settings) — this post was about the everyday shape of the app itself.

@@ -5,7 +5,11 @@ date: 2026-09-15
 description: "A practical guide for testers — where to find the app, how to install it so it works offline, what's worth trying, and the two ways to send feedback. Current as of v6.04."
 ---
 
+*Part of a series on IntentFlow: [why it exists](/journal/intentflow-motivation-and-status) · [a first-timer walkthrough](/journal/intentflow-walkthrough) · this post (the testing guide) · [the full functional spec](/journal/intentflow-functional-specification).*
+
 A few of you have offered to try IntentFlow out, so rather than repeat the same instructions in separate messages, here's one place with everything you need: the link, how to install it properly, what's actually worth testing, and how to tell me what you find.
+
+This is a snapshot, not a living document — it describes the app as of the version noted above. If you're reading this well after that date, some specifics below may have moved on; it's still a genuine invitation to try the app, just not a guarantee every detail matches what you'll see.
 
 The goal of IntentFlow is to help you brainstorm, plan, and prioritize your goals and habits — so as you're testing, it's worth keeping that in mind: does it actually help you think through what you want to do and in what order, or does it just feel like another tracker?
 

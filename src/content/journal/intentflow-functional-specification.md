@@ -1,13 +1,13 @@
 ---
 title: "IntentFlow, fully specified: what every tab and setting actually does"
 category: dev-update
-date: 2026-09-19
+date: 2026-09-26
 description: "A complete, living functional reference for IntentFlow — every tab, every setting, every behavior, kept up to date as the app changes rather than written once and left to go stale."
 ---
 
 *Part of a series on IntentFlow: [why it exists](/journal/intentflow-motivation-and-status) · [a first-timer walkthrough](/journal/intentflow-walkthrough) · [the testing guide](/journal/intentflow-testing-guide) · this post (the living reference).*
 
-**Verified against IntentFlow v6.50.**
+**Verified against IntentFlow v7.06.**
 
 I've written about IntentFlow a few times now — why it exists, a walkthrough for someone seeing it the first time, monthly notes on what shipped. What's been missing is the boring but useful one: a single document that actually specifies what the app does, completely, in one place. Not a pitch, not a tour with anecdotes — a reference.
 
@@ -29,11 +29,11 @@ The default landing tab, built from three stacked sections, in this order: **Wee
 - **Counter** — tallies toward a weekly target (e.g. "Run 3×"), resets every Monday.
 - **Tracker** — logs a value on any day with no target and no weekly reset (e.g. weight); tapping the trend icon shows the last 30 logged entries as a chart plus the full dated history underneath.
 
-Both types share an icon field (tap it to open the shared icon popup, described below) and a name. Each card has a **⠿** grip on its left edge for drag-to-reorder; the log/increment button sits at the right edge of the card (the frequent action, easiest to reach), with edit — and, for Trackers, the history button — just to its left.
+Both types share an icon field (tap it to open the shared icon popup, described below) and a name. Each card has a **⠿** grip on its left edge for drag-to-reorder; the log/increment button sits at the right edge of the card (the frequent action, easiest to reach), with edit — and, for Trackers, the history button — just to its left. Logging a new value for a Tracker pre-fills the input with the most recently logged value (today's, if already logged today; otherwise whatever was logged last) rather than leaving it blank, with the cursor placed at the end rather than the whole value selected — makes nudging something like a weight by one digit quick, without needing to retype the whole number.
 
 **🔔 Due today.** A section that appears only when something is actually due — a recurring chore (like a weekly bins run with no `lastDone` yet today) or a one-off event dated today, pulled from the Agenda data. Tapping an item here checks it off and awards points exactly like a habit, so there's no separate trip to the Agenda tab required just to clear what's due right now; a silent item shows up here too, as a plain non-checkable note. It's absent entirely when nothing qualifies.
 
-**Daily routine (habits).** Each habit has a name, an icon, a time of day, and a point value. Checking one off adds its points to a running daily score that resets at midnight (local time, not UTC). Missing a day resets that habit's individual streak counter back to zero, shown right on the habit row. On each row, edit (✎) sits between the name and the time, with the done-circle at the trailing right edge — same reachability logic as Weekly Goals' log button. A habit checked off today drops out of the list by default (a "Show completed" toggle above the list brings it back — useful for editing one you've already done); the whole section also has its own **▾** collapse toggle in its header, compressing down to a small progress badge. The score card at the top of the tab is deliberately minimal: just the running total next to a **📈** button that opens the full score history — no in-card breakdown text or chart, both of which used to sit here and were dropped as redundant with that history screen.
+**Daily routine (habits).** Each habit has a name, an icon, a time of day, and a point value. Checking one off adds its points to a running daily score that resets at midnight (local time, not UTC). Missing a day resets that habit's individual streak counter back to zero, shown right on the habit row. On each row, edit (✎) sits between the name and the time, with the done-circle at the trailing right edge — same reachability logic as Weekly Goals' log button. A habit checked off today drops out of the list by default (a "Show completed" toggle above the list brings it back — useful for editing one you've already done); the whole section also has its own **▾** collapse toggle in its header, sitting next to a **⏱️** button that opens an integrated Quick Timer (start/pause/reset, one-tap presets or a custom duration, a progress bar, and an audible + notification alert on completion — the same countdown-timer mode from the standalone QuickTimer app, built in rather than requiring a separate app for something like a stretching or meditation interval), compressing down to a small progress badge. The score card at the top of the tab is deliberately minimal: just the running total next to a **📈** button that opens the full score history — no in-card breakdown text or chart, both of which used to sit here and were dropped as redundant with that history screen.
 
 ## Agenda — a calendar and a chronological list, in one tab
 

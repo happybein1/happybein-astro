@@ -1,7 +1,7 @@
 ---
 title: "Why IntentFlow exists, and where it stands today"
 category: dev-update
-date: 2026-09-06
+date: 2026-10-01
 description: "The thinking behind IntentFlow and a status update now that cloud sync is live."
 ---
 
@@ -11,6 +11,6 @@ IntentFlow started from a simple annoyance: my habits lived in one app, my plans
 
 So IntentFlow is deliberately narrow: Today, Agenda, Plans, and Links (Events and Calendar started as two separate tabs, then merged into the single Agenda tab once it became clear a calendar and a chronological list of the same items didn't need separate homes). Four tabs, each doing one job well, all reading from the same local data. No accounts required, no ads, nothing running in the background you didn't ask for — it's meant to feel like a tool, not a product trying to hold your attention.
 
-That local-only design was also its biggest limitation. Everything lived in the browser's storage on whatever device you happened to be using, which meant switching phones — or just using it on both a phone and a laptop — meant your data didn't come with you. That's the gap I set out to close with cloud sync, and the same approach now also runs in Shop, my grocery app. For exactly what sync does today, see the [full functional spec](/journal/intentflow-functional-specification#settings).
+That local-only design was also its biggest limitation. Everything lived in the browser's storage on whatever device you happened to be using, which meant switching phones — or just using it on both a phone and a laptop — meant your data didn't come with you. That's the gap I set out to close with cloud sync, and the same approach now also runs in ShopTools, my grocery and household tracker (renamed from "Shop" once it grew a Budget tab alongside the grocery/inventory side). For exactly what sync does today, see the [full functional spec](/journal/intentflow-functional-specification#settings).
 
-Next up: let both apps run for real for a while, then hand IntentFlow to a few friends to kick the tires before I think about app stores or anything resembling marketing. One step at a time.
+Since then: both apps have had a few friends actually kicking the tires, which is where most of what's in the [monthly dev-update posts](/journal/intentflow-tracker-and-last-tab) has come from — real usage surfacing real friction, not a roadmap dreamed up in isolation. Both are also now packaged as installable native Android apps, and ShopTools is partway through Play Store submission. IntentFlow's own turn at that is next.

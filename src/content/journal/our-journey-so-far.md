@@ -1,7 +1,7 @@
 ---
 title: Our Journey so Far
 category: history-strategy
-date: 2026-09-07
+date: 2026-10-01
 ---
 This entry is meant to help define the next steps by describing what has been done so far.
 
@@ -24,5 +24,7 @@ I also created yeahdev website to store and share development know-how I was lea
 Once progressed enough on yeahvibe, I thought of marketing the content by making videos and posting these on social platforms. It was very time consuming and I was not happy with the outcome. But I learned AI tools and some basics on the new marketing, which can be handy for the future.
 
 Given that perspective, I realized that the project would create more value for me and the world if the content could be integrated in daily tools. Which is why I started making webapps and stored them under yeahvibe, and I moved the content heavy Foundation under core.yeahvibe.com.
+
+That "integrate it into daily tools" instinct turned into two apps that have had most of my attention since: IntentFlow (habits, plans, and an agenda, all in one place) and ShopTools (groceries, household inventory, stores, and a budget — it started life simply as "Shop" before growing into enough beyond groceries to earn the new name). Both stayed free and local-first by default, picked up optional cloud sync once switching devices became a real annoyance, and have since had a few friends actually using them day to day rather than just me — which has driven almost everything built into them since, far more than anything planned in advance. Both are now also packaged as installable native Android apps, with ShopTools partway through a real Play Store submission and IntentFlow's own turn next.
 
 More to come...

@@ -1,11 +1,11 @@
 ---
 title: "Introducing ShopTools: a home for stores, stock, links and budgets"
 category: dev-update
-date: 2026-09-27
+date: 2026-10-01
 description: "ShopTools has been quietly growing for months without ever getting its own introduction here. A high-level tour of what it does today, with detailed appendixes on each tab's behavior for anyone who wants the specifics."
 ---
 
-**Verified against ShopTools v8.10.**
+**Verified against ShopTools v8.21.**
 
 IntentFlow has had a whole series of posts here — why it exists, a walkthrough, a testing guide, a full living spec. ShopTools hasn't had any of that, despite being just as actively worked on. This is the overdue introduction: what it is, at a glance, with the detailed tab-by-tab behavior pushed down into appendixes for anyone who wants the specifics rather than the overview.
 
@@ -17,15 +17,15 @@ It started life simply as "Shop," a grocery-list app, and grew into something br
 
 ## The five tabs, at a glance
 
-Navigation lives in a bottom tab bar (icon over a short label), with the header showing whichever tab is currently open plus the version number:
+Navigation lives in a bottom tab bar (icon over a short label), left to right **Inventory, Quick List, Stores, Budget, Links**, with the header showing whichever tab is currently open plus the version number:
 
+- **📦 Inventory** — Groceries, plus any other lists you add (Clothes, Tools…), each tracked by category with a tap to bump quantity up or down, and a filter to show just the items that need attention.
+- **🧰 Quick List** — a flat list for occasional buys, now also splittable into named, draggable sections if a plain flat list stops being enough.
 - **💳 Stores** — loyalty cards and opening hours, all in one place.
-- **📦 Inventory** — Groceries, plus any other lists you add (Clothes, Tools…), each tracked by category with a tap to bump quantity up or down.
-- **🔗 Links** — URLs you come back to, grouped into categories.
 - **💰 Budget** — as many budgets as you like, each tracking its own monthly income vs. expenses, with spending logged as it happens.
-- **🧰 Quick List** — a flat list for occasional buys: just a name and a number.
+- **🔗 Links** — URLs you come back to, grouped into categories.
 
-A gear icon in the header opens **Settings** — landing-tab preference, sync, data export/import, and privacy. A one-time welcome screen introduces the app the first time it's opened on a device and never shows again after that.
+A gear icon in the header opens **Settings** — landing-tab preference, sync, data export/import, and privacy. A one-time welcome screen introduces the app the first time it's opened on a device, with a choice between an animated guided tour of the five tabs or skipping straight in (replayable later from Settings); both Inventory/Quick List/Stores/Budget/Links ship with a few example entries already in place on a brand-new install, so the app never opens to five genuinely empty tabs.
 
 ## How it's delivered
 
@@ -59,7 +59,7 @@ Tapping a saved store opens a small card view with Edit/Done. Stores can be reor
 
 **Groceries** is a pinned, always-present inventory — it can be renamed but not deleted. Alongside it, you can create any number of other named inventories (Clothes, Tools, whatever recurring category of stuff you track stock of). Each inventory is organized into categories, and each item within a category tracks: current stock level, an optional recommended level, an optional unit, and a quantity, with low-stock items visually distinguished by color.
 
-Both categories and individual items support drag-to-reorder via a **⠿** grip — a category's grip reorders whole sections, an item's grip reorders within its own section (dragging can also re-file an item into a different category). Tap **+ New inventory** to create one, **✎** to rename, **×** to delete (blocked for Groceries). The tab reopens whichever inventory you last had open, not always defaulting back to Groceries.
+Both categories and individual items support drag-to-reorder via a **⠿** grip — a category's grip reorders whole sections, an item's grip reorders within its own section (dragging can also re-file an item into a different category). Tap **+ New inventory** to create one, **✎** to rename, **×** to delete (blocked for Groceries). The inventories list itself is also reorderable. A filter pill in the top-right of an open inventory toggles between showing everything and showing only items that need attention (out of stock or below their recommended level). The tab reopens whichever inventory you last had open, not always defaulting back to Groceries.
 
 Adding or editing an item opens a form with: item name, category (existing or a new one typed inline), current inventory, recommended level, unit (optional), and quantity, plus Delete/Cancel/Save.
 
@@ -73,7 +73,7 @@ You can keep as many independent budgets as you like (Food, Pocket money, whatev
 
 Inside a budget, you set up recurring income and recurring expenses, each with a name, an amount, and a frequency (weekly, monthly, etc.) — ShopTools converts whatever frequency you pick into a monthly figure to compute what's left over each month. That "extra" figure counts down in real time as you log spending against it through the day, and resets fresh on the 1st of the month.
 
-**Expenses subsections.** Expenses (only — not Income, not the spending log) can optionally be grouped into named, collapsible subsections, added inline from the expense form (a dropdown offering "No subsection," any subsection you've already created, or "+ New subsection…"). This is fully opt-in: a budget with no subsections defined just shows a flat expense list, no extra chrome. Each subsection can be renamed (typing an existing subsection's name merges into it rather than creating a duplicate) or deleted — deleting a subsection un-assigns its expenses into an "Other" bucket rather than deleting the expenses themselves, using the same Undo-toast pattern as other deletes. Each subsection displays its own monthly total, which reconciles exactly with the overall Expenses total for the budget. Items within a subsection, and subsections themselves, both support drag-to-reorder.
+**Expenses subsections.** Expenses (only — not Income, not the spending log) can optionally be grouped into named, collapsible subsections — either the inline dropdown from the expense form, or a standalone **+ Section** button if you want to declare one before adding anything to it. This is fully opt-in: a budget with no subsections defined just shows a flat expense list, no extra chrome. Each subsection can be renamed (typing an existing subsection's name merges into it rather than creating a duplicate) or deleted — deleting a subsection un-assigns its expenses into an "Other" bucket rather than deleting the expenses themselves, using the same Undo-toast pattern as other deletes. Each subsection displays its own monthly total, which reconciles exactly with the overall Expenses total for the budget. Items within a subsection, subsections themselves, and dragging an expense from one subsection straight into another, all work via the same drag grip.
 
 **Spending log.** As you spend against a budget's leftover through the month, each entry is logged with a drag grip for manual reordering — this replaced an earlier always-newest-first date sort, since a manual order turned out to be more useful for a running daily log than a fixed chronological one.
 
@@ -81,18 +81,21 @@ A budget reopens wherever you last left it, same pattern as Inventory.
 
 ## Appendix E: Quick List
 
-The simplest tab: a flat list for one-off or occasional buys — DIY tools, electronics, gadgets, anything that doesn't need stock tracking or categories. Tap **+** to add an item and start typing its name immediately; double-tap a name to rename it; **−**/**+** adjust quantity; **×** deletes. No categories, no current/recommended-level tracking — that's the whole point of keeping this tab separate from Inventory.
+For one-off or occasional buys — DIY tools, electronics, gadgets, anything that doesn't need stock tracking. Tap **+** to add an item and start typing its name immediately; double-tap a name to rename it; **−**/**+** adjust quantity; **×** deletes. It can now also be split into named sections (same optional, draggable, cross-section-drag behavior as Budget's Expenses subsections) if a flat list stops being enough — still no current/recommended-level tracking, that's what keeps it distinct from Inventory.
 
 ## Appendix F: Settings
 
-Reached via the header's gear icon (this used to be a "Home" landing tab before becoming a dedicated Settings sheet):
+Reached via the header's gear icon (this used to be a "Home" landing tab before becoming a dedicated Settings sheet), and deliberately kept short — a five-paragraph "How ShopTools works" block that used to sit here was removed once the guided tour below covered the same ground interactively, rather than explaining the app twice in two different places:
 
 - **Landing tab** — which of the five tabs opens by default, including a "Last tab used" option that reopens wherever you left off instead of a fixed choice.
+- **🚶 Replay the tour** — reopens the same animated spotlight walkthrough shown on first install.
 - **Sync across devices (trial)** — off by default; see Appendix G for the full mechanism. Sign in/out, Back up now, Check now, and Delete my synced backup all live here.
 - **Data** — Export data (select-and-copy JSON plus a file download) and Import data (paste or choose a file, a full confirmed replace).
 - **Refresh app** — forces a fresh fetch past any stale cache, useful if an update doesn't seem to have landed.
 - **Get in touch** — a Contact & feedback mailto link.
 - **Privacy Policy** — a link to the app's own privacy page.
+
+The Android app's hardware/gesture back button now also works everywhere it reasonably should — closing an open sheet, modal, or drill-in view rather than falling straight through to exiting the app, the way it did before any screen in this single-page app pushed its own history entry.
 
 ## Appendix G: Platform delivery, in detail
 
@@ -104,7 +107,9 @@ ShopTools' web app (the actual source of truth for behavior — everything in th
 
 **Capacitor app (`com.yeahvibe.shoptools.app`).** Built to replace the TWA, using Capacitor's own WebView instead — this gives the app fully isolated, per-app storage with nothing shared with Chrome. `capacitor.config.json`'s `server.url` points at the live `grocery.yeahvibe.com` site rather than bundling a local copy, so — same as the PWA — a change to the deployed web app reaches native users automatically; only native-side changes (installed plugins, Android manifest entries, the launcher icon) need an actual rebuild in Android Studio.
 
-The one piece of native-only complexity: Google refuses to render its sign-in page inside any embedded WebView, including Capacitor's, as an anti-phishing measure. So inside the Capacitor build specifically, starting Google sign-in opens the OAuth flow in a real Chrome Custom Tab instead of the app's own WebView, and getting back into the app afterward relies on a verified Android App Link — the app declares ownership of `grocery.yeahvibe.com` via a signed `.well-known/assetlinks.json` file published on that domain, which is what lets Android hand the OAuth redirect back to the app instead of leaving it open in the browser. This is now confirmed working end-to-end on-device. Still pending: a signed release build (rather than the current debug build) ahead of an eventual Play Store submission for the Capacitor app.
+The one piece of native-only complexity: Google refuses to render its sign-in page inside any embedded WebView, including Capacitor's, as an anti-phishing measure. So inside the Capacitor build specifically, starting Google sign-in opens the OAuth flow in a real Chrome Custom Tab instead of the app's own WebView, and getting back into the app afterward relies on a verified Android App Link — the app declares ownership of `grocery.yeahvibe.com` via a signed `.well-known/assetlinks.json` file published on that domain, which is what lets Android hand the OAuth redirect back to the app instead of leaving it open in the browser. This is now confirmed working end-to-end on both a debug build and a signed release build.
+
+**Play Store submission is underway.** A Play Console app exists under package `com.yeahvibe.shoptools.app`, with Play App Signing accepted (Google holds and re-signs with its own key before distributing to real installs, on top of the debug and upload-key certificates already covered by `assetlinks.json`). A signed release build has been uploaded to an Internal testing release. What's left before Closed testing can open to real testers: on-device screenshots, the content-rating questionnaire, target-audience and Data Safety declarations, and the store listing copy itself — all account-holder steps rather than anything further to build in the app.
 
 ## Appendix H: Sync, in detail
 

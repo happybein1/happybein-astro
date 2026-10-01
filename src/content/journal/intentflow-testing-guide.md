@@ -1,8 +1,8 @@
 ---
 title: "Testing IntentFlow: the app link, what to try, and how to send feedback"
 category: dev-update
-date: 2026-09-15
-description: "A practical guide for testers — where to find the app, how to install it so it works offline, what's worth trying, and the two ways to send feedback. Current as of v6.04."
+date: 2026-10-01
+description: "A practical guide for testers — where to find the app, how to install it so it works offline, what's worth trying, and the two ways to send feedback. Current as of v7.12."
 ---
 
 *Part of a series on IntentFlow: [why it exists](/journal/intentflow-motivation-and-status) · [a first-timer walkthrough](/journal/intentflow-walkthrough) · this post (the testing guide) · [the full functional spec](/journal/intentflow-functional-specification).*
@@ -24,19 +24,21 @@ It's a free habit, event, and planning tracker — no account needed to use it, 
 The real test of a PWA is whether it works installed and offline, not just open in a browser tab, so please install it rather than just bookmarking the page:
 
 - **iPhone/iPad (Safari):** open the link above, tap the Share icon, then **Add to Home Screen**.
-- **Android (Chrome):** open the link, then either tap the install prompt if one pops up, or open the **⋮** menu and choose **Install app**.
+- **Android (Chrome):** open the link, then either tap the install prompt if one pops up, or open the **⋮** menu and choose **Install app**. There's also a native Android app version now, if you'd rather have it as a proper app-drawer install than a home-screen PWA shortcut — ask me for the link if you want to try that route instead.
 
 Once it's installed and you've opened it at least once, try turning on airplane mode and opening it again — it should load instantly and work completely normally with zero connection. That offline behavior is actually one of the things worth confirming as part of testing, not just a nice-to-have.
+
+On first open, you'll get a choice between an animated guided tour or skipping straight in — try the tour at least once (it's replayable later from Settings if you skip it the first time), since "does the tour actually explain the app well" is itself something worth testing.
 
 ## What to try
 
 No wrong way to explore it, but if you want a starting checklist, here's what exercises most of the app:
 
-**Today.** Add a habit or two (pick an icon, a time, a point value) and check one off — you should see your score go up next to the 📈 button (tap it for the full history), a streak start, and the habit itself drop out of the list (there's a "Show completed" toggle to bring it back). Add a Weekly Goal of each type: a **Counter** (something with a weekly target, like "Run 3×") and a **Tracker** (something you just log over time, like weight, no target) — try dragging one by its grip to reorder it against the other. If your habit list gets long, try the small **▾** next to "Daily routine" — it collapses the list down to a progress badge so Weekly Goals and Due Today stay reachable without scrolling.
+**Today.** Add a habit or two (pick an icon, a time, a point value) and check one off — you should see your score go up next to the 📈 button (tap it for the full history), a streak start, and the habit itself drop out of the list (there's a "Show completed" toggle to bring it back). While adding one, try the **✨ AI** button after typing a rough description (you'll need to be signed in) and see whether it fills in sensible fields. Add a Weekly Goal of each type: a **Counter** (something with a weekly target, like "Run 3×") and a **Tracker** (something you just log over time, like weight, no target) — try dragging one by its grip to reorder it against the other, and logging a second value on the Tracker to see whether the prefilled previous value actually makes updating it faster. If your habit list gets long, try the small **▾** next to "Daily routine" — it collapses the list down to a progress badge so Weekly Goals and Due Today stay reachable without scrolling. Also try the **⏱️ Quick Timer** in the header, next to Settings.
 
 **Agenda.** Add a one-off event and a recurring chore — try giving the event a time, or making it span a couple of days. Mark one done and see it reflected on Today's "Due today" section. Try the **All / Events / Chores** filter above the list — it should affect the calendar's day-dots too, not just the list — and the separate **Next / 6 mo** toggle for the list's time horizon. Scroll the list and confirm the calendar stays pinned in view above it, and try the **▴** button to collapse the calendar down to just its control row.
 
-**Plans.** Create a list and try both modes: **Plan** (add a part, add a few steps, drag to reorder, try the small **+** next to a step's grip to insert one right after it) and **Priority** (score an item on Impact/Urgency/Effort and watch it rank). If you create more than one list, check that switching between them and coming back to Plans later takes you to the right one.
+**Plans.** Create a list and try both modes: **Plan** (add a part, add a few steps, drag to reorder, try the small **+** next to a step's grip to insert one right after it, collapse a part with its **▾** toggle) and **Priority** (score an item on Impact/Urgency/Effort and watch it rank). Try **Duplicate** and **Extract plan**/**Copy list** from a plan's **⋯** menu too. If you create more than one list, check that switching between them and coming back to Plans later takes you to the right one — and try grouping a couple of plans under a **+ Section** on the all-plans screen.
 
 **Links.** Add a link, tap its icon to change it, long-press a row to copy the URL instead of opening it.
 

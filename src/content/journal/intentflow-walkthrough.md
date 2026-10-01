@@ -1,7 +1,7 @@
 ---
 title: A walkthrough of IntentFlow, for anyone seeing it for the first time
 category: dev-update
-date: 2026-09-13
+date: 2026-10-01
 description: What each tab in IntentFlow actually does, with real examples of
   how I use them.
 ---
@@ -23,7 +23,7 @@ Either way, you now have a real app icon, not just a bookmark — and everything
 
 ## First open: the landing screen and the four tabs
 
-The very first time you open IntentFlow, before any of your own data exists, you land on a full-screen welcome page rather than straight into the app — a teal gradient background, the app's icon, "IntentFlow" in big type under the tagline **"Your personal daily OS,"** and one line explaining the basics: habits, weekly goals and trackers, events, plans and links, all in one place, staying on your device unless you turn on sync. Tap **Get Started** and you're in — this screen only ever shows once per device.
+The very first time you open IntentFlow, before any of your own data exists, you land on a full-screen welcome page rather than straight into the app — a teal gradient background, the app's icon, "IntentFlow" in big type under the tagline **"Your personal daily OS,"** and one line explaining the basics: habits, weekly goals and trackers, events, plans and links, all in one place, staying on your device unless you turn on sync. From there you get an actual choice: **🚶 Show me around** starts a short animated tour that spotlights each real tab and a couple of key buttons live, right on the app itself — genuinely the faster way in if you'd rather be shown than read a post like this one — or skip it and explore on your own. Either way this screen only shows once per device, and the tour itself can be replayed anytime later from Settings.
 
 From there, everything hangs off four tabs, reached from a bar along the bottom of the screen: **Today**, **Agenda**, **Plans**, and **Links**. Today is your daily habit tracker and where the app opens by default. Agenda combines a calendar and a chronological list of the same dates in one tab. Plans is where lists, itineraries, and prioritization live. Links is a small reorderable set of URLs you reach for often. Settings later lets you change which of these four the app opens to by default — including an option to just reopen wherever you last were — but "Today" is the sensible starting point, so that's where this tour starts too.
 
@@ -36,6 +36,8 @@ Weekly Goals come in two shapes that solve different problems. A **Counter** is 
 Right below that, a **🔔 Due today** section quietly appears whenever something from Agenda or Plans is actually due — a recurring chore like taking the bins out, or a one-off event dated today — so you're not expected to go check the Agenda tab separately just to see what needs attention right now. It only shows up when there's something in it, and tapping an item checks it off and awards its points on the spot, exactly like a habit.
 
 Habits are the things you want to do every day — say, 10 minutes of stretching, drinking a glass of water before coffee, or reading a few pages before bed. Each one gets a time and a point value, and checking it off adds to a daily score that resets overnight. Miss a day and the streak counter under that habit resets too, which turns out to be a surprisingly effective nudge — nobody wants to watch a 12-day streak drop back to zero over something as small as forgetting to check a box. Check one off and it drops out of the list for the rest of the day by default, so the routine visibly shrinks as you work through it — there's a "Show completed" toggle if you need to get back to one, say to edit it. And if the list itself runs long, a small **▾** next to its header collapses the whole section down to a progress badge.
+
+Also worth knowing about, since it's easy to miss: a **⏱️ Quick Timer** sits in the header next to Settings, reachable from any tab — a genuine countdown timer with presets, a progress bar, and an alert on completion, for anything like a stretch hold or a meditation interval, so you don't need a separate timer app open alongside this one.
 
 ## Agenda — a calendar and a list of what's coming up, in one tab
 
@@ -53,7 +55,7 @@ Plans is where lists live, and every list runs in one of two modes, switchable f
 
 **Priority mode** is for deciding what to actually do first when you have more options than time. You score each item on Impact, Urgency, and Effort, and IntentFlow ranks them and can auto-sort the list; a Priority Matrix underneath maps everything into quadrants, so "high impact, low effort" items visually separate themselves from the busywork. I use this for anything with more candidates than I can realistically act on at once — a list of house features to prioritize while apartment-hunting, for instance, where "matters a lot and costs nothing to check" should clearly outrank "nice to have but expensive."
 
-Reordering is drag-and-drop via the **⠿** grip on the right of each row — drag a step under a different heading to re-file it, or drag a whole heading and its steps move with it.
+Reordering is drag-and-drop via the **⠿** grip on the right of each row — drag a step under a different heading to re-file it, or drag a whole heading and its steps move with it. Each part has its own **▾** collapse toggle, next to its name, for tucking away a day you've already finished; and a plan's **⋯** menu has a **Duplicate** option if you want to reuse one as a starting point for the next trip rather than building from scratch.
 
 ## Links — the handful of URLs you actually reach for daily
 
@@ -61,4 +63,6 @@ This one's deliberately simple: a flat, reorderable list of saved title-and-URL 
 
 ## Settings, briefly
 
-Everything above lives locally on your device by default — no account needed for any of it. Settings is where you'd turn on sync if you want that same data to follow you to a second device, pick which tab the app opens to (including "last tab used," if you'd rather it just remember where you left off), and find the privacy policy and export/backup tools. For exactly what sync does, see the [full functional spec](/journal/intentflow-functional-specification#settings) — this post was about the everyday shape of the app itself.
+One more thing worth knowing before you dive in: most of the Add forms (habits, events, chores, weekly goals) have a small **✨ AI** button once you're signed in — type a rough description in the Name field and tap it, and it fills in the rest of the form (date, time, frequency) for you to review before saving. It never creates anything on its own; it just saves you the typing.
+
+Everything above lives locally on your device by default — no account needed for any of it. Settings is where you'd turn on sync if you want that same data to follow you to a second device, pick which tab the app opens to (including "last tab used," if you'd rather it just remember where you left off), replay the first-open tour, and find the privacy policy and export/backup tools. For exactly what sync does, see the [full functional spec](/journal/intentflow-functional-specification#settings) — this post was about the everyday shape of the app itself.

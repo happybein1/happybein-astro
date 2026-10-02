@@ -26,16 +26,19 @@ const excerpt = (md: string, maxLen = 220): string => {
 };
 
 // Separates day-to-day build notes from the more reflective/strategic
-// entries about HappyBein itself — same two values enforced by the content
-// schema (src/content/config.ts) and offered in the Decap CMS field.
+// entries about HappyBein itself, plus a catch-all Miscellaneous bucket —
+// same three values enforced by the content schema (src/content/config.ts)
+// and offered in the Decap CMS field.
 const CATEGORY_META: Record<string, { label: string; badgeClass: string }> = {
   'dev-update': { label: 'Development Update', badgeClass: 'bg-teal-DEFAULT/10 text-teal-dark' },
   'history-strategy': { label: 'History & Strategy', badgeClass: 'bg-[#29ABE2]/10 text-[#1A7FAA]' },
+  'misc': { label: 'Miscellaneous', badgeClass: 'bg-gray-400/10 text-gray-600' },
 };
 const FILTERS: { key: string; label: string }[] = [
   { key: 'all', label: 'All' },
   { key: 'dev-update', label: 'Development Updates' },
   { key: 'history-strategy', label: 'History & Strategy' },
+  { key: 'misc', label: 'Miscellaneous' },
 ];
 ---
 <Base

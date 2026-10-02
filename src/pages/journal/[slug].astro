@@ -21,10 +21,11 @@ const lang = 'en';
 const dateFmt = (d: Date) =>
   d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
 
-// Same two categories/colors as the journal listing page (src/pages/journal/index.astro).
+// Same categories/colors as the journal listing page (src/pages/journal/index.astro).
 const CATEGORY_META: Record<string, { label: string; badgeClass: string }> = {
   'dev-update': { label: 'Development Update', badgeClass: 'bg-teal-DEFAULT/10 text-teal-dark' },
   'history-strategy': { label: 'History & Strategy', badgeClass: 'bg-[#29ABE2]/10 text-[#1A7FAA]' },
+  'misc': { label: 'Miscellaneous', badgeClass: 'bg-gray-400/10 text-gray-600' },
 };
 const category = CATEGORY_META[entry.data.category];
 

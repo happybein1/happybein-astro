@@ -2,7 +2,7 @@
 title: "Testing IntentFlow: the app link, what to try, and how to send feedback"
 category: dev-update
 date: 2026-10-01
-description: "A practical guide for testers — where to find the app, how to install it so it works offline, what's worth trying, and the two ways to send feedback. Current as of v7.12."
+description: "A practical guide for testers — where to find the app, how to install it so it works offline, what's worth trying, and how to send feedback. Current as of v7.31."
 ---
 
 *Part of a series on IntentFlow: [why it exists](/journal/intentflow-motivation-and-status) · [a first-timer walkthrough](/journal/intentflow-walkthrough) · this post (the testing guide) · [the full functional spec](/journal/intentflow-functional-specification).*
@@ -24,7 +24,9 @@ It's a free habit, event, and planning tracker — no account needed to use it, 
 The real test of a PWA is whether it works installed and offline, not just open in a browser tab, so please install it rather than just bookmarking the page:
 
 - **iPhone/iPad (Safari):** open the link above, tap the Share icon, then **Add to Home Screen**.
-- **Android (Chrome):** open the link, then either tap the install prompt if one pops up, or open the **⋮** menu and choose **Install app**. There's also a native Android app version now, if you'd rather have it as a proper app-drawer install than a home-screen PWA shortcut — ask me for the link if you want to try that route instead.
+- **Android (Chrome):** open the link, then either tap the install prompt if one pops up, or open the **⋮** menu and choose **Install app** (or **Add to Home screen**, depending on your Chrome version). There's also a native Android app version now, if you'd rather have it as a proper app-drawer install than a home-screen PWA shortcut — ask me for the link if you want to try that route instead.
+
+For the full screenshot-by-screenshot version of these steps (and the same instructions apply to ShopTools or anything else in the family) — see **[Adding one of our apps to your home screen](https://yeahdev.com/articles/installing-as-an-app)** on YeahDev.
 
 Once it's installed and you've opened it at least once, try turning on airplane mode and opening it again — it should load instantly and work completely normally with zero connection. That offline behavior is actually one of the things worth confirming as part of testing, not just a nice-to-have.
 
@@ -54,9 +56,13 @@ You don't need to leave the app to find these — the first two are already save
 
 - **[Quick Feedback (1 min)](https://form.jotform.com/222551513307043)** — a short survey for quick reactions, bug reports, or anything that struck you as confusing. Best for "here's a specific thing I noticed."
 - **Contact & Collaborate** — for anything longer, or if you'd rather just talk it through.
-- Or even simpler: a quick WhatsApp message, or an email to **happybein1@gmail.com**, works just as well if that's easier than opening a link.
+- Or even simpler: an email to **happybein1@gmail.com** works just as well if that's easier than opening a link.
 
-Whatever's easiest for what you want to say.
+Whatever's easiest for what you want to say. After you've had a chance to actually use it for a bit — not necessarily right away — these three are the ones I'm most curious about:
+
+1. What's the hardest part about managing your habits and goals right now?
+2. Do you see IntentFlow being useful day to day? If not, what would need to change?
+3. Would you be willing to pay for advanced features, like syncing across devices or calendar sync?
 
 ## The intro video
 

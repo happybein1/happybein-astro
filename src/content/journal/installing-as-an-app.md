@@ -27,6 +27,9 @@ That's it — the app's own icon now sits on your home screen like any other app
 
 1. Open the app's link in **Chrome**.
 2. Tap the **three-dot menu** in the top-right corner.
+
+![Arrow pointing to Chrome's three-dot menu button in the top-right corner](/images/journal/install-pwa/android-menu-button.jpg)
+
 3. Tap **Install and create shortcut** (on some Chrome versions this reads "Add to Home screen" instead — same thing).
 4. Confirm the install prompt.
 
@@ -37,7 +40,5 @@ Chrome will place the icon on your home screen (and usually in your app drawer t
 ## Once it's installed
 
 Open it from the home screen icon rather than typing the address into a browser again — that's what gives you the full-screen, no-address-bar experience and lets it work offline. The very first open still needs an internet connection (so the app itself can be downloaded and cached), but every open after that works with no signal at all, since the app, its icons, and its logic are all stored on the device.
-
-![IntentFlow's welcome screen, the first thing you'll see after installing and opening it](/images/journal/install-pwa/launched-standalone.jpg)
 
 One thing this can't do: none of these apps auto-update in the background the instant a new version ships. The app checks for a new version each time you open it, so if something looks out of date, closing and reopening it (or using the in-app "Refresh app" option, where available) is usually all that's needed.

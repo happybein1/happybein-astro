@@ -14,18 +14,15 @@ This blog has grown a lot of posts and this family of apps has grown a lot of su
 ## Active apps
 
 - **[IntentFlow](https://intentflow.yeahvibe.com)** — habits, an agenda, plans, and links. The most actively developed app in the family; see the series of posts about it linked below.
-- **[Shop / ShopTools](https://grocery.yeahvibe.com)** — groceries, household inventory, stores, links, and a budget tab. (The hub still labels it "Shop"; it was renamed to ShopTools this September — see the [introducing ShopTools](/journal/introducing-shoptools) post.)
-- **[BudgetFlow](https://budget.yeahvibe.com)** — a standalone income-vs-expenses tracker (also reachable at its original domain, [budget.happybein.com](https://budget.happybein.com)). Distinct from ShopTools' own built-in Budget tab — this is the older, separate app the Budget-tab conversation started from.
+- **[ShopTools](https://grocery.yeahvibe.com)** — groceries, household inventory, stores, links, and a budget tab. The hub itself now labels it ShopTools too — see the [introducing ShopTools](/journal/introducing-shoptools) post.
 - **[Reflect](https://selfimprove.yeahvibe.com)** — journaling and self-assessment.
 - **[SpeakNote](https://speaknote.yeahvibe.com)** — voice-to-text notes.
 - **[QuickTimer](https://quicktimer.yeahvibe.com)** — the standalone countdown timer (also built directly into IntentFlow's own header now).
 - **[World Clock](https://time.yeahvibe.com)** — multiple timezones at a glance.
-- **[DailyTracker](https://dailytracker.yeahvibe.com)** — a simple daily habit/task tracker.
 - **[YeahVibe Workout](https://workout.yeahvibe.com)** — workout logging.
 - **[YeahVibe GameTrack](https://gametrack.yeahvibe.com)** — score-keeping for games.
 - **[Sudoku](https://sudoku.yeahvibe.com)**, **[Tetris](https://tetris.yeahvibe.com)**, **[Snake](https://snake.yeahvibe.com)**, **[BlockFit](https://blockfit.yeahvibe.com)** — the standalone games, split out from what used to be one combined Arcade.
 - **[YT Viewer](https://ytv.yeahvibe.com)** — a focused YouTube viewer.
-- **[HabitFlow](https://habitflow.yeahvibe.com)** — not yet linked from the hub's own nav, but live.
 
 ## Kept live, not actively developed
 
@@ -33,7 +30,7 @@ This blog has grown a lot of posts and this family of apps has grown a lot of su
 - **[Arcade](https://game.yeahvibe.com)** — the original combined games app, superseded by the standalone Sudoku/Tetris/Snake/BlockFit above but left live.
 - **[WhichDay](https://whichday.yeahvibe.com)**
 
-*(ChoreTracker is still linked from the hub's own nav as of this writing, but that app and its Cloudflare deployment have been deleted — that link is stale and due for cleanup on the hub page itself.)*
+*(ChoreTracker, DailyTracker, HabitFlow, and BudgetFlow have all been fully removed — their apps and Cloudflare deployments are gone, and their entries have been removed from the hub (dailyapp's own app data) as well. They're mentioned here only as a record that they once existed.)*
 
 ## Native Android apps
 

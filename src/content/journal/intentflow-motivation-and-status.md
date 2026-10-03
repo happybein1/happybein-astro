@@ -1,11 +1,11 @@
 ---
 title: "Why IntentFlow exists, and where it stands today"
 category: dev-update
-date: 2026-10-01
+date: 2026-09-06
 description: "The thinking behind IntentFlow and a status update now that cloud sync is live."
 ---
 
-*Part of a series on IntentFlow: this post (why it exists) · [a walkthrough for first-time users](/journal/intentflow-walkthrough) · [introducing IntentFlow for testers](/journal/intentflow-testing-guide) · [the full functional spec](/journal/intentflow-functional-specification).*
+*Part of a series on IntentFlow: this post (why it exists) · [a walkthrough for first-time users](/journal/intentflow-walkthrough) · [introducing IntentFlow for MVP validation](/journal/intentflow-testing-guide) · [the full functional spec](/journal/intentflow-functional-specification).*
 
 IntentFlow started from a simple annoyance: my habits lived in one app, my plans in a notes file, my calendar somewhere else, and the odd link I wanted to keep for later scattered across bookmarks and messages to myself. None of it talked to the others. I wanted one place that covered a normal day end to end — what I'm trying to build as a habit, what's coming up, what I'm actively planning, and the handful of links worth keeping — without it turning into a bloated productivity suite I'd abandon in a month.
 

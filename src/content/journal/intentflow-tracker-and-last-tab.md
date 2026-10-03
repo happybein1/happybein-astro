@@ -1,7 +1,7 @@
 ---
 title: "September 2026 — Development Updates"
 category: dev-update
-date: 2026-09-30
+date: 2026-09-09
 description: "The full September record: IntentFlow's Today tab reworked and Plans rebuilt as a real two-screen tab with sections and collapse toggles; ShopTools renamed from Shop and given a real multi-budget Budget tab; both apps shipped as native Android apps (ShopTools now partway through Play Store submission), picked up animated guided tours, AI-assisted add, hardened sync, and real privacy policies with Google verification."
 ---
 

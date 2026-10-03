@@ -1,11 +1,11 @@
 ---
-title: "Introducing IntentFlow for testers"
+title: "Introducing IntentFlow for MVP Validation"
 category: dev-update
 date: 2026-10-01
 description: "An introduction to IntentFlow for early testers: what it is, how to access and install it, and how to share feedback. Current as of v7.31."
 ---
 
-*Part of a series on IntentFlow: [why it exists](/journal/intentflow-motivation-and-status) · [a first-timer walkthrough](/journal/intentflow-walkthrough) · this post (introducing IntentFlow for testers) · [the full functional spec](/journal/intentflow-functional-specification).*
+*Part of a series on IntentFlow: [why it exists](/journal/intentflow-motivation-and-status) · [a first-timer walkthrough](/journal/intentflow-walkthrough) · this post (introducing IntentFlow for MVP validation) · [the full functional spec](/journal/intentflow-functional-specification).*
 
 Hi there,
 

@@ -49,7 +49,7 @@ Both IntentFlow and ShopTools also ship as installable native Android apps (Capa
 4. Our Journey so Far — [https://happybein.com/journal/our-journey-so-far](https://happybein.com/journal/our-journey-so-far) — Oct 1, 2026
 5. Why IntentFlow exists, and where it stands today — [https://happybein.com/journal/intentflow-motivation-and-status](https://happybein.com/journal/intentflow-motivation-and-status) — Oct 1, 2026
 6. A walkthrough of IntentFlow, for anyone seeing it for the first time — [https://happybein.com/journal/intentflow-walkthrough](https://happybein.com/journal/intentflow-walkthrough) — Oct 1, 2026
-7. Introducing IntentFlow for MVP Validation — [https://happybein.com/journal/intentflow-testing-guide](https://happybein.com/journal/intentflow-testing-guide) — Oct 1, 2026
+7. Introducing IntentFlow for Validation — [https://happybein.com/journal/intentflow-testing-guide](https://happybein.com/journal/intentflow-testing-guide) — Oct 1, 2026
 8. IntentFlow, fully specified: what every tab and setting actually does — [https://happybein.com/journal/intentflow-functional-specification](https://happybein.com/journal/intentflow-functional-specification) — Oct 1, 2026 (living document, updated in place rather than reposted)
 9. Introducing ShopTools: a home for stores, stock, links and budgets — [https://happybein.com/journal/introducing-shoptools](https://happybein.com/journal/introducing-shoptools) — Oct 1, 2026 (also a living document)
 

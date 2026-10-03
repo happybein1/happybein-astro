@@ -5,7 +5,7 @@ date: 2026-09-13
 description: What each tab in IntentFlow actually does, with real examples of
   how I use them.
 ---
-*Part of a series on IntentFlow: [why it exists](/journal/intentflow-motivation-and-status) · this post (a first-timer walkthrough) · [introducing IntentFlow for MVP validation](/journal/intentflow-testing-guide) · [the full functional spec](/journal/intentflow-functional-specification).*
+*Part of a series on IntentFlow: [why it exists](/journal/intentflow-motivation-and-status) · this post (a first-timer walkthrough) · [introducing IntentFlow for validation](/journal/intentflow-testing-guide) · [the full functional spec](/journal/intentflow-functional-specification).*
 
 IntentFlow's integrated, customizable lists and trackers help you brainstorm, plan, and prioritize your goals and habits, and keep your events and chores on track. Free, no account required, nothing running in the background you didn't ask for.
 

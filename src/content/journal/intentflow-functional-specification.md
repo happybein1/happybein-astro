@@ -5,7 +5,7 @@ date: 2026-10-01
 description: "A complete, living functional reference for IntentFlow — every tab, every setting, every behavior, kept up to date as the app changes rather than written once and left to go stale."
 ---
 
-*Part of a series on IntentFlow: [why it exists](/journal/intentflow-motivation-and-status) · [a first-timer walkthrough](/journal/intentflow-walkthrough) · [the testing guide](/journal/intentflow-testing-guide) · this post (the living reference).*
+*Part of a series on IntentFlow: [why it exists](/journal/intentflow-motivation-and-status) · [a first-timer walkthrough](/journal/intentflow-walkthrough) · [introducing IntentFlow for testers](/journal/intentflow-testing-guide) · this post (the living reference).*
 
 **Verified against IntentFlow v7.12.**
 

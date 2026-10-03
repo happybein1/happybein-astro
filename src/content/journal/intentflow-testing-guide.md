@@ -1,71 +1,50 @@
 ---
-title: "Testing IntentFlow: the app link, what to try, and how to send feedback"
+title: "Introducing IntentFlow for testers"
 category: dev-update
 date: 2026-10-01
-description: "A practical guide for testers — where to find the app, how to install it so it works offline, what's worth trying, and how to send feedback. Current as of v7.31."
+description: "An introduction to IntentFlow for early testers: what it is, how to access and install it, and how to share feedback. Current as of v7.31."
 ---
 
-*Part of a series on IntentFlow: [why it exists](/journal/intentflow-motivation-and-status) · [a first-timer walkthrough](/journal/intentflow-walkthrough) · this post (the testing guide) · [the full functional spec](/journal/intentflow-functional-specification).*
+*Part of a series on IntentFlow: [why it exists](/journal/intentflow-motivation-and-status) · [a first-timer walkthrough](/journal/intentflow-walkthrough) · this post (introducing IntentFlow for testers) · [the full functional spec](/journal/intentflow-functional-specification).*
 
-A few of you have offered to try IntentFlow out, so rather than repeat the same instructions in separate messages, here's one place with everything you need: the link, how to install it properly, what's actually worth testing, and how to tell me what you find.
+Hi there,
 
-This is a snapshot, not a living document — it describes the app as of the version noted above. If you're reading this well after that date, some specifics below may have moved on; it's still a genuine invitation to try the app, just not a guarantee every detail matches what you'll see.
+IntentFlow is an app I'm building to help people plan and manage habits and goals — calmly, without another complicated system to maintain.
 
-The goal of IntentFlow is to help you brainstorm, plan, and prioritize your goals and habits — so as you're testing, it's worth keeping that in mind: does it actually help you think through what you want to do and in what order, or does it just feel like another tracker?
+Development is still ongoing, and I'd love early feedback on whether it's genuinely useful. Your input will shape what gets built next.
 
-## The app
+**What it does:** four tabs — **Today** (habits and weekly goals), **Agenda** (a calendar and what's coming up), **Plans** (lists and priorities), **Links** (URLs you use often). Everything stays on your device. No account needed, no ads, no data tracking. For a tour of each tab, see the [first-timer walkthrough](/journal/intentflow-walkthrough); for every feature in detail, the [full functional spec](/journal/intentflow-functional-specification).
 
-**[intentflow.yeahvibe.com](https://intentflow.yeahvibe.com)**
+## Access to the app
 
-It's a free habit, event, and planning tracker — no account needed to use it, everything stays on your device unless you turn sync on yourself.
+IntentFlow can be used in two ways:
 
-## Install it — don't just leave it as a browser tab
+1. **As a web app** — open the link and use it in your browser: **[intentflow.yeahvibe.com](https://intentflow.yeahvibe.com/)**
+2. **As an installed app** — add it to your home screen so it opens full-screen and works offline (see below for your device).
 
-The real test of a PWA is whether it works installed and offline, not just open in a browser tab, so please install it rather than just bookmarking the page:
+Once installed, it works offline and behaves like a native app. Your data stays in your browser's cache — and you can sync a backup from the app's settings whenever you want. How sync works is covered under [Settings in the functional spec](/journal/intentflow-functional-specification#settings).
 
-- **iPhone/iPad (Safari):** open the link above, tap the Share icon, then **Add to Home Screen**.
-- **Android (Chrome):** open the link, then either tap the install prompt if one pops up, or open the **⋮** menu and choose **Install app** (or **Add to Home screen**, depending on your Chrome version). There's also a native Android app version now, if you'd rather have it as a proper app-drawer install than a home-screen PWA shortcut — ask me for the link if you want to try that route instead.
+### How to install IntentFlow on Android
 
-For the full screenshot-by-screenshot version of these steps (and the same instructions apply to ShopTools or anything else in the family) — see **[Adding one of our apps to your home screen](https://yeahdev.com/articles/installing-as-an-app)** on YeahDev.
+Open the link in Chrome, tap the ⋮ menu, and select **Install app** (or **Add to Home screen**).
 
-Once it's installed and you've opened it at least once, try turning on airplane mode and opening it again — it should load instantly and work completely normally with zero connection. That offline behavior is actually one of the things worth confirming as part of testing, not just a nice-to-have.
+### How to install IntentFlow on iPhone
 
-On first open, you'll get a choice between an animated guided tour or skipping straight in — try the tour at least once (it's replayable later from Settings if you skip it the first time), since "does the tour actually explain the app well" is itself something worth testing.
+Open the link in Safari (not Chrome), tap the Share button, scroll down, and select **Add to Home Screen**.
 
-## What to try
+For the same steps with screenshots, see **[Adding one of our apps to your home screen](https://yeahdev.com/articles/installing-as-an-app)** on YeahDev.
 
-No wrong way to explore it, but if you want a starting checklist, here's what exercises most of the app:
+## Sharing feedback or staying updated
 
-**Today.** Add a habit or two (pick an icon, a time, a point value) and check one off — you should see your score go up next to the 📈 button (tap it for the full history), a streak start, and the habit itself drop out of the list (there's a "Show completed" toggle to bring it back). While adding one, try the **✨ AI** button after typing a rough description (you'll need to be signed in) and see whether it fills in sensible fields. Add a Weekly Goal of each type: a **Counter** (something with a weekly target, like "Run 3×") and a **Tracker** (something you just log over time, like weight, no target) — try dragging one by its grip to reorder it against the other, and logging a second value on the Tracker to see whether the prefilled previous value actually makes updating it faster. If your habit list gets long, try the small **▾** next to "Daily routine" — it collapses the list down to a progress badge so Weekly Goals and Due Today stay reachable without scrolling. Also try the **⏱️ Quick Timer** in the header, next to Settings.
+- Reach out to me by email at **happybein1@gmail.com**
+- Fill in the short form here: **[Quick Feedback (1 min)](https://form.jotform.com/222551513307043)**
 
-**Agenda.** Add a one-off event and a recurring chore — try giving the event a time, or making it span a couple of days. Mark one done and see it reflected on Today's "Due today" section. Try the **All / Events / Chores** filter above the list — it should affect the calendar's day-dots too, not just the list — and the separate **Next / 6 mo** toggle for the list's time horizon. Scroll the list and confirm the calendar stays pinned in view above it, and try the **▴** button to collapse the calendar down to just its control row.
-
-**Plans.** Create a list and try both modes: **Plan** (add a part, add a few steps, drag to reorder, try the small **+** next to a step's grip to insert one right after it, collapse a part with its **▾** toggle) and **Priority** (score an item on Impact/Urgency/Effort and watch it rank). Try **Duplicate** and **Extract plan**/**Copy list** from a plan's **⋯** menu too. If you create more than one list, check that switching between them and coming back to Plans later takes you to the right one — and try grouping a couple of plans under a **+ Section** on the all-plans screen.
-
-**Links.** Add a link, tap its icon to change it, long-press a row to copy the URL instead of opening it.
-
-**Settings.** Try the Landing tab preference (including "Last tab used"), dark mode, and — only if you're comfortable — Sync across devices. It's still a trial feature, so if you do turn it on, treat anything important as backed up elsewhere too just in case.
-
-One more thing worth doing deliberately: close the app fully and reopen it a bit later, on both installs if you're testing on more than one device. Does it land where you'd expect? Did anything look off after being backgrounded a while?
-
-## How to send feedback
-
-What I'm most curious about isn't really bugs, though flag those too if you hit any — it's whether this is actually useful, and what you end up actually using it for. Which parts do you keep coming back to? Which ones you tried once and never touched again? That's more valuable to me than a polished feature list.
-
-You don't need to leave the app to find these — the first two are already saved as entries in the **Links** tab:
-
-- **[Quick Feedback (1 min)](https://form.jotform.com/222551513307043)** — a short survey for quick reactions, bug reports, or anything that struck you as confusing. Best for "here's a specific thing I noticed."
-- **Contact & Collaborate** — for anything longer, or if you'd rather just talk it through.
-- Or even simpler: an email to **happybein1@gmail.com** works just as well if that's easier than opening a link.
-
-Whatever's easiest for what you want to say. After you've had a chance to actually use it for a bit — not necessarily right away — these three are the ones I'm most curious about:
+I'd love your thoughts on a few things (after discovery and possibly in a few weeks):
 
 1. What's the hardest part about managing your habits and goals right now?
 2. Do you see IntentFlow being useful day to day? If not, what would need to change?
-3. Would you be willing to pay for advanced features, like syncing across devices or calendar sync?
+3. Would you be willing to pay for advanced features like syncing across devices or calendar sync?
 
-## The intro video
+Thank you in advance!
 
-I put together a short walkthrough of the app — worth five minutes before you dive in: **[watch it on YouTube](https://youtu.be/4N4vCUx9kK0)**.
-
-Thanks for taking the time to try it out — genuinely useful to see it used by someone other than me.
+Yorick, Founder of HappyBein

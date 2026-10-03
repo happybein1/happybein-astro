@@ -214,6 +214,16 @@ for (const l of allLangs) {
         const keys = await caches.keys();
         await Promise.all(keys.map((k) => caches.delete(k)));
       }
+      // Re-fetch this page's stylesheets/scripts with cache:'reload': it bypasses
+      // AND overwrites the browser's HTTP cache entry. Needed because /_astro/*
+      // is served "immutable" for a year, so a bad copy cached once (e.g. an HTML
+      // error page under a .css URL) is otherwise never re-requested.
+      const assets = new Set();
+      document.querySelectorAll('link[rel="stylesheet"][href], script[src]').forEach((el) => {
+        const a = el.getAttribute('href') || el.getAttribute('src');
+        if (a) assets.add(a);
+      });
+      await Promise.all([...assets].map((a) => fetch(a, { cache: 'reload' }).catch(() => null)));
     } catch (e) { /* carry on regardless */ }
     const u = new URL(location.href);
     u.searchParams.set('refresh', String(Date.now()));

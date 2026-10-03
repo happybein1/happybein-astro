@@ -20,7 +20,7 @@ Development is still ongoing, and I'd love early feedback on whether it's genuin
 IntentFlow can be used in two ways:
 
 1. **As a web app** — open the link and use it in your browser: **[intentflow.yeahvibe.com](https://intentflow.yeahvibe.com/)**
-2. **As an installed app** — add it to your home screen so it opens full-screen and works offline (see below for your device).
+2. **As an installed app** — first open the link **[intentflow.yeahvibe.com](https://intentflow.yeahvibe.com/)** on your phone, then add it to your home screen so it opens full-screen and works offline (see below for your device).
 
 Once installed, it works offline and behaves like a native app. Your data stays in your browser's cache — and you can sync a backup from the app's settings whenever you want. How sync works is covered under [Settings in the functional spec](/journal/intentflow-functional-specification#settings).
 

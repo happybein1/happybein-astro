@@ -69,7 +69,7 @@
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     isolation: isolate;
-    scroll-margin-top: calc(70px + 22px + 12px);
+    scroll-margin-top: calc(70px + 12px);
     transition: transform 0.28s ease, box-shadow 0.28s ease;
   }
   .init-card:hover {
@@ -143,7 +143,7 @@
 
   /* ── Page hero ───────────────────────────────── */
   .page-hero {
-    padding-top: calc(70px + 22px + 3.5rem);
+    padding-top: calc(70px + 3.5rem);
     @apply pb-12 px-6 border-b;
     background: #E8F7F7;
     border-color: rgba(42,191,191,0.18);

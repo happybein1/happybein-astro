@@ -197,11 +197,13 @@ for (const l of allLangs) {
 </div>
 
 <script>
-  // Full refresh. The site is plain static pages, so the layers that can hold an
-  // old copy are: any Cache Storage / service worker, and the browser's HTTP
-  // cache. Clear the first two, re-fetch this page and its stylesheet/scripts
-  // with cache:'reload' (bypasses AND overwrites the HTTP cache entry), reload.
-  // Cloudflare's edge cache is server-side and cannot be cleared from here.
+  // Full refresh. Layers that can hold an old copy: Cache Storage / service
+  // workers, the browser's HTTP cache, and Cloudflare's edge cache (which can
+  // serve an OLD page whose hashed /_astro/*.css no longer exists after a
+  // deploy; that shows up as a completely unstyled page). So after clearing the
+  // first two we load the page under a throwaway ?refresh= URL: a new cache key
+  // for the browser AND for Cloudflare, i.e. a guaranteed fresh page from the
+  // origin, which references the CSS/JS files that actually exist now.
   async function refreshSite() {
     try {
       if ('serviceWorker' in navigator) {
@@ -212,19 +214,21 @@ for (const l of allLangs) {
         const keys = await caches.keys();
         await Promise.all(keys.map((k) => caches.delete(k)));
       }
-      const urls = new Set([location.pathname + location.search]);
-      document.querySelectorAll('link[rel="stylesheet"][href], script[src]').forEach((el) => {
-        const u = el.getAttribute('href') || el.getAttribute('src');
-        if (u) urls.add(u);
-      });
-      await Promise.all([...urls].map((u) => fetch(u, { cache: 'reload' }).catch(() => null)));
-    } catch (e) { /* reload regardless */ }
-    location.reload();
+    } catch (e) { /* carry on regardless */ }
+    const u = new URL(location.href);
+    u.searchParams.set('refresh', String(Date.now()));
+    location.replace(u.toString());
   }
   document.getElementById('brand-refresh')?.addEventListener('click', (e) => {
     e.preventDefault();
     refreshSite();
   });
+  // Tidy the throwaway parameter out of the address bar once the page has loaded.
+  if (new URL(location.href).searchParams.has('refresh')) {
+    const u = new URL(location.href);
+    u.searchParams.delete('refresh');
+    history.replaceState(null, '', u.pathname + u.search + u.hash);
+  }
 
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobile-nav');

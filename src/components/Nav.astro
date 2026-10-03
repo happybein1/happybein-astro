@@ -32,8 +32,13 @@ for (const l of allLangs) {
   <div class="max-w-6xl mx-auto px-5 w-full flex items-center justify-between">
 
     <!-- Logo -->
-    <a href={p('/')} class="flex items-center shrink-0">
+    <!-- Clicking the logo refreshes the site (clears caches, re-fetches the page, reloads).
+         Without JS it is still a plain link home. -->
+    <a href={p('/')} id="brand-refresh" class="flex items-center shrink-0 gap-2"
+       title="Tap to refresh the site (get the latest version)"
+       aria-label={`HappyBein v${version} — tap to refresh the site`}>
       <img src="/images/logo.png" alt="HappyBein" class="h-9 w-auto" />
+      <span class="font-mono-sm font-bold" style="font-size:.62rem; opacity:.6; color:#1A9A9A;">v{version}</span>
     </a>
 
     <!-- Desktop nav -->
@@ -201,6 +206,35 @@ for (const l of allLangs) {
 </div>
 
 <script>
+  // Full refresh. The site is plain static pages, so the layers that can hold an
+  // old copy are: any Cache Storage / service worker, and the browser's HTTP
+  // cache. Clear the first two, re-fetch this page and its stylesheet/scripts
+  // with cache:'reload' (bypasses AND overwrites the HTTP cache entry), reload.
+  // Cloudflare's edge cache is server-side and cannot be cleared from here.
+  async function refreshSite() {
+    try {
+      if ('serviceWorker' in navigator) {
+        const regs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(regs.map((r) => r.unregister()));
+      }
+      if ('caches' in window) {
+        const keys = await caches.keys();
+        await Promise.all(keys.map((k) => caches.delete(k)));
+      }
+      const urls = new Set([location.pathname + location.search]);
+      document.querySelectorAll('link[rel="stylesheet"][href], script[src]').forEach((el) => {
+        const u = el.getAttribute('href') || el.getAttribute('src');
+        if (u) urls.add(u);
+      });
+      await Promise.all([...urls].map((u) => fetch(u, { cache: 'reload' }).catch(() => null)));
+    } catch (e) { /* reload regardless */ }
+    location.reload();
+  }
+  document.getElementById('brand-refresh')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    refreshSite();
+  });
+
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobile-nav');
   hamburger?.addEventListener('click', () => {

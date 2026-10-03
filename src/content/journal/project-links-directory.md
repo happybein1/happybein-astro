@@ -26,11 +26,10 @@ This blog has grown a lot of posts and this family of apps has grown a lot of su
 
 ## Kept live, not actively developed
 
-- **PrioStorm** — [https://priostorm.yeahvibe.com](https://priostorm.yeahvibe.com)
 - **Arcade** — [https://game.yeahvibe.com](https://game.yeahvibe.com) — the original combined games app, superseded by the standalone Sudoku/Tetris/Snake/BlockFit above but left live.
 - **WhichDay** — [https://whichday.yeahvibe.com](https://whichday.yeahvibe.com)
 
-*(ChoreTracker, DailyTracker, HabitFlow, and BudgetFlow have all been fully removed — their apps and Cloudflare deployments are gone, and their entries have been removed from the hub (dailyapp's own app data) as well. They're mentioned here only as a record that they once existed.)*
+*(ChoreTracker, DailyTracker, HabitFlow, BudgetFlow, and PrioStorm have all been fully removed — their apps and Cloudflare deployments are gone, and their entries have been removed from the hub (dailyapp's own app data) as well. They're mentioned here only as a record that they once existed.)*
 
 ## Native Android apps
 

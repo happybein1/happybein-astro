@@ -25,7 +25,7 @@ Once installed, it works offline and behaves like a native app. Your data stays 
 
 ### Get IntentFlow from Google Play (Android testers)
 
-The Play Store version is in a closed test. Google only lets people who are on my tester list join it, so the order matters:
+The Play Store version is **Android only**. On an iPhone, use the web app or the home-screen install above instead; both work the same way. The Play version is in a closed test, and Google only lets people who are on my tester list join it, so the order matters:
 
 1. **Email me first** at **happybein1@gmail.com** with the **Google account (Gmail) address you use on your Android phone**. It has to be that exact account, or Google will say the test isn't available to you.
 2. I add your address to the tester list and reply to confirm. This is manual, so it can take a little while.

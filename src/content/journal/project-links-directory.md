@@ -21,6 +21,7 @@ This blog has grown a lot of posts and this family of apps has grown a lot of su
 - **World Clock** — [https://time.yeahvibe.com](https://time.yeahvibe.com) — multiple timezones at a glance.
 - **YeahVibe Workout** — [https://workout.yeahvibe.com](https://workout.yeahvibe.com) — workout logging.
 - **YeahVibe GameTrack** — [https://gametrack.yeahvibe.com](https://gametrack.yeahvibe.com) — score-keeping for games.
+- **Connect** — [https://connect.yeahvibe.com](https://connect.yeahvibe.com) — a calm, private contact manager: names, numbers, groups with a saved first message, follow-up dates and a contact log, stored on your device with optional sync. Not listed on the hub yet.
 - **Sudoku** — [https://sudoku.yeahvibe.com](https://sudoku.yeahvibe.com), **Tetris** — [https://tetris.yeahvibe.com](https://tetris.yeahvibe.com), **Snake** — [https://snake.yeahvibe.com](https://snake.yeahvibe.com), **BlockFit** — [https://blockfit.yeahvibe.com](https://blockfit.yeahvibe.com) — the standalone games, split out from what used to be one combined Arcade.
 - **YT Viewer** — [https://ytv.yeahvibe.com](https://ytv.yeahvibe.com) — a focused YouTube viewer.
 
@@ -33,7 +34,7 @@ This blog has grown a lot of posts and this family of apps has grown a lot of su
 
 ## Native Android apps
 
-Both IntentFlow and ShopTools also ship as installable native Android apps (Capacitor-wrapped, isolated storage, pointed at the same live sites above rather than a bundled copy). Neither has a public Play Store listing yet — ShopTools is mid-submission (Internal testing done, Closed testing next), IntentFlow's turn is after that — so there's no public link for either yet.
+Both IntentFlow and ShopTools also ship as installable native Android apps (Capacitor-wrapped, isolated storage, pointed at the same live sites above rather than a bundled copy). Neither has a public Play Store listing yet, so there's no public link for either. IntentFlow is in Closed testing (published, recruiting testers); ShopTools is a step behind (Internal testing done, Closed testing next).
 
 ## Company & foundation pages
 
@@ -52,5 +53,6 @@ Both IntentFlow and ShopTools also ship as installable native Android apps (Capa
 7. Introducing IntentFlow for Validation — [https://happybein.com/journal/intentflow-testing-guide](https://happybein.com/journal/intentflow-testing-guide) — Oct 1, 2026
 8. IntentFlow, fully specified: what every tab and setting actually does — [https://happybein.com/journal/intentflow-functional-specification](https://happybein.com/journal/intentflow-functional-specification) — Oct 1, 2026 (living document, updated in place rather than reposted)
 9. Introducing ShopTools: a home for stores, stock, links and budgets — [https://happybein.com/journal/introducing-shoptools](https://happybein.com/journal/introducing-shoptools) — Oct 1, 2026 (also a living document)
+10. A directory: every app, every page, every journal entry — [https://happybein.com/journal/project-links-directory](https://happybein.com/journal/project-links-directory) — Oct 1, 2026 (this page, updated in place)
 
 The full, always-current listing — with category filters — is at [https://happybein.com/journal](https://happybein.com/journal) itself; the numbered list above is a snapshot of what exists as of this entry.

@@ -76,7 +76,6 @@ Every link also has an icon — tap it to open a small picker with a set of comm
 Reached via the gear icon in the header; opens as a panel with several sections:
 
 - **Landing tab** — a dropdown choosing which of the four tabs the app opens to, including a "Last tab used" option that just reopens wherever you left off instead of a fixed choice. This is also the default for anyone who's never touched the setting.
-- **Notifications** — an optional daily check-in reminder at a time you set, using the browser's Notification API (gracefully degrades with a toast if the browser doesn't support it).
 - **Appearance** — a dark mode toggle.
 - **Data** — Refresh app (forces a fresh fetch past any stale cache, useful if an update doesn't seem to have landed), Undo last change (a small history stack, separate from the per-delete Undo toasts — see below), Export all data (select-and-copy JSON, plus a file download), and Import data (paste or choose a file; a full, confirmed replace of local data).
 - **🚶 Replay the tour** — reopens the same animated spotlight walkthrough shown on first install, any time.
@@ -95,7 +94,7 @@ A few patterns are deliberately shared across the whole app rather than reinvent
 
 ## What's deliberately out of scope
 
-No accounts required for the core app — Sync is opt-in and only ever touches data you've explicitly turned it on for. No ads, a small set of anonymous, generic usage events (which tab you're on, that a habit was checked off — never any of your actual habit/plan/event text) alongside standard analytics page views, both disclosed in the privacy policy, and no notifications beyond the one optional daily reminder you set yourself. Sync itself is a single backup per account, not a real-time multi-device merge — it refuses to overwrite a backup it hasn't seen yet rather than blindly clobbering it, but two devices genuinely edited at the exact same moment can still have one lose; for one-device-at-a-time use with occasional switching, that trade-off keeps the whole thing simpler and more reliable than trying to build real conflict resolution for a personal tool.
+No accounts required for the core app — Sync is opt-in and only ever touches data you've explicitly turned it on for. No ads, a small set of anonymous, generic usage events (which tab you're on, that a habit was checked off — never any of your actual habit/plan/event text) alongside standard analytics page views, both disclosed in the privacy policy, and no notifications other than the Quick Timer's own completion alert. (A daily check-in reminder existed until v7.40; it was removed because it only worked while the app was open, and may return later as a proper reminder in the Android app.) Sync itself is a single backup per account, not a real-time multi-device merge — it refuses to overwrite a backup it hasn't seen yet rather than blindly clobbering it, but two devices genuinely edited at the exact same moment can still have one lose; for one-device-at-a-time use with occasional switching, that trade-off keeps the whole thing simpler and more reliable than trying to build real conflict resolution for a personal tool.
 
 ---
 

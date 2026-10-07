@@ -150,7 +150,7 @@ export const initiatives: Initiative[] = [
     details: [
       { type: 'bullets', items: [
         'DailyTracker — build better habits with streaks and daily check-ins',
-        'SpeakNote — instant voice-to-text, 100% local, no cloud required',
+        'SpeakNote — instant voice-to-text, notes saved on your device, no account',
         'QuickTimer — one-tap preset timers, custom countdown, lap chronometer',
         'YeahVibe Workout — randomised exercise prompts for quick movement breaks',
         'YeahVibe GameTrack — score tracker for any game or activity',

@@ -125,12 +125,12 @@ export const frInitiatives: Record<string, {
   speaknote: {
     badge: 'Transcription vocale',
     tagline: "\u00ab\u00a0Parlez. Stockez. Utilisez.\u00a0\u00bb",
-    summary: "Transformez votre voix en texte instantan\u00e9ment \u2014 en priv\u00e9, sans cloud requis.",
+    summary: "Transformez votre voix en texte instantan\u00e9ment \u2014 notes enregistr\u00e9es sur votre appareil, sans compte.",
     details: [
       { type: 'italic', text: "\u00ab\u00a0Parlez. Stockez. Utilisez.\u00a0\u00bb" },
       { type: 'bullets', items: [
         "Transcription en temps r\u00e9el multilingue",
-        "100% local \u2014 aucune donn\u00e9e envoy\u00e9e",
+        "Notes enregistr\u00e9es sur votre appareil \u2014 la reconnaissance vocale utilise le service de votre navigateur",
         "Export en un clic",
       ]},
     ],
@@ -241,12 +241,12 @@ export const esInitiatives: Record<string, {
   speaknote: {
     badge: 'Transcripción de voz',
     tagline: '"Habla. Almacena. Usa."',
-    summary: 'Convierte tu voz en texto al instante — de forma privada, sin necesidad de nube.',
+    summary: 'Convierte tu voz en texto al instante — notas guardadas en tu dispositivo, sin cuenta.',
     details: [
       { type: 'italic', text: '"Habla. Almacena. Usa."' },
       { type: 'bullets', items: [
         'Transcripción en tiempo real multilingüe',
-        '100% local — sin datos enviados a servidores',
+        'Notas guardadas en tu dispositivo — el reconocimiento de voz usa el servicio de tu navegador',
         'Exportación al portapapeles',
       ]},
     ],
@@ -360,12 +360,12 @@ export const nlInitiatives: Record<string, {
   speaknote: {
     badge: 'Spraaktranscriptie',
     tagline: '"Spreek. Sla op. Gebruik."',
-    summary: 'Zet je stem direct om in tekst — privé, geen cloud vereist.',
+    summary: 'Zet je stem direct om in tekst — notities blijven op je apparaat, geen account nodig.',
     details: [
       { type: 'italic', text: '"Spreek. Sla op. Gebruik."' },
       { type: 'bullets', items: [
         'Real-time spraak-naar-tekst in meerdere talen',
-        '100% lokaal — geen gegevens naar een server',
+        'Notities op je apparaat — spraakherkenning gebruikt de spraakdienst van je browser',
         'Exporteer met één tik naar klembord',
         'Geen account, geen aanmelding, geen tracking',
       ]},

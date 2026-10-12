@@ -20,7 +20,7 @@ export const fr: Translations = {
 
   // Home
   home: {
-    title: 'HappyBein – Simplifier la complexité. Concevoir votre vie.',
+    title: 'HappyBein – De la compréhension aux solutions',
     description: 'HappyBein est une fondation engagée à simplifier la complexité sociétale. Découvrez YeahVibe, YeahSight, YeahDev et d\'autres outils d\'aide à la décision.',
     heroH1a: 'Simplifier la complexité.',
     heroH1b: 'Concevoir votre vie.',
@@ -200,6 +200,7 @@ export const fr: Translations = {
 
   // Footer
   footer: {
+    brandTagline: 'De la compréhension aux solutions',
     tagline: 'Une fondation engagée à simplifier la complexité sociétale — une décision à la fois.',
     initiativesTitle: 'Initiatives',
     allInitiatives: 'Toutes les initiatives',

@@ -19,7 +19,7 @@ export const en = {
 
   // Home
   home: {
-    title: 'HappyBein – Simplify Complexity. Design Your Life.',
+    title: 'HappyBein – From understanding to solutions',
     description: 'HappyBein is a purpose-driven foundation simplifying societal complexity. Discover YeahVibe, YeahSight, YeahDev and more decision-support tools.',
     heroH1a: 'Simplify Complexity.',
     heroH1b: 'Design Your Life.',
@@ -199,6 +199,7 @@ export const en = {
 
   // Footer
   footer: {
+    brandTagline: 'From understanding to solutions',
     tagline: 'A purpose-driven foundation simplifying societal complexity — one decision at a time.',
     initiativesTitle: 'Initiatives',
     allInitiatives: 'All Initiatives',

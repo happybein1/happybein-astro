@@ -37,7 +37,10 @@ for (const l of allLangs) {
     <a href={p('/')} id="brand-refresh" class="flex items-center shrink-0 gap-2"
        title="Tap to refresh the site (get the latest version)"
        aria-label={`HappyBein v${version} — tap to refresh the site`}>
-      <img src="/images/logo.png" alt="HappyBein" class="h-9 w-auto" />
+      <span class="flex flex-col leading-none">
+        <img src="/images/logo.png" alt="HappyBein" class="h-8 w-auto" />
+        <span class="brand-tagline" style="font-size:.62rem; font-weight:600; letter-spacing:.02em; color:#5B7474; margin-top:3px; white-space:nowrap;">{t.footer.brandTagline}</span>
+      </span>
       <span class="font-mono-sm font-bold" style="font-size:.62rem; opacity:.6; color:#1A9A9A;">v{version}</span>
     </a>
 

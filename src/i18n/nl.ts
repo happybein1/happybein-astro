@@ -20,7 +20,7 @@ export const nl: Translations = {
 
   // Home
   home: {
-    title: 'HappyBein – Complexiteit vereenvoudigen. Jouw leven ontwerpen.',
+    title: 'HappyBein – Van begrip naar oplossingen',
     description: 'HappyBein is een doelgerichte stichting die maatschappelijke complexiteit vereenvoudigt. Ontdek YeahVibe, YeahSight, YeahDev en meer beslissingsondersteunende tools.',
     heroH1a: 'Complexiteit vereenvoudigen.',
     heroH1b: 'Jouw leven ontwerpen.',
@@ -200,6 +200,7 @@ export const nl: Translations = {
 
   // Footer
   footer: {
+    brandTagline: 'Van begrip naar oplossingen',
     tagline: 'Een doelgerichte stichting die maatschappelijke complexiteit vereenvoudigt — één beslissing tegelijk.',
     initiativesTitle: 'Initiatieven',
     allInitiatives: 'Alle initiatieven',

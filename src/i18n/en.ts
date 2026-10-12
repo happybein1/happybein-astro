@@ -78,7 +78,7 @@ export const en = {
     pageTitle: 'The HappyBein Manifesto',
     pageSub: 'Clarity for a Complex World — why we exist, how we operate, and what we believe.',
     northStarTitle: '🌟 Our North Star',
-    northStar: 'To simplify the complexity of our world so that every citizen and leader can make conscious, informed, and impactful decisions.',
+    northStar: 'Structured understanding unlocks solutions. We exist to help every citizen and leader understand the forces shaping their world, so they can make conscious, informed and impactful decisions.',
     northStarIntro: 'We believe that individual well-being and collective progress are not accidental. They are the result of conscious choices. But in a world drowning in noise, making good choices has never been harder.',
     s1Title: '1. How We Operate: The Architect and The Instrument',
     s1Intro: 'To bridge the gap between abstract wisdom and daily action, we operate through two distinct vehicles:',

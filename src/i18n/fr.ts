@@ -79,7 +79,7 @@ export const fr: Translations = {
     pageTitle: 'Le Manifeste HappyBein',
     pageSub: 'Clarté pour un monde complexe — pourquoi nous existons, comment nous fonctionnons, et ce en quoi nous croyons.',
     northStarTitle: '🌟 Notre étoile polaire',
-    northStar: 'Simplifier la complexité de notre monde pour que chaque citoyen et leader puisse prendre des décisions conscientes, éclairées et impactantes.',
+    northStar: 'Une compréhension structurée ouvre la voie aux solutions. Nous existons pour aider chaque citoyen et chaque dirigeant à comprendre les forces qui façonnent leur monde, afin de prendre des décisions conscientes, éclairées et impactantes.',
     northStarIntro: 'Nous croyons que le bien-être individuel et le progrès collectif ne sont pas accidentels. Ils sont le résultat de choix conscients. Mais dans un monde noyé dans le bruit, faire de bons choix n\'a jamais été aussi difficile.',
     s1Title: '1. Comment nous fonctionnons : L\'Architecte et L\'Instrument',
     s1Intro: 'Pour combler le fossé entre la sagesse abstraite et l\'action quotidienne, nous opérons à travers deux véhicules distincts :',

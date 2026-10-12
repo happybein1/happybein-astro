@@ -79,7 +79,7 @@ export const nl: Translations = {
     pageTitle: 'Het HappyBein Manifest',
     pageSub: 'Helderheid voor een complexe wereld — waarom we bestaan, hoe we werken en wat we geloven.',
     northStarTitle: '🌟 Onze poolster',
-    northStar: 'De complexiteit van onze wereld vereenvoudigen zodat elke burger en leider bewuste, geïnformeerde en impactvolle beslissingen kan nemen.',
+    northStar: 'Gestructureerd begrip ontsluit oplossingen. We bestaan om elke burger en leider te helpen de krachten te begrijpen die hun wereld vormen, zodat ze bewuste, geïnformeerde en impactvolle beslissingen kunnen nemen.',
     northStarIntro: 'Wij geloven dat individueel welzijn en collectieve vooruitgang niet toevallig zijn. Ze zijn het resultaat van bewuste keuzes. Maar in een wereld verdronken in lawaai is het maken van goede keuzes nooit moeilijker geweest.',
     s1Title: '1. Hoe we werken: De Architect en Het Instrument',
     s1Intro: 'Om de kloof tussen abstracte wijsheid en dagelijkse actie te overbruggen, werken we via twee afzonderlijke voertuigen:',

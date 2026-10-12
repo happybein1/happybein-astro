@@ -21,7 +21,7 @@ export const nl: Translations = {
   // Home
   home: {
     title: 'HappyBein – Van begrip naar oplossingen',
-    description: 'HappyBein is een doelgerichte stichting die maatschappelijke complexiteit vereenvoudigt. Ontdek YeahVibe, YeahSight, YeahDev en meer beslissingsondersteunende tools.',
+    description: 'HappyBein is een doelgerichte stichting: gestructureerd begrip ontsluit oplossingen. Ontdek YeahVibe, YeahSight, YeahDev en meer beslissingsondersteunende tools.',
     heroH1a: 'Complexiteit vereenvoudigen.',
     heroH1b: 'Jouw leven ontwerpen.',
     heroSub: 'HappyBein is de architect. YeahVibe is het instrument. Samen helpen we je begrijpen, beslissen en handelen.',
@@ -30,7 +30,7 @@ export const nl: Translations = {
     whatTitle: 'Wat is HappyBein?',
     foundationTag: '🏛 De missie & de architect',
     foundationTitle: 'HappyBein (De Stichting)',
-    foundationDesc: 'Een doelgerichte stichting toegewijd aan het vereenvoudigen van maatschappelijke complexiteit. Wij bouwen de kaders die jonge volwassenen en toekomstige leiders helpen een luidruchtige wereld met helderheid en wereldbewustzijn te navigeren.',
+    foundationDesc: 'Een doelgerichte stichting gebouwd op één idee: gestructureerd begrip ontsluit oplossingen. Wij bouwen de kaders die jonge volwassenen en toekomstige leiders helpen een luidruchtige wereld met helderheid en wereldbewustzijn te navigeren.',
     foundationLink: 'Lees het HappyBein Manifest →',
     platformTag: '🛠 Het instrument & de tool',
     platformTitle: 'YeahVibe (Het Platform)',
@@ -74,7 +74,7 @@ export const nl: Translations = {
   // Manifesto
   manifesto: {
     title: 'Het HappyBein Manifest – Helderheid voor een complexe wereld',
-    description: 'Onze poolster: de complexiteit van onze wereld vereenvoudigen zodat elke burger en leider bewuste, geïnformeerde en impactvolle beslissingen kan nemen.',
+    description: 'Onze poolster: gestructureerd begrip ontsluit oplossingen, zodat elke burger en leider de krachten begrijpt die hun wereld vormen en bewuste, geïnformeerde en impactvolle beslissingen kan nemen.',
     pageLabel: 'Onze stichting',
     pageTitle: 'Het HappyBein Manifest',
     pageSub: 'Helderheid voor een complexe wereld — waarom we bestaan, hoe we werken en wat we geloven.',
@@ -201,7 +201,7 @@ export const nl: Translations = {
   // Footer
   footer: {
     brandTagline: 'Van begrip naar oplossingen',
-    tagline: 'Een doelgerichte stichting die maatschappelijke complexiteit vereenvoudigt — één beslissing tegelijk.',
+    tagline: 'Een doelgerichte stichting die gestructureerd begrip omzet in oplossingen — één beslissing tegelijk.',
     initiativesTitle: 'Initiatieven',
     allInitiatives: 'Alle initiatieven',
     aboutTitle: 'Over ons',

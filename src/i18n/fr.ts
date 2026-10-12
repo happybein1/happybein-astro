@@ -21,7 +21,7 @@ export const fr: Translations = {
   // Home
   home: {
     title: 'HappyBein – De la compréhension aux solutions',
-    description: 'HappyBein est une fondation engagée à simplifier la complexité sociétale. Découvrez YeahVibe, YeahSight, YeahDev et d\'autres outils d\'aide à la décision.',
+    description: 'HappyBein est une fondation engagée : une compréhension structurée ouvre la voie aux solutions. Découvrez YeahVibe, YeahSight, YeahDev et d\'autres outils d\'aide à la décision.',
     heroH1a: 'Simplifier la complexité.',
     heroH1b: 'Concevoir votre vie.',
     heroSub: 'HappyBein est l\'architecte. YeahVibe est l\'instrument. Ensemble, nous vous aidons à comprendre, décider et agir.',
@@ -30,7 +30,7 @@ export const fr: Translations = {
     whatTitle: 'Qu\'est-ce que HappyBein ?',
     foundationTag: '🏛 La mission & l\'architecte',
     foundationTitle: 'HappyBein (La Fondation)',
-    foundationDesc: 'Une fondation engagée à simplifier la complexité sociétale. Nous construisons les cadres qui aident les jeunes adultes et les futurs leaders à naviguer dans un monde bruyant avec clarté et conscience mondiale.',
+    foundationDesc: 'Une fondation engagée, bâtie sur une idée : une compréhension structurée ouvre la voie aux solutions. Nous construisons les cadres qui aident les jeunes adultes et les futurs leaders à naviguer dans un monde bruyant avec clarté et conscience mondiale.',
     foundationLink: 'Lire le Manifeste HappyBein →',
     platformTag: '🛠 L\'outil & l\'instrument',
     platformTitle: 'YeahVibe (La Plateforme)',
@@ -74,7 +74,7 @@ export const fr: Translations = {
   // Manifesto
   manifesto: {
     title: 'Le Manifeste HappyBein – Clarté pour un monde complexe',
-    description: 'Notre étoile polaire : simplifier la complexité de notre monde pour que chaque citoyen et leader puisse prendre des décisions conscientes, éclairées et impactantes.',
+    description: 'Notre étoile polaire : une compréhension structurée ouvre la voie aux solutions, pour que chaque citoyen et chaque dirigeant comprenne les forces qui façonnent son monde et prenne des décisions conscientes, éclairées et impactantes.',
     pageLabel: 'Notre fondation',
     pageTitle: 'Le Manifeste HappyBein',
     pageSub: 'Clarté pour un monde complexe — pourquoi nous existons, comment nous fonctionnons, et ce en quoi nous croyons.',
@@ -201,7 +201,7 @@ export const fr: Translations = {
   // Footer
   footer: {
     brandTagline: 'De la compréhension aux solutions',
-    tagline: 'Une fondation engagée à simplifier la complexité sociétale — une décision à la fois.',
+    tagline: 'Une fondation engagée qui transforme une compréhension structurée en solutions — une décision à la fois.',
     initiativesTitle: 'Initiatives',
     allInitiatives: 'Toutes les initiatives',
     aboutTitle: 'À propos',

@@ -159,7 +159,7 @@ export const esInitiatives: Record<string, {
   happybein: {
     badge: 'El Arquitecto',
     tagline: '',
-    summary: 'Una fundación comprometida con simplificar la complejidad social. Construimos los marcos que ayudan a los individuos y líderes a navegar un mundo complejo con claridad.',
+    summary: 'Una fundación comprometida, construida sobre una idea: la comprensión estructurada abre el camino a las soluciones. Construimos los marcos que ayudan a los individuos y líderes a navegar un mundo complejo con claridad.',
     details: [{ type: 'bullets', items: [
       'Estudio de investigación sobre desafíos sociales y mejores prácticas',
       'Define la visión y responde a "¿Por qué importa esto?"',

@@ -20,7 +20,7 @@ export const en = {
   // Home
   home: {
     title: 'HappyBein – From understanding to solutions',
-    description: 'HappyBein is a purpose-driven foundation simplifying societal complexity. Discover YeahVibe, YeahSight, YeahDev and more decision-support tools.',
+    description: 'HappyBein is a purpose-driven foundation: structured understanding unlocks solutions. Discover YeahVibe, YeahSight, YeahDev and more decision-support tools.',
     heroH1a: 'Simplify Complexity.',
     heroH1b: 'Design Your Life.',
     heroSub: 'HappyBein is the architect. YeahVibe is the instrument. Together, we empower you to understand, decide, and act.',
@@ -29,7 +29,7 @@ export const en = {
     whatTitle: 'What is HappyBein?',
     foundationTag: '🏛 The Mission & Architect',
     foundationTitle: 'HappyBein (The Foundation)',
-    foundationDesc: 'A purpose-driven foundation dedicated to simplifying societal complexity. We build the frameworks that help young adults and future leaders navigate a noisy world with clarity and global awareness.',
+    foundationDesc: 'A purpose-driven foundation built on one idea: structured understanding unlocks solutions. We build the frameworks that help young adults and future leaders navigate a noisy world with clarity and global awareness.',
     foundationLink: 'Read The HappyBein Manifesto →',
     platformTag: '🛠 The Tool & Instrument',
     platformTitle: 'YeahVibe (The Platform)',
@@ -73,7 +73,7 @@ export const en = {
   // Manifesto
   manifesto: {
     title: 'The HappyBein Manifesto – Clarity for a Complex World',
-    description: 'Our North Star: simplify the complexity of our world so every citizen and leader can make conscious, informed, and impactful decisions.',
+    description: 'Our North Star: structured understanding unlocks solutions, helping every citizen and leader understand the forces shaping their world and make conscious, informed, and impactful decisions.',
     pageLabel: 'Our Foundation',
     pageTitle: 'The HappyBein Manifesto',
     pageSub: 'Clarity for a Complex World — why we exist, how we operate, and what we believe.',
@@ -200,7 +200,7 @@ export const en = {
   // Footer
   footer: {
     brandTagline: 'From understanding to solutions',
-    tagline: 'A purpose-driven foundation simplifying societal complexity — one decision at a time.',
+    tagline: 'A purpose-driven foundation turning structured understanding into solutions — one decision at a time.',
     initiativesTitle: 'Initiatives',
     allInitiatives: 'All Initiatives',
     aboutTitle: 'About',

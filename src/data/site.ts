@@ -1,9 +1,9 @@
 export const SITE = {
   name: 'HappyBein',
   url: 'https://happybein.com',
-  version: '3.7',
+  version: '3.8',
   versionDate: 'October 2026',
-  description: 'A purpose-driven foundation dedicated to simplifying societal complexity so every citizen and leader can make conscious, informed, and impactful decisions.',
+  description: 'A purpose-driven foundation built on one idea: structured understanding unlocks solutions, so every citizen and leader can make conscious, informed, and impactful decisions.',
   email: 'happybein1@gmail.com',
   location: 'Eindhoven, Netherlands',
   founded: '2021',

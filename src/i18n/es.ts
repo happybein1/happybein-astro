@@ -21,7 +21,7 @@ export const es: Translations = {
   // Home
   home: {
     title: 'HappyBein – De la comprensión a las soluciones',
-    description: 'HappyBein es una fundación comprometida con simplificar la complejidad social. Descubre YeahVibe, YeahSight, YeahDev y más herramientas de apoyo a la decisión.',
+    description: 'HappyBein es una fundación comprometida: la comprensión estructurada abre el camino a las soluciones. Descubre YeahVibe, YeahSight, YeahDev y más herramientas de apoyo a la decisión.',
     heroH1a: 'Simplificar la complejidad.',
     heroH1b: 'Diseñar tu vida.',
     heroSub: 'HappyBein es el arquitecto. YeahVibe es el instrumento. Juntos, te ayudamos a entender, decidir y actuar.',
@@ -30,7 +30,7 @@ export const es: Translations = {
     whatTitle: '¿Qué es HappyBein?',
     foundationTag: '🏛 La misión & el arquitecto',
     foundationTitle: 'HappyBein (La Fundación)',
-    foundationDesc: 'Una fundación comprometida con simplificar la complejidad social. Construimos los marcos que ayudan a los jóvenes adultos y futuros líderes a navegar un mundo ruidoso con claridad y conciencia global.',
+    foundationDesc: 'Una fundación comprometida, construida sobre una idea: la comprensión estructurada abre el camino a las soluciones. Construimos los marcos que ayudan a los jóvenes adultos y futuros líderes a navegar un mundo ruidoso con claridad y conciencia global.',
     foundationLink: 'Leer el Manifiesto HappyBein →',
     platformTag: '🛠 La herramienta & el instrumento',
     platformTitle: 'YeahVibe (La Plataforma)',
@@ -74,7 +74,7 @@ export const es: Translations = {
   // Manifesto
   manifesto: {
     title: 'El Manifiesto HappyBein – Claridad para un mundo complejo',
-    description: 'Nuestra estrella polar: simplificar la complejidad de nuestro mundo para que cada ciudadano y líder pueda tomar decisiones conscientes, informadas e impactantes.',
+    description: 'Nuestra estrella polar: la comprensión estructurada abre el camino a las soluciones, para que cada ciudadano y líder entienda las fuerzas que moldean su mundo y tome decisiones conscientes, informadas e impactantes.',
     pageLabel: 'Nuestra fundación',
     pageTitle: 'El Manifiesto HappyBein',
     pageSub: 'Claridad para un mundo complejo — por qué existimos, cómo operamos y en qué creemos.',
@@ -201,7 +201,7 @@ export const es: Translations = {
   // Footer
   footer: {
     brandTagline: 'De la comprensión a las soluciones',
-    tagline: 'Una fundación comprometida con simplificar la complejidad social — una decisión a la vez.',
+    tagline: 'Una fundación comprometida que convierte la comprensión estructurada en soluciones — una decisión a la vez.',
     initiativesTitle: 'Iniciativas',
     allInitiatives: 'Todas las iniciativas',
     aboutTitle: 'Acerca de',

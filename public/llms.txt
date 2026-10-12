@@ -1,7 +1,7 @@
 # HappyBein
 # Framework: Astro 4 + Tailwind CSS (migrated from vanilla HTML)
 
-> A purpose-driven foundation dedicated to simplifying societal complexity so that every citizen and leader can make conscious, informed, and impactful decisions.
+> A purpose-driven foundation built on one idea: structured understanding unlocks solutions, so that every citizen and leader can make conscious, informed, and impactful decisions.
 
 ## Core Pages
 

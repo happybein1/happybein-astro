@@ -52,10 +52,10 @@ export const initiatives: Initiative[] = [
     ctaLabel: 'Read the Manifesto ↗',
   },
   {
-    id: 'yeahvibe',
-    name: 'YeahVibe',
-    url: 'https://yeahvibe.com',
-    externalUrl: 'https://yeahvibe.com',
+    id: 'yeahvibe',  // id kept so i18n keys and page filters still match; shown as YeahCore
+    name: 'YeahCore',
+    url: 'https://yeahcore.happybein.com',
+    externalUrl: 'https://yeahcore.happybein.com',
     icon: '⚡',
     badge: 'Core Platform',
     bannerClass: 'bg-gradient-to-r from-teal-DEFAULT to-teal-light',
@@ -77,7 +77,7 @@ export const initiatives: Initiative[] = [
       ]},
       { type: 'link', label: '🎯 Take the Self-Assessment →', href: 'https://form.jotform.com/222552689387066' },
     ],
-    ctaLabel: 'Visit YeahVibe ↗',
+    ctaLabel: 'Visit YeahCore ↗',
   },
   {
     id: 'yeahsight',

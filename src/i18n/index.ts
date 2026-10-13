@@ -66,7 +66,7 @@ export const frInitiatives: Record<string, {
       ]},
       { type: 'link', label: "\ud83c\udfaf Faire l\u2019auto-\u00e9valuation \u2192", href: 'https://form.jotform.com/222552689387066' },
     ],
-    ctaLabel: 'Visiter YeahVibe \u2197',
+    ctaLabel: 'Visiter YeahCore \u2197',
   },
   yeahsight: {
     badge: 'Contexte mondial',
@@ -182,7 +182,7 @@ export const esInitiatives: Record<string, {
       ]},
       { type: 'link', label: '🎯 Hacer la autoevaluación →', href: 'https://form.jotform.com/222552689387066' },
     ],
-    ctaLabel: 'Visitar YeahVibe ↗',
+    ctaLabel: 'Visitar YeahCore ↗',
   },
   yeahsight: {
     badge: 'Contexto mundial',
@@ -298,7 +298,7 @@ export const nlInitiatives: Record<string, {
       ]},
       { type: 'link', label: '🎯 Doe de zelfevaluatie →', href: 'https://form.jotform.com/222552689387066' },
     ],
-    ctaLabel: 'Bezoek YeahVibe ↗',
+    ctaLabel: 'Bezoek YeahCore ↗',
   },
   yeahsight: {
     badge: 'Wereldcontext',

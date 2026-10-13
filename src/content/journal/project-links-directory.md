@@ -39,7 +39,7 @@ Both IntentFlow and ShopTools also ship as installable native Android apps (Capa
 ## Company & foundation pages
 
 - **happybein.com** — [https://happybein.com](https://happybein.com) — the main HappyBein site: Manifesto ([https://happybein.com/manifesto](https://happybein.com/manifesto)), Roadmap ([https://happybein.com/roadmap](https://happybein.com/roadmap)), Initiatives ([https://happybein.com/initiatives](https://happybein.com/initiatives)), Contact ([https://happybein.com/contact](https://happybein.com/contact)), Privacy Policy ([https://happybein.com/privacy](https://happybein.com/privacy)), and this Journal ([https://happybein.com/journal](https://happybein.com/journal)) itself.
-- **core.yeahvibe.com** — [https://core.yeahvibe.com](https://core.yeahvibe.com) — "Core Foundation," the longer-form educational content on wellbeing, decision-making, and the 5 Pillars framework that everything else grew out of.
+- **yeahcore.happybein.com** — [https://yeahcore.happybein.com](https://yeahcore.happybein.com) — YeahCore (formerly "Core Foundation" at core.yeahvibe.com, renamed October 2026): the longer-form content on human needs, decision-making, and the 5 Pillars framework that everything else grew out of.
 - **yeahsight.happybein.com** — [https://yeahsight.happybein.com](https://yeahsight.happybein.com) — YeahSight: how society works and where it is heading (environment & energy, economy & equity, technology & automation, social organization), ending with a proposed Vision & Roadmap. Moved out of core.yeahvibe.com into its own site in October 2026; yeahsight.com points here.
 - **yeahdev.com** — [https://yeahdev.com](https://yeahdev.com) — a separate, unrelated-by-domain site for development/tech articles.
 

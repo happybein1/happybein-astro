@@ -1,7 +1,7 @@
 export const SITE = {
   name: 'HappyBein',
   url: 'https://happybein.com',
-  version: '3.8',
+  version: '3.9',
   versionDate: 'October 2026',
   description: 'A purpose-driven foundation built on one idea: structured understanding unlocks solutions, so every citizen and leader can make conscious, informed, and impactful decisions.',
   email: 'happybein1@gmail.com',
@@ -21,7 +21,7 @@ export const SITE = {
       { divider: true },
       { groupLabel: 'Initiatives' },
       { label: 'YeahVibe',   href: 'https://core.yeahvibe.com', external: true },
-      { label: 'YeahSight',  href: 'https://yeahsight.com',     external: true },
+      { label: 'YeahSight',  href: 'https://yeahsight.happybein.com',     external: true },
       { label: 'YeahDev',    href: 'https://yeahdev.com',       external: true },
       { divider: true },
       { groupLabel: 'Tools' },

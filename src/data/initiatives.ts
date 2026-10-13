@@ -82,8 +82,8 @@ export const initiatives: Initiative[] = [
   {
     id: 'yeahsight',
     name: 'YeahSight',
-    url: 'https://yeahsight.com',
-    externalUrl: 'https://yeahsight.com',
+    url: 'https://yeahsight.happybein.com',
+    externalUrl: 'https://yeahsight.happybein.com',
     icon: '🔭',
     badge: 'World Context',
     bannerClass: 'bg-gradient-to-r from-teal-dark to-teal-DEFAULT',

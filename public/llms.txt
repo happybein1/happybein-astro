@@ -15,7 +15,7 @@
 
 - [HappyBein Foundation](https://happybein.com/initiatives#happybein): The architect. Non-profit research studio. Eindhoven, NL. Founded 2021.
 - [YeahVibe](https://yeahvibe.com): Core platform. Practical framework built around 5 levers of change (direction & priorities, mindset, surroundings & processes, collaboration & leadership, YeahSight).
-- [YeahSight](https://yeahsight.com): World context tool. Decodes global trends — energy, economy, technology, society — into plain language.
+- [YeahSight](https://yeahsight.happybein.com): World context tool. Decodes global trends — energy, economy, technology, society — into plain language.
 - [YeahDev](https://yeahdev.com): Article repository. No-fluff guides on AI, marketing, SEO, and getting your first customers, for founders and makers.
 - [DailyApp](https://dailyapp.happybein.com): A collection of lightweight, focused daily tools, each doing one thing well with no accounts or subscriptions — DailyTracker (habit streaks), SpeakNote (local voice-to-text), QuickTimer (preset/custom timers), YeahVibe Workout (micro-exercise prompts), and YeahVibe GameTrack (score tracking).
 

@@ -32,11 +32,11 @@ for (const l of allLangs) {
   <div class="max-w-6xl mx-auto px-5 w-full flex items-center justify-between">
 
     <!-- Logo -->
-    <!-- Clicking the logo refreshes the site (clears caches, re-fetches the page, reloads).
-         Without JS it is still a plain link home. -->
+    <!-- Clicking the logo goes to the home page and refreshes the site on the way (clears
+         caches, re-fetches assets). Without JS it is still a plain link home. -->
     <a href={p('/')} id="brand-refresh" class="flex items-center shrink-0 gap-2"
-       title="Tap to refresh the site (get the latest version)"
-       aria-label={`HappyBein v${version} — tap to refresh the site`}>
+       title="Home (also loads the latest version)"
+       aria-label={`HappyBein v${version}, home page`}>
       <span class="flex flex-col leading-none">
         <img src="/images/logo.png" alt="HappyBein" class="h-8 w-auto" />
         <span class="brand-tagline" style="font-size:.62rem; font-weight:600; letter-spacing:.02em; color:#5B7474; margin-top:3px; white-space:nowrap;">{t.footer.brandTagline}</span>
@@ -228,9 +228,11 @@ for (const l of allLangs) {
       });
       await Promise.all([...assets].map((a) => fetch(a, { cache: 'reload' }).catch(() => null)));
     } catch (e) { /* carry on regardless */ }
-    const u = new URL(location.href);
+    // Land on the home page (in the current language), not the page the logo was tapped on.
+    const home = (document.getElementById('brand-refresh') as HTMLAnchorElement | null)?.href || '/';
+    const u = new URL(home, location.href);
     u.searchParams.set('refresh', String(Date.now()));
-    location.replace(u.toString());
+    location.assign(u.toString());
   }
   document.getElementById('brand-refresh')?.addEventListener('click', (e) => {
     e.preventDefault();

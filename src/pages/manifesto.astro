@@ -18,6 +18,8 @@ const schema = JSON.stringify({
   "dateModified": "2026-05-13",
   "inLanguage": "en",
 });
+import { values } from '../data/values';
+const v = values.en!;
 ---
 <Base
   title={m.title}
@@ -42,6 +44,9 @@ const schema = JSON.stringify({
       <h2>{m.northStarTitle}</h2>
       <div class="north-star"><p>{m.northStar}</p></div>
       <p>{m.northStarIntro}</p>
+      <hr />
+      <h2>{v.label}</h2>
+      {v.items.map((item) => (<><h3>{item.title}</h3><p>{item.desc}</p></>))}
       <hr />
       <h2>{m.s1Title}</h2>
       <p>{m.s1Intro}</p>

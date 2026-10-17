@@ -1,0 +1,25 @@
+---
+// Home page: "Our values" (replaces the quote band and the two-streams section).
+// Text lives in src/data/values.ts, shared with the Manifesto.
+import { values } from '../data/values';
+import type { Lang } from '../i18n/index';
+
+const { lang } = Astro.props as { lang: Lang };
+const v = values[lang] ?? values.en!;
+const accents = ['#2ABFBF', '#1A9A9A', '#4CAF50'];
+---
+<section class="py-20 px-5">
+  <div class="max-w-6xl mx-auto">
+    <div class="section-label">{v.label}</div>
+    <blockquote class="font-display font-bold text-ink leading-snug mb-2 max-w-3xl" style="font-size:clamp(1.2rem,2.2vw,1.65rem);">“{v.quote}”</blockquote>
+    <cite class="block text-xs tracking-widest uppercase text-muted not-italic mb-10">{v.quoteAuthor}</cite>
+    <div class="grid gap-6 md:grid-cols-3">
+      {v.items.map((item, i) => (
+        <div class="rounded-xl p-7 bg-white" style={`border-top:5px solid ${accents[i]}; box-shadow:0 4px 20px rgba(26,153,154,0.12);`}>
+          <h3 class="font-display font-extrabold text-ink text-[1.15rem] mb-2">{item.title}</h3>
+          <p class="text-muted leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

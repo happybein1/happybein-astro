@@ -87,7 +87,8 @@ const schema = JSON.stringify({
   }
   @media (max-width: 960px) {
     section:first-of-type { grid-template-columns: 1fr !important; min-height: auto !important; }
-    .hero-art { display: none; }
+    section:first-of-type { gap: 2rem; }
+    .hero-art { max-width: 480px; margin: 0 auto; }
     .max-w-6xl > .grid { grid-template-columns: 1fr !important; }
   }
 </style>

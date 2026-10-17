@@ -25,8 +25,8 @@ export const nl: Translations = {
     heroH1a: 'Complexiteit vereenvoudigen.',
     heroH1b: 'Jouw leven ontwerpen.',
     heroSub: 'HappyBein is de architect. YeahVibe is het instrument. Samen helpen we je begrijpen, beslissen en handelen.',
-    btnExplore: 'Ontdek YeahVibe tools',
-    btnManifesto: 'Ons manifest',
+    btnExplore: 'Hoe we helpen',
+    btnManifesto: 'Wie we zijn',
     whatTitle: 'Wat is HappyBein?',
     foundationTag: '🏛 De missie & de architect',
     foundationTitle: 'HappyBein (De Stichting)',
@@ -50,7 +50,7 @@ export const nl: Translations = {
     streamBGoal: 'Doel: van Verward naar Geïnformeerd.',
     ctaTitle: 'Doe mee aan de bouw',
     ctaDesc: 'Wij bouwen de toekomst van beslissingsondersteuning en hebben jouw hulp nodig. Of je nu gebruiker of partner bent — jouw stem telt.',
-    ctaBtn: 'Neem vandaag contact op →',
+    ctaBtn: 'Neem vandaag contact op',
   },
 
   // Initiatives

@@ -1,7 +1,7 @@
 ---
 // Home page: "Who we are" (target of the hero's "Who we are" button): a short intro,
 // optional key facts, and links on. `intro`, `facts` and `links` are optional per
-// language (English shows no facts: the owner preferred the text without numbers).
+// language (no language shows facts any more: the owner preferred the text without numbers).
 import { localePath, type Lang } from '../i18n/index';
 
 const { lang } = Astro.props as { lang: Lang };
@@ -12,24 +12,18 @@ const copy = {
     intro: 'HappyBein is a small non-profit foundation in the Netherlands, set up in 2022. We study how people and societies work, and turn that into free guides and tools. No ads, no selling of your data.',
     links: [['Read our Manifesto →', '/manifesto'], ['Get in touch →', '/contact']],
   },
-  fr: { label: 'En bref', facts: [
-    ['2022', 'Fondation à but non lucratif (stichting) aux Pays-Bas'],
-    ['3', 'Étapes reliées : YeahCore, YeahSight, YeahVibe'],
-    ['4', 'Langues sur ce site'],
-    ['0 €', 'Gratuit : sans publicité, sans abonnement'],
-  ]},
-  es: { label: 'De un vistazo', facts: [
-    ['2022', 'Fundación sin ánimo de lucro (stichting) en los Países Bajos'],
-    ['3', 'Pasos conectados: YeahCore, YeahSight, YeahVibe'],
-    ['4', 'Idiomas en este sitio'],
-    ['0 €', 'Gratis: sin anuncios, sin suscripciones'],
-  ]},
-  nl: { label: 'In het kort', facts: [
-    ['2022', 'Stichting zonder winstoogmerk in Nederland'],
-    ['3', 'Verbonden stappen: YeahCore, YeahSight, YeahVibe'],
-    ['4', 'Talen op deze site'],
-    ['€0', 'Gratis: geen advertenties, geen abonnementen'],
-  ]},
+  fr: { label: 'Qui sommes-nous',
+    intro: 'HappyBein est une petite fondation à but non lucratif aux Pays-Bas, créée en 2022. Nous étudions comment fonctionnent les personnes et les sociétés, et nous en tirons des guides et des outils gratuits. Pas de publicité, et vos données ne sont jamais vendues.',
+    links: [['Lire notre Manifeste →', '/manifesto'], ['Nous contacter →', '/contact']],
+  },
+  es: { label: 'Quiénes somos',
+    intro: 'HappyBein es una pequeña fundación sin ánimo de lucro en los Países Bajos, creada en 2022. Estudiamos cómo funcionan las personas y las sociedades, y lo convertimos en guías y herramientas gratuitas. Sin anuncios y sin vender tus datos.',
+    links: [['Leer nuestro Manifiesto →', '/manifesto'], ['Contactar →', '/contact']],
+  },
+  nl: { label: 'Wie we zijn',
+    intro: 'HappyBein is een kleine stichting zonder winstoogmerk in Nederland, opgericht in 2022. We onderzoeken hoe mensen en samenlevingen werken, en maken daar gratis gidsen en tools van. Geen advertenties, en we verkopen je gegevens niet.',
+    links: [['Lees ons Manifest →', '/manifesto'], ['Neem contact op →', '/contact']],
+  },
 }[lang] as { label: string; intro?: string; facts?: string[][]; links?: string[][] };
 ---
 <section id="who-we-are" class="py-16 px-5" style="background:#1A3333; scroll-margin-top:70px;">

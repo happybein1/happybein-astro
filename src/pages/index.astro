@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { SITE } from '../data/site';
-import { getT } from '../i18n/index';
+import { getT, localePath } from '../i18n/index';
 import HomeStory from '../components/HomeStory.astro';
 import HomeFacts from '../components/HomeFacts.astro';
 import HomeValues from '../components/HomeValues.astro';
@@ -69,14 +69,14 @@ const schema = JSON.stringify({
     <div class="teal-gradient rounded-2xl p-16 max-w-2xl mx-auto text-white" style="box-shadow:0 12px 40px rgba(42,191,191,0.2);">
       <h2 class="font-display font-extrabold leading-tight mb-4" style="font-size:clamp(1.4rem,2.5vw,2.1rem);">{h.ctaTitle}</h2>
       <p class="opacity-90 mb-8 leading-relaxed">{h.ctaDesc}</p>
-      <a href={lang === 'fr' ? '/fr/contact' : '/contact'} class="btn-white">{h.ctaBtn}</a>
+      <a href={localePath(lang, '/contact')} class="btn-white">{h.ctaBtn}</a>
     </div>
   </section>
 </Base>
 
 <style>
   /* Hero buttons: normal capitalisation, both in brand teal, side by side and equal on phones */
-  .hero-btn { text-transform: none; letter-spacing: 0; font-size: 0.95rem; justify-content: center; white-space: nowrap; }
+  .hero-btn { text-transform: none; letter-spacing: 0; font-size: 0.95rem; justify-content: center; text-align: center; line-height: 1.25; }
   .hero-btn-main { background: #1A9A9A; border-color: #1A9A9A; }
   .hero-btn-main:hover, .hero-btn-main:active { background: #157F7F; border-color: #157F7F; }
   .hero-btn-alt { background: #E8F7F7; }

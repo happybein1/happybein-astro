@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import { SITE } from '../data/site';
 import { getT } from '../i18n/index';
+import HomeStory from '../components/HomeStory.astro';
+import HomeFacts from '../components/HomeFacts.astro';
 import EmailCapture from '../components/EmailCapture.astro';
 
 const lang = 'en';
@@ -59,23 +61,7 @@ const schema = JSON.stringify({
     </div>
   </section>
 
-  <section class="py-20 px-5" style="background:#F4FAFA;">
-    <div class="max-w-3xl mx-auto">
-      <div>
-        <div class="section-label">{h.whatTitle}</div>
-        <div class="rounded-lg p-6 mb-4" style="background:white; border-left:4px solid #2ABFBF; box-shadow:0 2px 12px rgba(26,153,154,0.12);">
-          <div class="text-2xs font-bold tracking-widest uppercase text-teal-dark mb-1">{h.foundationTag}</div>
-          <h3 class="font-display font-extrabold text-ink text-[1.05rem] mb-2">{h.foundationTitle}</h3>
-          <p class="text-sm text-muted leading-relaxed">{h.foundationDesc} <a href={lang === 'fr' ? '/fr/manifesto' : '/manifesto'} class="text-teal-dark font-semibold border-b border-teal-dark/30">{h.foundationLink}</a></p>
-        </div>
-        <div class="rounded-lg p-6" style="background:white; border-left:4px solid #4CAF50; box-shadow:0 2px 12px rgba(26,153,154,0.12);">
-          <div class="text-2xs font-bold tracking-widest uppercase text-green-dark mb-1">{h.platformTag}</div>
-          <h3 class="font-display font-extrabold text-ink text-[1.05rem] mb-2">{h.platformTitle}</h3>
-          <p class="text-sm text-muted leading-relaxed">{h.platformDesc} <a href="https://www.yeahvibe.com/" target="_blank" rel="noopener" class="text-green-dark font-semibold border-b border-green-dark/30">{h.platformLink}</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <HomeStory lang={lang} />
 
   <section class="py-16 px-5 text-center text-white teal-gradient">
     <div class="max-w-3xl mx-auto">
@@ -105,6 +91,8 @@ const schema = JSON.stringify({
       </div>
     </div>
   </section>
+
+  <HomeFacts lang={lang} />
 
   <EmailCapture />
 

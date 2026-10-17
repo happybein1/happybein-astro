@@ -1,0 +1,180 @@
+---
+// Home page: "Why we exist" + "Three steps" (the story of the executive deck).
+// All four languages live in this one file so they stay in sync.
+import { localePath, type Lang } from '../i18n/index';
+
+const { lang } = Astro.props as { lang: Lang };
+const p = (path: string) => localePath(lang, path);
+const fr = lang === 'fr';
+
+const copy = {
+  en: {
+    whyLabel: 'Why we exist',
+    whyTitle: 'People want to change, but lack clarity and support',
+    whyIntro: 'Many habits, routines and ways of thinking hold people back, in their own lives and as a society. Willpower is rarely the problem. What is usually missing is:',
+    clarityTitle: 'Clarity',
+    clarityDesc: 'About what they want, and why it matters to them.',
+    supportTitle: 'Support',
+    supportDesc: 'To reach those goals, on their own or together with others.',
+    others: 'Typical self-help sites',
+    us: 'HappyBein',
+    rows: [
+      ['Too much text, little structure', 'Structured, in plain language'],
+      ['Subscriptions and ads', 'Free, no ads, no accounts'],
+      ['Tips without a bigger picture', 'Tied to people’s needs and to society'],
+    ],
+    stepsLabel: 'Our ecosystem',
+    stepsTitle: 'Three steps, from understanding to solutions',
+    steps: [
+      { tag: '1 · Understand people', name: 'YeahCore', desc: 'What people need, and how to decide well: the 5 Pillars and practical guides.', cta: 'Visit YeahCore' },
+      { tag: '2 · Understand society', name: 'YeahSight', desc: 'How society works, the forces shaping the future, and how to share fairly.', cta: 'Visit YeahSight' },
+      { tag: '3 · Act on it', name: 'YeahVibe', desc: 'Free everyday tools: IntentFlow, ShopTools, Reflect, SpeakNote and more.', cta: 'Explore the tools' },
+    ],
+    foundation: 'The HappyBein Foundation, a non-profit stichting, is the architect behind all three.',
+    foundationLink: 'Read the Manifesto →',
+  },
+  fr: {
+    whyLabel: 'Pourquoi nous existons',
+    whyTitle: 'Les gens veulent changer, mais manquent de clarté et de soutien',
+    whyIntro: 'Beaucoup d’habitudes, de routines et de façons de penser freinent les gens, dans leur vie comme dans la société. La volonté est rarement le problème. Ce qui manque le plus souvent :',
+    clarityTitle: 'La clarté',
+    clarityDesc: 'Sur ce qu’ils veulent, et pourquoi cela compte pour eux.',
+    supportTitle: 'Le soutien',
+    supportDesc: 'Pour atteindre ces objectifs, seuls ou avec d’autres.',
+    others: 'Sites de développement personnel classiques',
+    us: 'HappyBein',
+    rows: [
+      ['Trop de texte, peu de structure', 'Structuré, en langage clair'],
+      ['Abonnements et publicités', 'Gratuit, sans publicité, sans compte'],
+      ['Des astuces sans vue d’ensemble', 'Relié aux besoins humains et à la société'],
+    ],
+    stepsLabel: 'Notre écosystème',
+    stepsTitle: 'Trois étapes, de la compréhension aux solutions',
+    steps: [
+      { tag: '1 · Comprendre les personnes', name: 'YeahCore', desc: 'Ce dont les gens ont besoin, et comment bien décider : les 5 piliers et des guides pratiques.', cta: 'Visiter YeahCore' },
+      { tag: '2 · Comprendre la société', name: 'YeahSight', desc: 'Comment fonctionne la société, les forces qui façonnent l’avenir, et comment partager équitablement.', cta: 'Visiter YeahSight' },
+      { tag: '3 · Passer à l’action', name: 'YeahVibe', desc: 'Des outils gratuits pour le quotidien : IntentFlow, ShopTools, Reflect, SpeakNote et d’autres.', cta: 'Découvrir les outils' },
+    ],
+    foundation: 'La Fondation HappyBein, une fondation à but non lucratif (stichting), est l’architecte de ces trois étapes.',
+    foundationLink: 'Lire le Manifeste →',
+  },
+  es: {
+    whyLabel: 'Por qué existimos',
+    whyTitle: 'Las personas quieren cambiar, pero les falta claridad y apoyo',
+    whyIntro: 'Muchos hábitos, rutinas y formas de pensar frenan a las personas, en su propia vida y como sociedad. La fuerza de voluntad rara vez es el problema. Lo que suele faltar es:',
+    clarityTitle: 'Claridad',
+    clarityDesc: 'Sobre lo que quieren, y por qué es importante para ellas.',
+    supportTitle: 'Apoyo',
+    supportDesc: 'Para alcanzar esas metas, por su cuenta o junto a otras personas.',
+    others: 'Sitios típicos de autoayuda',
+    us: 'HappyBein',
+    rows: [
+      ['Demasiado texto, poca estructura', 'Estructurado, en lenguaje claro'],
+      ['Suscripciones y anuncios', 'Gratis, sin anuncios, sin cuentas'],
+      ['Consejos sin una visión de conjunto', 'Ligado a las necesidades de las personas y a la sociedad'],
+    ],
+    stepsLabel: 'Nuestro ecosistema',
+    stepsTitle: 'Tres pasos, de la comprensión a las soluciones',
+    steps: [
+      { tag: '1 · Entender a las personas', name: 'YeahCore', desc: 'Lo que las personas necesitan, y cómo decidir bien: los 5 pilares y guías prácticas.', cta: 'Visitar YeahCore' },
+      { tag: '2 · Entender la sociedad', name: 'YeahSight', desc: 'Cómo funciona la sociedad, las fuerzas que dan forma al futuro y cómo repartir de forma justa.', cta: 'Visitar YeahSight' },
+      { tag: '3 · Pasar a la acción', name: 'YeahVibe', desc: 'Herramientas gratuitas para el día a día: IntentFlow, ShopTools, Reflect, SpeakNote y más.', cta: 'Descubrir las herramientas' },
+    ],
+    foundation: 'La Fundación HappyBein, una fundación sin ánimo de lucro (stichting), es el arquitecto de los tres pasos.',
+    foundationLink: 'Leer el Manifiesto →',
+  },
+  nl: {
+    whyLabel: 'Waarom we bestaan',
+    whyTitle: 'Mensen willen veranderen, maar missen helderheid en steun',
+    whyIntro: 'Veel gewoonten, routines en denkpatronen houden mensen tegen, in hun eigen leven en als samenleving. Wilskracht is zelden het probleem. Wat meestal ontbreekt:',
+    clarityTitle: 'Helderheid',
+    clarityDesc: 'Over wat ze willen, en waarom dat voor hen belangrijk is.',
+    supportTitle: 'Steun',
+    supportDesc: 'Om die doelen te bereiken, alleen of samen met anderen.',
+    others: 'Typische zelfhulpsites',
+    us: 'HappyBein',
+    rows: [
+      ['Te veel tekst, weinig structuur', 'Gestructureerd, in heldere taal'],
+      ['Abonnementen en advertenties', 'Gratis, geen advertenties, geen account'],
+      ['Tips zonder groter geheel', 'Verbonden met wat mensen nodig hebben en met de samenleving'],
+    ],
+    stepsLabel: 'Ons ecosysteem',
+    stepsTitle: 'Drie stappen, van begrip naar oplossingen',
+    steps: [
+      { tag: '1 · Mensen begrijpen', name: 'YeahCore', desc: 'Wat mensen nodig hebben, en hoe je goed beslist: de 5 pijlers en praktische gidsen.', cta: 'Bezoek YeahCore' },
+      { tag: '2 · De samenleving begrijpen', name: 'YeahSight', desc: 'Hoe de samenleving werkt, welke krachten de toekomst vormen, en hoe we eerlijk kunnen delen.', cta: 'Bezoek YeahSight' },
+      { tag: '3 · In actie komen', name: 'YeahVibe', desc: 'Gratis tools voor elke dag: IntentFlow, ShopTools, Reflect, SpeakNote en meer.', cta: 'Ontdek de tools' },
+    ],
+    foundation: 'De HappyBein Stichting, een stichting zonder winstoogmerk, is de architect achter alle drie.',
+    foundationLink: 'Lees het Manifest →',
+  },
+}[lang];
+
+// YeahCore and YeahSight have French versions; Dutch and Spanish visitors get English.
+const stepHrefs = [
+  fr ? 'https://yeahcore.happybein.com/fr/' : 'https://yeahcore.happybein.com/',
+  fr ? 'https://yeahsight.happybein.com/fr/' : 'https://yeahsight.happybein.com/',
+  'https://yeahvibe.com/',
+];
+const stepColors = ['#2ABFBF', '#1A9A9A', '#4CAF50'];
+---
+<!-- Why we exist -->
+<section class="py-20 px-5" style="background:#F4FAFA;">
+  <div class="max-w-5xl mx-auto">
+    <div class="section-label">{copy.whyLabel}</div>
+    <h2 class="font-display font-extrabold text-ink tracking-tight mb-4" style="font-size:clamp(1.5rem,2.8vw,2.3rem);">{copy.whyTitle}</h2>
+    <p class="text-muted leading-relaxed mb-8 max-w-2xl">{copy.whyIntro}</p>
+    <div class="grid gap-5 md:grid-cols-2 mb-10">
+      <div class="rounded-xl p-6 bg-white" style="border-left:5px solid #2ABFBF; box-shadow:0 2px 12px rgba(26,153,154,0.12);">
+        <h3 class="font-display font-extrabold text-ink text-xl mb-1">{copy.clarityTitle}</h3>
+        <p class="text-muted leading-relaxed">{copy.clarityDesc}</p>
+      </div>
+      <div class="rounded-xl p-6 bg-white" style="border-left:5px solid #4CAF50; box-shadow:0 2px 12px rgba(26,153,154,0.12);">
+        <h3 class="font-display font-extrabold text-ink text-xl mb-1">{copy.supportTitle}</h3>
+        <p class="text-muted leading-relaxed">{copy.supportDesc}</p>
+      </div>
+    </div>
+    <div class="rounded-xl overflow-hidden bg-white" style="border:1px solid rgba(42,191,191,0.25);">
+      <div class="grid grid-cols-2 text-sm font-bold text-white" style="background:#1A3333;">
+        <div class="px-5 py-3">{copy.others}</div>
+        <div class="px-5 py-3">{copy.us}</div>
+      </div>
+      {copy.rows.map(([them, us], i) => (
+        <div class="grid grid-cols-2 text-sm" style={`border-top:1px solid rgba(42,191,191,0.18);${i % 2 ? ' background:#F4FAFA;' : ''}`}>
+          <div class="px-5 py-3 text-muted">{them}</div>
+          <div class="px-5 py-3 font-semibold text-ink">{us}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Three steps -->
+<section class="py-20 px-5">
+  <div class="max-w-6xl mx-auto">
+    <div class="section-label">{copy.stepsLabel}</div>
+    <h2 class="font-display font-extrabold text-ink tracking-tight mb-10" style="font-size:clamp(1.5rem,2.8vw,2.3rem);">{copy.stepsTitle}</h2>
+    <div class="flex flex-col md:flex-row md:items-stretch gap-3 md:gap-4">
+      {copy.steps.map((s, i) => (
+        <>
+          {i > 0 && (
+            <div class="flex items-center justify-center text-2xl font-bold" style="color:#2ABFBF;" aria-hidden="true">
+              <span class="md:hidden">↓</span><span class="hidden md:inline">→</span>
+            </div>
+          )}
+          <a href={stepHrefs[i]} target="_blank" rel="noopener"
+             class="flex-1 flex flex-col rounded-xl p-6 bg-white transition-shadow hover:shadow-lg"
+             style={`border-top:6px solid ${stepColors[i]}; box-shadow:0 4px 20px rgba(26,153,154,0.12);`}>
+            <span class="text-2xs font-bold tracking-widest uppercase text-teal-dark mb-2">{s.tag}</span>
+            <span class="font-display font-black text-ink text-2xl mb-2">{s.name}</span>
+            <span class="text-muted leading-relaxed mb-4 flex-1">{s.desc}</span>
+            <span class="font-semibold text-teal-dark">{s.cta} ↗</span>
+          </a>
+        </>
+      ))}
+    </div>
+    <p class="text-muted leading-relaxed mt-8">
+      {copy.foundation} <a href={p('/manifesto')} class="text-teal-dark font-semibold border-b border-teal-dark/30">{copy.foundationLink}</a>
+    </p>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+---
+// Home page: a small band of key facts. Only facts that don't go stale:
+// no app counts or version numbers here.
+import type { Lang } from '../i18n/index';
+
+const { lang } = Astro.props as { lang: Lang };
+
+const copy = {
+  en: { label: 'At a glance', facts: [
+    ['2022', 'Non-profit foundation (stichting) in the Netherlands'],
+    ['3', 'Connected steps: YeahCore, YeahSight, YeahVibe'],
+    ['4', 'Languages on this site'],
+    ['€0', 'Free to use: no ads, no subscriptions'],
+  ]},
+  fr: { label: 'En bref', facts: [
+    ['2022', 'Fondation à but non lucratif (stichting) aux Pays-Bas'],
+    ['3', 'Étapes reliées : YeahCore, YeahSight, YeahVibe'],
+    ['4', 'Langues sur ce site'],
+    ['0 €', 'Gratuit : sans publicité, sans abonnement'],
+  ]},
+  es: { label: 'De un vistazo', facts: [
+    ['2022', 'Fundación sin ánimo de lucro (stichting) en los Países Bajos'],
+    ['3', 'Pasos conectados: YeahCore, YeahSight, YeahVibe'],
+    ['4', 'Idiomas en este sitio'],
+    ['0 €', 'Gratis: sin anuncios, sin suscripciones'],
+  ]},
+  nl: { label: 'In het kort', facts: [
+    ['2022', 'Stichting zonder winstoogmerk in Nederland'],
+    ['3', 'Verbonden stappen: YeahCore, YeahSight, YeahVibe'],
+    ['4', 'Talen op deze site'],
+    ['€0', 'Gratis: geen advertenties, geen abonnementen'],
+  ]},
+}[lang];
+---
+<section class="py-16 px-5" style="background:#1A3333;">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-2xs font-bold tracking-widest uppercase mb-8" style="color:#4DD0D0;">{copy.label}</div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      {copy.facts.map(([big, label]) => (
+        <div>
+          <div class="font-display font-black leading-none mb-2" style="font-size:clamp(2.2rem,4vw,3.4rem); color:#4DD0D0;">{big}</div>
+          <div class="text-sm leading-relaxed" style="color:#BFE3E3;">{label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

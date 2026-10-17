@@ -20,6 +20,14 @@ const currentPath = Astro.url.pathname
   .replace(/^\/(fr|es|nl)/, '')
   .replace(/^$/, '/');
 const langLinks: Record<string, string> = {};
+// Mobile menu: the three steps in story order, and one shared row style
+const mobileSteps = [
+  { label: 'YeahCore', href: 'https://yeahcore.happybein.com' },
+  { label: 'YeahSight', href: 'https://yeahsight.happybein.com' },
+  { label: lang === 'fr' ? 'Outils YeahVibe' : lang === 'es' ? 'Herramientas YeahVibe' : lang === 'nl' ? 'YeahVibe-tools' : 'YeahVibe tools', href: 'https://yeahvibe.com' },
+];
+const rowClass = 'block pl-4 text-sm text-muted border-b';
+const rowStyle = 'border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;';
 for (const l of allLangs) {
   langLinks[l] = l === 'en'
     ? (currentPath || '/')
@@ -140,62 +148,31 @@ for (const l of allLangs) {
      class="hidden fixed left-0 right-0 bottom-0 bg-white z-40 overflow-y-auto px-6 py-4"
      style="top:70px; -webkit-overflow-scrolling:touch; flex-direction:column;">
 
-  <!-- Language section mobile -->
-  <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-4 pb-1">🌐 Language</span>
-  {allLangs.map(l => (
-    l === lang
-      ? <div class="flex items-center justify-between border-b font-bold"
-             style="border-color:rgba(42,191,191,0.18); min-height:44px; color:#1A9A9A;">
-          {langLabels[l]} <span class="text-xs">✓</span>
-        </div>
-      : <a href={langLinks[l]}
-           class="block text-sm text-muted border-b"
-           style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">
-           {langLabels[l]}
-         </a>
+  <!-- The three steps, in story order -->
+  <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-4 pb-1">{t.footer.brandTagline}</span>
+  {mobileSteps.map((step, i) => (
+    <a href={step.href} target="_blank" rel="noopener" class={rowClass} style={rowStyle}>
+      {i + 1}. {step.label} ↗
+    </a>
   ))}
-
-  <!-- Initiatives -->
-  <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-4 pb-1">{t.nav.initiatives}</span>
-  <a href={p('/initiatives')}
-     class="block font-bold font-display text-teal-dark border-b"
-     style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">
+  <a href={p('/initiatives')} class="block pl-4 text-sm font-bold text-teal-dark border-b" style={rowStyle}>
     {t.nav.allInitiatives}
   </a>
-
-  <span class="block text-[0.62rem] font-bold tracking-[0.12em] uppercase pt-3 pb-1" style="color:#1A9A9A;">
-    {lang === 'fr' ? 'Initiatives' : lang === 'es' ? 'Iniciativas' : lang === 'nl' ? 'Initiatieven' : 'Initiatives'}
-  </span>
-  {items.filter((i: any) => ['YeahCore','YeahSight','YeahDev'].includes(i.label)).map((item: any) => (
-    <a href={item.href} target="_blank" rel="noopener"
-       class="block pl-4 text-sm text-muted border-b"
-       style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">
-      {item.label} ↗
-    </a>
-  ))}
-
-  <span class="block text-[0.62rem] font-bold tracking-[0.12em] uppercase pt-3 pb-1" style="color:#1A9A9A;">
-    {lang === 'fr' ? 'Outils' : lang === 'es' ? 'Herramientas' : lang === 'nl' ? 'Tools' : 'Tools'}
-  </span>
-  {items.filter((i: any) => ['YeahVibe Tools'].includes(i.label)).map((item: any) => (
-    <a href={item.href} target="_blank" rel="noopener"
-       class="block pl-4 text-sm text-muted border-b"
-       style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">
-      {item.label} ↗
-    </a>
-  ))}
-
-  <a href={p('/initiatives') + '#happybein'}
-     class="block pl-4 text-sm text-muted border-b mt-1"
-     style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">
-    {lang === 'fr' ? 'Fondation HappyBein' : lang === 'es' ? 'Fundación HappyBein' : lang === 'nl' ? 'HappyBein Stichting' : 'HappyBein Foundation'}
-  </a>
-
   <!-- About -->
   <span class="block text-[0.68rem] font-bold tracking-[0.14em] uppercase text-teal-dark pt-5 pb-1">{t.nav.about}</span>
-  <a href={p('/manifesto')} class="block pl-4 text-sm text-muted border-b" style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">{t.nav.manifesto}</a>
-  <a href={p('/contact')}   class="block pl-4 text-sm text-muted border-b" style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">{t.nav.contact}</a>
-  <a href="/journal"        class="block pl-4 text-sm text-muted border-b" style="border-color:rgba(42,191,191,0.18); min-height:44px; line-height:44px;">Journal</a>
+  <a href={p('/manifesto')} class={rowClass} style={rowStyle}>{t.nav.manifesto}</a>
+  <a href={p('/roadmap')}   class={rowClass} style={rowStyle}>{t.nav.roadmap}</a>
+  <a href="/journal"        class={rowClass} style={rowStyle}>Journal</a>
+  <a href={p('/contact')}   class={rowClass} style={rowStyle}>{t.nav.contact}</a>
+  <!-- Languages: one compact row -->
+  <div class="flex items-center gap-2 pt-5" aria-label="Language">
+    <span class="text-sm mr-1" aria-hidden="true">🌐</span>
+    {allLangs.map(l => (
+      l === lang
+        ? <span class="px-2 text-sm font-bold" style="color:#1A9A9A; min-height:44px; line-height:44px;" aria-current="true">{l.toUpperCase()}</span>
+        : <a href={langLinks[l]} class="px-2 text-sm text-muted" style="min-height:44px; line-height:44px;" lang={l}>{l.toUpperCase()}</a>
+    ))}
+  </div>
 
 </div>
 

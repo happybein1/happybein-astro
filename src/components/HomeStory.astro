@@ -9,7 +9,7 @@ const fr = lang === 'fr';
 
 const copy = {
   en: {
-    whyLabel: 'Why we exist',
+    whyLabel: 'What we help with',
     whyTitle: 'People want to change, but lack clarity and support',
     whyIntro: 'Many habits, routines and ways of thinking hold people back, in their own lives and as a society. Willpower is rarely the problem. What is usually missing is:',
     clarityTitle: 'Clarity',
@@ -116,8 +116,8 @@ const stepHrefs = [
 ];
 const stepColors = ['#2ABFBF', '#1A9A9A', '#4CAF50'];
 ---
-<!-- Why we exist -->
-<section class="py-20 px-5" style="background:#F4FAFA;">
+<!-- What we help with (target of the hero's first button) -->
+<section id="what-we-help-with" class="py-20 px-5" style="background:#F4FAFA; scroll-margin-top:70px;">
   <div class="max-w-5xl mx-auto">
     <div class="section-label">{copy.whyLabel}</div>
     <h2 class="font-display font-extrabold text-ink tracking-tight mb-4" style="font-size:clamp(1.5rem,2.8vw,2.3rem);">{copy.whyTitle}</h2>
@@ -147,7 +147,7 @@ const stepColors = ['#2ABFBF', '#1A9A9A', '#4CAF50'];
   </div>
 </section>
 
-<!-- Three steps (target of the hero's "See how it works" button) -->
+<!-- Three steps -->
 <section id="how-it-works" class="py-20 px-5" style="scroll-margin-top:80px;">
   <div class="max-w-6xl mx-auto">
     <div class="section-label">{copy.stepsLabel}</div>

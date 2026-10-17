@@ -1,7 +1,7 @@
 ---
 // Home page: "Who we are" (target of the hero's "Who we are" button): a short intro,
-// a few key facts, and links on. Only facts that don't go stale: no app counts or
-// version numbers here. `intro` and `links` are optional per language.
+// optional key facts, and links on. `intro`, `facts` and `links` are optional per
+// language (English shows no facts: the owner preferred the text without numbers).
 import { localePath, type Lang } from '../i18n/index';
 
 const { lang } = Astro.props as { lang: Lang };
@@ -10,12 +10,6 @@ const p = (path: string) => localePath(lang, path);
 const copy = {
   en: { label: 'Who we are',
     intro: 'HappyBein is a small non-profit foundation in the Netherlands, set up in 2022. We study how people and societies work, and turn that into free guides and tools. No ads, no selling of your data.',
-    facts: [
-    ['2022', 'Non-profit foundation (stichting) in the Netherlands'],
-    ['3', 'Connected steps: YeahCore, YeahSight, YeahVibe'],
-    ['4', 'Languages on this site'],
-    ['€0', 'Free to use: no ads, no subscriptions'],
-  ],
     links: [['Read our Manifesto →', '/manifesto'], ['Get in touch →', '/contact']],
   },
   fr: { label: 'En bref', facts: [
@@ -36,22 +30,22 @@ const copy = {
     ['4', 'Talen op deze site'],
     ['€0', 'Gratis: geen advertenties, geen abonnementen'],
   ]},
-}[lang] as { label: string; intro?: string; facts: string[][]; links?: string[][] };
+}[lang] as { label: string; intro?: string; facts?: string[][]; links?: string[][] };
 ---
 <section id="who-we-are" class="py-16 px-5" style="background:#1A3333; scroll-margin-top:70px;">
   <div class="max-w-6xl mx-auto">
     <div class="text-2xs font-bold tracking-widest uppercase mb-4" style="color:#4DD0D0;">{copy.label}</div>
     {copy.intro && <p class="leading-relaxed mb-10 max-w-2xl" style="color:#E8F7F7; font-size:1.05rem;">{copy.intro}</p>}
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+    {copy.facts && <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
       {copy.facts.map(([big, label]) => (
         <div>
           <div class="font-display font-black leading-none mb-2" style="font-size:clamp(2.2rem,4vw,3.4rem); color:#4DD0D0;">{big}</div>
           <div class="text-sm leading-relaxed" style="color:#BFE3E3;">{label}</div>
         </div>
       ))}
-    </div>
+    </div>}
     {copy.links && (
-      <div class="flex flex-wrap gap-x-8 gap-y-3 mt-10">
+      <div class="flex flex-wrap gap-x-8 gap-y-3">
         {copy.links.map(([label, path]) => (
           <a href={p(path)} class="font-semibold border-b" style="color:#4DD0D0; border-color:rgba(77,208,208,0.4);">{label}</a>
         ))}

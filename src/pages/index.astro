@@ -45,12 +45,12 @@ const schema = JSON.stringify({
         Structured understanding unlocks solutions.
       </h1>
       <p class="leading-relaxed mb-8 max-w-[480px]" style="color:#2C4A4A; font-size:1.05rem; line-height:1.75;">
-        We bring clarity to complex topics, and build tools, guides and initiatives that turn that understanding into better choices.
+        Get clarity on complex topics, with free guides, plain-language explainers and everyday tools.
         <span class="block mt-3 font-semibold" style="color:#1A9A9A;">Because life is complicated enough — navigating it shouldn't be.</span>
       </p>
       <div class="flex flex-wrap gap-3">
-        <a href="https://www.yeahvibe.com" target="_blank" rel="noopener" class="btn-primary">{h.btnExplore}</a>
-        <a href="/manifesto" class="btn-outline">{h.btnManifesto}</a>
+        <a href="#how-it-works" class="btn-primary hero-btn">{h.btnExplore}</a>
+        <a href="/manifesto" class="btn-outline hero-btn">{h.btnManifesto}</a>
       </div>
     </div>
     <div class="relative rounded-xl overflow-hidden" style="aspect-ratio:16/9; background:#000; border:3px solid #2ABFBF; box-shadow:0 16px 48px rgba(26,153,154,0.15); -webkit-transform:translateZ(0); transform:translateZ(0);">
@@ -72,7 +72,7 @@ const schema = JSON.stringify({
 
   <section class="py-20 px-5">
     <div class="max-w-6xl mx-auto">
-      <div class="section-label">{lang === 'fr' ? 'Comment ça fonctionne' : 'How It Works'}</div>
+      <div class="section-label">Our approach</div>
       <h2 class="font-display font-extrabold text-ink tracking-tight mb-3" style="font-size:clamp(1.6rem,2.8vw,2.5rem);">{h.howTitle}</h2>
       <p class="text-muted leading-relaxed mb-10 max-w-lg">{h.howSub}</p>
       <div class="grid gap-6" style="grid-template-columns:1fr 1fr;">
@@ -106,6 +106,9 @@ const schema = JSON.stringify({
 </Base>
 
 <style>
+  /* Hero buttons: normal capitalisation; full width and equal on phones */
+  .hero-btn { text-transform: none; letter-spacing: 0; font-size: 0.95rem; justify-content: center; }
+  @media (max-width: 640px) { .hero-btn { width: 100%; } }
   @media (max-width: 960px) {
     section:first-of-type { grid-template-columns: 1fr !important; min-height: auto !important; }
     .max-w-6xl > .grid { grid-template-columns: 1fr !important; }

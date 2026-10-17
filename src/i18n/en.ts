@@ -24,7 +24,7 @@ export const en = {
     heroH1a: 'Simplify Complexity.',
     heroH1b: 'Design Your Life.',
     heroSub: 'HappyBein is the architect. YeahVibe is the instrument. Together, we empower you to understand, decide, and act.',
-    btnExplore: 'Discover how we help',
+    btnExplore: 'How we help',
     btnManifesto: 'Who we are',
     whatTitle: 'What is HappyBein?',
     foundationTag: '🏛 The Mission & Architect',

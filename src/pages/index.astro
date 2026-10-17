@@ -38,7 +38,7 @@ const schema = JSON.stringify({
   alternateFr="https://happybein.com/fr/"
   schema={schema}
 >
-  <section class="max-w-6xl mx-auto px-5 grid gap-14 items-center"
+  <section class="hero max-w-6xl mx-auto px-5 grid gap-14 items-center"
            style="min-height:88vh; padding-top:4.5rem; padding-bottom:4rem; grid-template-columns:1fr 1.15fr;">
     <div>
       <h1 class="font-display font-black text-ink leading-[1.12] tracking-tight mb-5"
@@ -47,11 +47,11 @@ const schema = JSON.stringify({
       </h1>
       <p class="leading-relaxed mb-8 max-w-[480px]" style="color:#2C4A4A; font-size:1.05rem; line-height:1.75;">
         Get clarity on complex topics, with free guides, plain-language explainers and everyday tools.
-        <span class="block mt-3 font-semibold" style="color:#1A9A9A;">Because life is complicated enough — navigating it shouldn't be.</span>
+        <span class="block mt-3 font-semibold" style="color:#1A9A9A; font-size:0.95rem;">Because life is complicated enough — navigating it shouldn't be.</span>
       </p>
-      <div class="flex flex-wrap gap-3">
-        <a href="#what-we-help-with" class="btn-primary hero-btn">{h.btnExplore}</a>
-        <a href="#who-we-are" class="btn-outline hero-btn">{h.btnManifesto}</a>
+      <div class="flex gap-3">
+        <a href="#what-we-help-with" class="btn-primary hero-btn hero-btn-main">{h.btnExplore}</a>
+        <a href="#who-we-are" class="btn-outline hero-btn hero-btn-alt">{h.btnManifesto}</a>
       </div>
     </div>
     <div class="relative rounded-xl overflow-hidden" style="aspect-ratio:16/9; background:#000; border:3px solid #2ABFBF; box-shadow:0 16px 48px rgba(26,153,154,0.15); -webkit-transform:translateZ(0); transform:translateZ(0);">
@@ -80,9 +80,15 @@ const schema = JSON.stringify({
 </Base>
 
 <style>
-  /* Hero buttons: normal capitalisation; full width and equal on phones */
-  .hero-btn { text-transform: none; letter-spacing: 0; font-size: 0.95rem; justify-content: center; }
-  @media (max-width: 640px) { .hero-btn { width: 100%; } }
+  /* Hero buttons: normal capitalisation, both in brand teal, side by side and equal on phones */
+  .hero-btn { text-transform: none; letter-spacing: 0; font-size: 0.95rem; justify-content: center; white-space: nowrap; }
+  .hero-btn-main { background: #1A9A9A; border-color: #1A9A9A; }
+  .hero-btn-main:hover, .hero-btn-main:active { background: #157F7F; border-color: #157F7F; }
+  .hero-btn-alt { background: #E8F7F7; }
+  @media (max-width: 640px) {
+    .hero-btn { flex: 1 1 0; padding-left: 0.75rem; padding-right: 0.75rem; }
+    .hero { padding-top: 2rem !important; }
+  }
   @media (max-width: 960px) {
     section:first-of-type { grid-template-columns: 1fr !important; min-height: auto !important; }
     .max-w-6xl > .grid { grid-template-columns: 1fr !important; }

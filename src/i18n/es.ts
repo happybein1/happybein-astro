@@ -56,10 +56,10 @@ export const es: Translations = {
   // Initiatives
   initiatives: {
     title: 'Nuestras Iniciativas – HappyBein',
-    description: 'Descubre todas las iniciativas de HappyBein: YeahVibe, YeahSight, YeahDev y DailyApp — herramientas sencillas para el día a día.',
+    description: 'Descubre todas las iniciativas de HappyBein: YeahCore, YeahSight, YeahDev y las herramientas YeahVibe para el día a día.',
     pageLabel: 'Lo que estamos construyendo',
     pageTitle: 'Nuestras Iniciativas',
-    pageSub: 'Ocho instrumentos en el ecosistema HappyBein — cada uno una herramienta enfocada para ayudar a las personas a simplificar la complejidad, ganar influencia y vivir con más propósito.',
+    pageSub: 'Cinco instrumentos en el ecosistema HappyBein — cada uno una herramienta enfocada para ayudar a las personas a simplificar la complejidad, ganar influencia y vivir con más propósito.',
     readMore: 'Leer más ↓',
     showLess: 'Cerrar ↑',
     live: 'En línea',

@@ -132,10 +132,10 @@ export const initiatives: Initiative[] = [
     ctaLabel: 'Visit YeahDev ↗',
   },
   {
-    id: 'dailyapp',
-    name: 'DailyApp',
-    url: 'https://dailyapp.happybein.com',
-    externalUrl: 'https://dailyapp.happybein.com',
+    id: 'dailyapp',  // id kept so page filters still match; shown as YeahVibe tools
+    name: 'YeahVibe tools',
+    url: 'https://yeahvibe.com',
+    externalUrl: 'https://yeahvibe.com',
     icon: '⚡',
     badge: 'Daily Tools',
     bannerClass: 'bg-gradient-to-r from-teal-DEFAULT to-teal-light',
@@ -146,16 +146,17 @@ export const initiatives: Initiative[] = [
     dotColor: '#2ABFBF',
     statusLabel: 'Live',
     tagline: '"Simple tools for daily life."',
-    summary: 'A collection of lightweight, focused tools — habit tracking, voice notes, quick timers, workouts, and score keeping. Each one does one thing well, with no accounts or subscriptions.',
+    summary: 'Where understanding turns into action: lightweight, focused tools at yeahvibe.com. Each one does one thing well, with no accounts or subscriptions needed.',
     details: [
       { type: 'bullets', items: [
-        'DailyTracker — build better habits with streaks and daily check-ins',
-        'SpeakNote — instant voice-to-text, notes saved on your device, no account',
+        'IntentFlow — your daily planner: ideas, habits, agenda and links in one place',
+        'ShopTools — stores, stock, shopping lists, links and budgets',
+        'Reflect — assess yourself across 8 life areas and keep a private journal',
+        'SpeakNote — instant voice-to-text, notes saved on your device',
         'QuickTimer — one-tap preset timers, custom countdown, lap chronometer',
-        'YeahVibe Workout — randomised exercise prompts for quick movement breaks',
-        'YeahVibe GameTrack — score tracker for any game or activity',
+        'World Clock — any city’s current time at a glance',
       ]},
     ],
-    ctaLabel: 'Explore DailyApp ↗',
+    ctaLabel: 'Visit YeahVibe ↗',
   },
 ];

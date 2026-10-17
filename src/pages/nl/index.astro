@@ -68,6 +68,12 @@ const h = t.home;
   </section>
 </Base>
 <style>
+  /* Phones: halve the space between sections (desktop sizes looked empty) */
+  @media (max-width: 640px) {
+    section:first-of-type { padding-top: 2rem !important; padding-bottom: 1.5rem !important; }
+    :global(main > section.py-20) { padding-top: 3rem; padding-bottom: 3rem; }
+    :global(main > section.py-16), :global(main > section.py-14) { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  }
   @media (max-width: 960px) {
     section:first-of-type { grid-template-columns: 1fr !important; min-height: auto !important; }
     .hero-art { display: none; }

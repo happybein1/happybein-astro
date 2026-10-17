@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" role="img" aria-labelledby="t">
+  <title id="t">From understanding to solutions: understand people, understand society, act on it</title>
+  <defs>
+    <linearGradient id="path" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#2ABFBF"/>
+      <stop offset="0.55" stop-color="#1A9A9A"/>
+      <stop offset="1" stop-color="#4CAF50"/>
+    </linearGradient>
+    <filter id="sh" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#1A9A9A" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="560" height="440" rx="24" fill="#F4FAFA"/>
+
+  <!-- faint circuit background, echoing the logo -->
+  <g fill="none" stroke="#2ABFBF" stroke-opacity="0.16" stroke-width="2">
+    <path d="M30 70 H130 V30"/><circle cx="130" cy="26" r="4"/>
+    <path d="M440 400 V360 H530"/><circle cx="534" cy="360" r="4"/>
+    <path d="M30 190 H66 V150"/><circle cx="66" cy="146" r="4"/>
+    <path d="M400 30 V70 H470"/><circle cx="474" cy="70" r="4"/>
+  </g>
+
+  <!-- the rising path: people -> society -> action -->
+  <path d="M110 330 H200 V230 H300 V130 H420" fill="none" stroke="url(#path)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="200" cy="330" r="5" fill="#2ABFBF"/>
+  <circle cx="300" cy="230" r="5" fill="#1A9A9A"/>
+  <path d="M432 130 l-14 -9 v18 z" fill="#4CAF50"/>
+
+  <!-- 1 people -->
+  <g filter="url(#sh)">
+    <circle cx="110" cy="330" r="46" fill="#fff" stroke="#2ABFBF" stroke-width="5"/>
+  </g>
+  <g fill="#2ABFBF">
+    <circle cx="110" cy="316" r="11"/>
+    <path d="M88 352 a22 20 0 0 1 44 0 z"/>
+  </g>
+  <text x="110" y="402" text-anchor="middle" font-family="Nunito, 'Nunito Sans', system-ui, sans-serif" font-weight="800" font-size="17" fill="#1A3333">Understand people</text>
+
+  <!-- 2 society -->
+  <g filter="url(#sh)">
+    <circle cx="300" cy="230" r="46" fill="#fff" stroke="#1A9A9A" stroke-width="5"/>
+  </g>
+  <g fill="none" stroke="#1A9A9A" stroke-width="3.5">
+    <circle cx="300" cy="230" r="22"/>
+    <ellipse cx="300" cy="230" rx="10" ry="22"/>
+    <path d="M278 230 H322"/>
+  </g>
+  <text x="300" y="302" text-anchor="middle" font-family="Nunito, 'Nunito Sans', system-ui, sans-serif" font-weight="800" font-size="17" fill="#1A3333">Understand society</text>
+
+  <!-- 3 action -->
+  <g filter="url(#sh)">
+    <circle cx="480" cy="130" r="46" fill="#4CAF50"/>
+  </g>
+  <path d="M462 131 l12 12 l24 -26" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="480" y="202" text-anchor="middle" font-family="Nunito, 'Nunito Sans', system-ui, sans-serif" font-weight="800" font-size="17" fill="#1A3333">Act on it</text>
+</svg>

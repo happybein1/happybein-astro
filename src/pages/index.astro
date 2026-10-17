@@ -54,12 +54,7 @@ const schema = JSON.stringify({
         <a href="#who-we-are" class="btn-outline hero-btn hero-btn-alt">{h.btnManifesto}</a>
       </div>
     </div>
-    <div class="relative rounded-xl overflow-hidden" style="aspect-ratio:16/9; background:#000; border:3px solid #2ABFBF; box-shadow:0 16px 48px rgba(26,153,154,0.15); -webkit-transform:translateZ(0); transform:translateZ(0);">
-      <iframe src="https://player.vimeo.com/video/908983038?badge=0&autopause=0&player_id=0&app_id=58479"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-              title="Introduction HappyBein"
-              class="absolute inset-0 w-full h-full border-0"></iframe>
-    </div>
+    <img src="/images/hero-path.svg" alt="Understand people, understand society, act on it" width="560" height="440" class="hero-art w-full h-auto" />
   </section>
 
   <HomeStory lang={lang} />
@@ -91,6 +86,7 @@ const schema = JSON.stringify({
   }
   @media (max-width: 960px) {
     section:first-of-type { grid-template-columns: 1fr !important; min-height: auto !important; }
+    .hero-art { display: none; }
     .max-w-6xl > .grid { grid-template-columns: 1fr !important; }
   }
 </style>

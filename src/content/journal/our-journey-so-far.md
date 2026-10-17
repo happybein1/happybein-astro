@@ -7,10 +7,10 @@ This entry looks back at what has been built so far, to help decide what comes n
 
 ## Where it started
 
-HappyBein began in 2022 with a simple observation: well-being and good decisions depend on
+HappyBein began in 2021 with a simple observation: well-being and good decisions depend on
 things most people are never taught, from how our bodies and minds react to stress, to how
-we decide and how we work with others. We set up a non-profit foundation, HappyBein
-Stichting, to share that knowledge in plain language.
+we decide and how we work with others. In April 2022 we made it official by setting up a non-profit
+foundation, HappyBein Stichting, to share that knowledge in plain language.
 
 The first steps were a website, explainer videos for YouTube, and protecting the HappyBein
 brand. We also tried branded t-shirts and mugs, to see whether the brand could help fund

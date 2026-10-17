@@ -6,7 +6,7 @@ Use this as the system prompt / project context for any Claude chat dedicated to
 
 ## Who We Are
 
-HappyBein is a purpose-driven foundation based in Eindhoven, Netherlands (est. 2021). Mission: **simplify societal complexity** — giving individuals and founders better tools to make sense of the world and act with clarity.
+HappyBein is a purpose-driven foundation based in Eindhoven, Netherlands (work began 2021; stichting officially founded April 2022). Mission: **simplify societal complexity** — giving individuals and founders better tools to make sense of the world and act with clarity.
 
 The founder works solo with a lean budget. Every solution must prioritise **simplicity, zero/low recurring cost, and maintainability by one person**.
 

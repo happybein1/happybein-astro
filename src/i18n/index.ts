@@ -45,7 +45,7 @@ export const frInitiatives: Record<string, {
     tagline: '',
     summary: "HappyBein existe pour rendre la complexit\u00e9 plus facile \u00e0 vivre. Nous construisons des outils simples et partageons des insights clairs pour aider les gens \u00e0 comprendre le monde et \u00e0 faire de meilleurs choix.",
     details: [{ type: 'bullets', items: [
-      "Stichting zonder winstoogmerk gevestigd in Eindhoven, Nederland \u2014 opgericht in 2021",
+      "Fondation \u00e0 but non lucratif (stichting) \u00e0 Eindhoven, Pays-Bas \u2014 travail commenc\u00e9 en 2021, fond\u00e9e officiellement en avril 2022",
       "Studio de recherche \u00e9tudiant les d\u00e9fis soci\u00e9taux et les meilleures pratiques",
       "Construit et maintient l\u2019\u00e9cosyst\u00e8me d\u2019outils et d\u2019insights Yeah",
       "Op\u00e8re sur deux flux\u00a0: Efficacit\u00e9 interne + Compr\u00e9hension externe",
@@ -163,7 +163,7 @@ export const esInitiatives: Record<string, {
     details: [{ type: 'bullets', items: [
       'Estudio de investigación sobre desafíos sociales y mejores prácticas',
       'Define la visión y responde a "¿Por qué importa esto?"',
-      'Sin ánimo de lucro, Eindhoven, Países Bajos — fundada en 2021',
+      'Fundación sin ánimo de lucro (stichting), Eindhoven, Países Bajos — trabajo iniciado en 2021, fundada oficialmente en abril de 2022',
       'Opera en dos flujos: Eficiencia interna + Comprensión externa',
     ]}],
     ctaLabel: 'Leer el Manifiesto ↗',
@@ -279,7 +279,7 @@ export const nlInitiatives: Record<string, {
     details: [{ type: 'bullets', items: [
       'Onderzoeksstudio die maatschappelijke uitdagingen en beste praktijken bestudeert',
       'Definieert de visie en beantwoordt "Waarom is dit belangrijk?"',
-      'Non-profit, Eindhoven, Nederland — opgericht in 2021',
+      'Stichting zonder winstoogmerk, Eindhoven, Nederland — gestart in 2021, officieel opgericht in april 2022',
       'Opereert via twee stromen: Interne efficiëntie + Externe begrip',
     ]}],
     ctaLabel: 'Lees het Manifest ↗',

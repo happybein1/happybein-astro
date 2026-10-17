@@ -1,12 +1,12 @@
 export const SITE = {
   name: 'HappyBein',
   url: 'https://happybein.com',
-  version: '3.15',
+  version: '3.16',
   versionDate: 'October 2026',
   description: 'A purpose-driven foundation built on one idea: structured understanding unlocks solutions, so every citizen and leader can make conscious, informed, and impactful decisions.',
   email: 'happybein1@gmail.com',
   location: 'Eindhoven, Netherlands',
-  founded: '2021',
+  founded: '2022-04',  // official founding of the stichting; work began in 2021
   ogImage: 'https://happybein.com/images/og-home.jpg',
   GA_ID: 'G-TJFL5YQ705',
   social: {

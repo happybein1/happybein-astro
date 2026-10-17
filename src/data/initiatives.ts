@@ -43,7 +43,7 @@ export const initiatives: Initiative[] = [
     summary: 'HappyBein exists to make complexity easier to live with. We build simple tools and share clear insights to help people understand the world around them and make better choices.',
     details: [
       { type: 'bullets', items: [
-        'Non-profit foundation based in Eindhoven, Netherlands — founded 2021',
+        'Non-profit foundation (stichting) in Eindhoven, Netherlands — work began in 2021, officially founded in April 2022',
         'Research studio studying societal challenges and curating best practices',
         'Builds and maintains the Yeah ecosystem of tools and insights',
         'Operates across two streams: Internal Efficiency + External Understanding',

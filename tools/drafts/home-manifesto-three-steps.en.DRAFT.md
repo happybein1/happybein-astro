@@ -49,7 +49,19 @@ Stream A and Stream B stay as they are.
 
 ---
 
-## 3. Manifesto, section 1
+## 3. Manifesto, opening section: one clear mission
+
+**Now (title):** 🌟 Our North Star
+
+**Proposed (title):** 🌟 Our Mission
+
+The text under it stays as it is ("Structured understanding unlocks solutions. We exist to
+help every citizen and leader…"). This is the one mission statement; the foundation box
+below no longer states a second one (see section 4 of this draft).
+
+---
+
+## 4. Manifesto, section 1
 
 **Now (title):** 1. How We Operate: The Architect and The Instrument
 
@@ -61,7 +73,24 @@ through two distinct vehicles:
 **Proposed (intro):** To bridge the gap between understanding and daily action, the
 foundation builds three connected steps:
 
-**HappyBein (The Foundation)**: keep the current text.
+**Now, first box:**
+
+> **HappyBein (The Foundation)**
+> The Architect & The Source. HappyBein is the non-profit organisation dedicated to the
+> mission of holistic well-being. We act as the Research Studio — studying societal
+> challenges, curating best practices, and defining the vision. We answer the question:
+> "Why does this matter?"
+
+**Proposed, first box:**
+
+> **HappyBein (The Foundation)**
+> The Architect & The Source. HappyBein is a non-profit foundation (stichting) registered
+> in the Netherlands. We act as the Research Studio — studying societal challenges,
+> curating best practices, and defining the vision. We answer the question: "Why does this
+> matter?"
+
+(This states the legal status precisely and removes the second, different mission
+"holistic well-being". No "charity" or "ANBI" wording.)
 
 **Now, second box:**
 
@@ -80,7 +109,7 @@ foundation builds three connected steps:
 
 ---
 
-## 4. Manifesto, section 2
+## 5. Manifesto, section 2
 
 **Now (title):** 2. The Content: What YeahVibe Delivers
 
@@ -97,7 +126,7 @@ The bullet points under each stream stay as they are.
 
 ---
 
-## 5. Manifesto, section 3 (closing line)
+## 6. Manifesto, section 3 (closing line)
 
 **Now:** HappyBein exists to foster this balance. YeahVibe exists to deliver it.
 

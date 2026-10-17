@@ -30,8 +30,6 @@ const copy = {
       { tag: '2 · Understand society', name: 'YeahSight', desc: 'How society works, the forces shaping the future, and how to share fairly.', cta: 'Visit YeahSight' },
       { tag: '3 · Act on it', name: 'YeahVibe', desc: 'Free everyday tools: IntentFlow, ShopTools, Reflect, SpeakNote and more.', cta: 'Explore the tools' },
     ],
-    foundation: 'The HappyBein Foundation, a non-profit stichting, is the architect behind all three.',
-    foundationLink: 'Read the Manifesto →',
   },
   fr: {
     whyLabel: 'Pourquoi nous existons',
@@ -108,7 +106,7 @@ const copy = {
     foundation: 'De HappyBein Stichting, een stichting zonder winstoogmerk, is de architect achter alle drie.',
     foundationLink: 'Lees het Manifest →',
   },
-}[lang];
+}[lang] as { foundation?: string; foundationLink?: string } & Record<string, any>;
 
 // YeahCore and YeahSight have French versions; Dutch and Spanish visitors get English.
 const stepHrefs = [
@@ -173,8 +171,10 @@ const stepColors = ['#2ABFBF', '#1A9A9A', '#4CAF50'];
         </>
       ))}
     </div>
-    <p class="text-muted leading-relaxed mt-8">
-      {copy.foundation} <a href={p('/manifesto')} class="text-teal-dark font-semibold border-b border-teal-dark/30">{copy.foundationLink}</a>
-    </p>
+    {copy.foundation && (
+      <p class="text-muted leading-relaxed mt-8">
+        {copy.foundation} <a href={p('/manifesto')} class="text-teal-dark font-semibold border-b border-teal-dark/30">{copy.foundationLink}</a>
+      </p>
+    )}
   </div>
 </section>
